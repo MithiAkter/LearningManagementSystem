@@ -1,12 +1,12 @@
 import {Link} from 'react-router-dom';
 
-function Register(){
+function TeacherRegister(){
     return(
        <div className="container mt-4">
             <div className="row">
                 <div className="col-6 offset-3">
                     <div className="card">
-                        <h5 className="card-header">User Register</h5>
+                        <h5 className="card-header">Teacher Register</h5>
                         <div className="card-body">
                         <form>
                             <div className="mb-3">
@@ -30,7 +30,7 @@ function Register(){
                             </div>
 
                             <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Interests in which course</label>
+                                <label for="exampleInputEmail1" className="form-label">Skills</label>
                                 <textarea className="form-control"></textarea>
                                 <div id="emailHelp" className="form-text">C, C++, Java, PHP, Python, JavaScripts, etc</div>
                             </div>
@@ -43,4 +43,4 @@ function Register(){
        </div>
     )
 }
-export default Register;
+export default TeacherRegister;

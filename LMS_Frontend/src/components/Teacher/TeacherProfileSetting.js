@@ -1,14 +1,14 @@
 import {Link} from 'react-router-dom';
-import Sidebar from './Sidebar';
+import TeacherSidebar from './TeacherSidebar';
 
 
 
-function ProfileSetting(){
+function TeacherProfileSetting(){
     return(
        <div className="container mt-4">
             <div className="row">
                 <aside className='col-md-3'>
-                    <Sidebar />
+                    <TeacherSidebar />
                 </aside>
                 <section className='col-md-9'>
                     <div className="card">
@@ -39,13 +39,14 @@ function ProfileSetting(){
                             </div>
                         </div>
                         <div className="mb-3 row">
-                            <label for="inputPassword" className="col-sm-2 col-form-label">Interest</label>
+                            <label for="inputPassword" className="col-sm-2 col-form-label">Skills</label>
                             <div className="col-sm-10">
-                            <input type="text" className="form-control" id="inputPassword"/>
+                            <textarea className="form-control"></textarea>
+                            <div id="emailHelp" className="form-text">C, C++, Java, PHP, Python, JavaScripts, etc</div>
                             </div>
                         </div>
-                        <hr />
-                        <button className='btn btn-primary'>Update</button>
+                            <hr />
+                            <button className='btn btn-primary'>Update</button>
                         </div>
                     </div>
                 </section>
@@ -53,4 +54,4 @@ function ProfileSetting(){
         </div>
     )
 }
-export default ProfileSetting;
+export default TeacherProfileSetting;
