@@ -1,10 +1,11 @@
 import {Link} from 'react-router-dom';
+import AllCourses from './AllCourses';
 
 function Home() {
     return (
         <div className="container mt-4">
         {/* start Leatest Courses*/}
-            <h3 className="pb-1 mb-4">Leatest Courses<a href="#" class="float-end">See all</a></h3>
+            <h3 className="pb-1 mb-4">Leatest Courses<Link to="/all-courses" className="float-end">See all</Link></h3>
             <div className="row"> 
                 <div className="col-md-3">
                     <div className="card">
@@ -51,7 +52,7 @@ function Home() {
 
 
             {/* start popular Courses*/}
-            <h3 className="pb-1 mb-4 mt-4">Popular Courses <a href="#" className="float-end">See all</a></h3>
+            <h3 className="pb-1 mb-4 mt-4">Popular Courses <Link to="/popular-courses" className="float-end">See all</Link></h3>
             <div className="row"> 
                 <div className="col-md-3">
                     <div className="card">
@@ -97,7 +98,7 @@ function Home() {
 
 
             {/* start popular teachers*/}
-            <h3 className="pb-1 mb-4 mt-4">Popular Teachers <a href="#" className="float-end">See all</a></h3>
+            <h3 className="pb-1 mb-4 mt-4">Popular Teachers <Link to="/popular-teacher" className="float-end">See all</Link></h3>
             <div className="row"> 
                 <div className="col-md-3">
                     <div className="card">

@@ -26,9 +26,14 @@ import TeacherProfileSetting from './Teacher/TeacherProfileSetting';
 import TeacherChangePassword from './Teacher/TeacherChangePassword';
 
 
+// List Pages
+import AllCourses from './AllCourses';
+import PopularCourses from './PopularCourses';
+import PopularTeacher from './PopularTeacher';
+
+
+
 import {Routes as Switch, Route} from 'react-router-dom';
-
-
 
 
 
@@ -42,6 +47,9 @@ function Main() {
             <Route path='/about' element={<About />} />
             <Route path='/detail/:course_id' element={<CourseDetail />} />
             <Route path='/teacher-detail/:teacher_id' element={<TeacherDetail />} />
+            <Route path='/all-courses' element={<AllCourses />} />
+            <Route path='/popular-courses' element={<PopularCourses />} />
+            <Route path='/popular-teacher' element={<PopularTeacher />} />
             
             <Route path='/user-login' element={<Login />} />
             <Route path='/user-register' element={<Register />} />
