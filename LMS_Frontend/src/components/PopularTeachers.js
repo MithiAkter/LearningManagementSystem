@@ -1,18 +1,25 @@
 import {Link} from 'react-router-dom';
 
-function PopularTeacher() {
+function PopularTeachers() {
     return (
         
         <div className="container mt-3">
-            {/* Popular Courses Starts */}
+            {/* Popular Teacher Starts */}
                 <h3 className="pb-1 mb-4">Popular Teachers</h3>
             <div className="row"> 
                 <div className="col-md-3 mb-4">
                     <div className="card">
                     <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
+                            <h5 className="card-title"><Link to="/teacher-detail/1">Teacher's Name</Link></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div> 
 
@@ -21,8 +28,16 @@ function PopularTeacher() {
                     <div className="card">
                     <a href="#"><img src="teacher.png" className="card-img-top" alt="..."/></a>
                         <div className="card-body">
-                            <h5 className="card-title"><a href="#">Course title</a></h5>
+                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div> 
 
@@ -31,8 +46,16 @@ function PopularTeacher() {
                     <div className="card">
                     <a href="#"><img src="teacher.png" className="card-img-top" alt="..."/></a>
                         <div className="card-body">
-                            <h5 className="card-title"><a href="#">Course title</a></h5>
+                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div> 
 
@@ -41,8 +64,16 @@ function PopularTeacher() {
                     <div className="card">
                     <a href="#"><img src="teacher.png" className="card-img-top" alt="..."/></a>
                         <div className="card-body">
-                            <h5 className="card-title"><a href="#">Course title</a></h5>
+                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>   
 
@@ -51,8 +82,16 @@ function PopularTeacher() {
                     <div className="card">
                     <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
+                            <h5 className="card-title"><Link to="/detail/1">Teacher's Name</Link></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div> 
 
@@ -60,8 +99,16 @@ function PopularTeacher() {
                     <div className="card">
                     <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
+                            <h5 className="card-title"><Link to="/detail/1">Teacher's Name</Link></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div> 
 
@@ -69,8 +116,16 @@ function PopularTeacher() {
                     <div className="card">
                     <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
+                            <h5 className="card-title"><Link to="/detail/1">Teacher's Name</Link></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div> 
 
@@ -78,12 +133,19 @@ function PopularTeacher() {
                     <div className="card">
                     <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
+                            <h5 className="card-title"><Link to="/detail/1">Teacher's Name</Link></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div> 
             </div>
-            {/* Popular Courses ends */}
+            {/* Popular Teachers ends */}
             {/* Pagination Starts */}
             <nav aria-label="Page navigation example">
                 <ul class="pagination mt-5 justify-content-center">
@@ -100,4 +162,4 @@ function PopularTeacher() {
     );
   }
   
-  export default PopularTeacher;
+  export default PopularTeachers;

@@ -13,6 +13,15 @@ function PopularCourses() {
                         <div className="card-body">
                             <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                                <span className="float-end">Views : 78945</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div> 
 
@@ -23,6 +32,15 @@ function PopularCourses() {
                         <div className="card-body">
                             <h5 className="card-title"><a href="#">Course title</a></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                                <span className="float-end">Views : 78945</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div> 
 
@@ -33,6 +51,15 @@ function PopularCourses() {
                         <div className="card-body">
                             <h5 className="card-title"><a href="#">Course title</a></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                                <span className="float-end">Views : 78945</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div> 
 
@@ -43,6 +70,15 @@ function PopularCourses() {
                         <div className="card-body">
                             <h5 className="card-title"><a href="#">Course title</a></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                                <span className="float-end">Views : 78945</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>   
 
@@ -53,6 +89,15 @@ function PopularCourses() {
                         <div className="card-body">
                             <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                                <span className="float-end">Views : 78945</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div> 
 
@@ -62,6 +107,15 @@ function PopularCourses() {
                         <div className="card-body">
                             <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                                <span className="float-end">Views : 78945</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div> 
 
@@ -71,6 +125,15 @@ function PopularCourses() {
                         <div className="card-body">
                             <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                                <span className="float-end">Views : 78945</span>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div> 
 
@@ -80,6 +143,15 @@ function PopularCourses() {
                         <div className="card-body">
                             <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
                         </div>
+
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating : 4.5/5</span>
+                                <span className="float-end">Views : 78945</span>
+                            </div>
+                        </div>
+
+                        
                     </div>
                 </div> 
             </div>

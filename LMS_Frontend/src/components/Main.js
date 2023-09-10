@@ -29,7 +29,7 @@ import TeacherChangePassword from './Teacher/TeacherChangePassword';
 // List Pages
 import AllCourses from './AllCourses';
 import PopularCourses from './PopularCourses';
-import PopularTeacher from './PopularTeacher';
+import PopularTeachers from './PopularTeachers';
 
 
 
@@ -49,7 +49,7 @@ function Main() {
             <Route path='/teacher-detail/:teacher_id' element={<TeacherDetail />} />
             <Route path='/all-courses' element={<AllCourses />} />
             <Route path='/popular-courses' element={<PopularCourses />} />
-            <Route path='/popular-teacher' element={<PopularTeacher />} />
+            <Route path='/popular-teachers' element={<PopularTeachers />} />
             
             <Route path='/user-login' element={<Login />} />
             <Route path='/user-register' element={<Register />} />
