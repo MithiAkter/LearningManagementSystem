@@ -1,9 +1,20 @@
 import {Link} from 'react-router-dom';
+import {useEffect,useState} from 'react';
+import axios from 'axios';
 
+const baseUrl='http://localhost:8000/api';
 function PopularTeachers() {
+    const [teacher,setTeacher]=useState(null);
+   
+    useEffect(() => {
+        axios.get(baseUrl+'/teacher/').then((response) => {
+            setTeacher(response.data);
+        });
+    }, []);
+    
+    console.log(teacher);
     return (
-        
-        <div className="container mt-3">
+         <div className="container mt-3">
             {/* Popular Teacher Starts */}
                 <h3 className="pb-1 mb-4">Popular Teachers</h3>
             <div className="row"> 
@@ -82,7 +93,7 @@ function PopularTeachers() {
                     <div className="card">
                     <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Teacher's Name</Link></h5>
+                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
                         </div>
 
                         <div className="card-footer">
@@ -99,7 +110,7 @@ function PopularTeachers() {
                     <div className="card">
                     <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Teacher's Name</Link></h5>
+                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
                         </div>
 
                         <div className="card-footer">
@@ -116,7 +127,7 @@ function PopularTeachers() {
                     <div className="card">
                     <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Teacher's Name</Link></h5>
+                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
                         </div>
 
                         <div className="card-footer">
@@ -133,7 +144,7 @@ function PopularTeachers() {
                     <div className="card">
                     <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Teacher's Name</Link></h5>
+                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
                         </div>
 
                         <div className="card-footer">
