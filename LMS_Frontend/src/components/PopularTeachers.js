@@ -1,17 +1,18 @@
 import {Link} from 'react-router-dom';
-import {useEffect,useState} from 'react';
+import {useEffect, useState} from 'react';
 import axios from 'axios';
 
-const baseUrl='http://localhost:8000/api';
+const baseUrl = 'http://localhost:8000/api';
+
 function PopularTeachers() {
-    const [teacher,setTeacher]=useState(null);
+    const [teacher, setTeacher] = useState(null);
    
     useEffect(() => {
         axios.get(baseUrl+'/teacher/').then((response) => {
             setTeacher(response.data);
+            
         });
     }, []);
-    
     console.log(teacher);
     return (
          <div className="container mt-3">
@@ -159,7 +160,7 @@ function PopularTeachers() {
             {/* Popular Teachers ends */}
             {/* Pagination Starts */}
             <nav aria-label="Page navigation example">
-                <ul class="pagination mt-5 justify-content-center">
+                <ul className="pagination mt-5 justify-content-center">
                     <li className ="page-item"><a className ="page-link" href="#">Previous</a></li>
                     <li className ="page-item"><a className ="page-link" href="#">1</a></li>
                     <li className ="page-item"><a className ="page-link" href="#">2</a></li>

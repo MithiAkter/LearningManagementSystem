@@ -51,7 +51,7 @@ function AllCourses() {
                     <div className="card">
                     <Link to="/detail/1"><img src="python.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
+                            <h5 className="card-title"><a href="#">Course title</a></h5>
                         </div>
                     </div>
                 </div> 
@@ -60,7 +60,7 @@ function AllCourses() {
                     <div className="card">
                     <Link to="/detail/1"><img src="python.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
+                            <h5 className="card-title"><a href="#">Course title</a></h5>
                         </div>
                     </div>
                 </div> 
@@ -69,7 +69,7 @@ function AllCourses() {
                     <div className="card">
                     <Link to="/detail/1"><img src="python.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
+                            <h5 className="card-title"><a href="#">Course title</a></h5>
                         </div>
                     </div>
                 </div> 
@@ -78,7 +78,7 @@ function AllCourses() {
                     <div className="card">
                     <Link to="/detail/1"><img src="python.png" className="card-img-top" alt="..."/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
+                            <h5 className="card-title"><a href="#">Course title</a></h5>
                         </div>
                     </div>
                 </div> 
@@ -86,7 +86,7 @@ function AllCourses() {
             {/* Latest Courses ends */}
             {/* Pagination Starts */}
             <nav aria-label="Page navigation example">
-                <ul class="pagination mt-5 justify-content-center">
+                <ul className="pagination mt-5 justify-content-center">
                     <li className ="page-item"><a className ="page-link" href="#">Previous</a></li>
                     <li className ="page-item"><a className ="page-link" href="#">1</a></li>
                     <li className ="page-item"><a className ="page-link" href="#">2</a></li>

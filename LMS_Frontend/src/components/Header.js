@@ -19,7 +19,7 @@ function Header() {
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                     Teacher
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><Link className="dropdown-item" to="/teacher-login">Login</Link></li>
                                     <li><Link className="dropdown-item" to="/teacher-register">Register</Link></li>
                                     <li><hr className="dropdown-divider"/></li>
@@ -32,7 +32,7 @@ function Header() {
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                     User
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><Link className="dropdown-item" to="/user-login">Login</Link></li>
                                     <li><Link className="dropdown-item" to="/user-register">Register</Link></li>
                                     <li><hr className="dropdown-divider"/></li>

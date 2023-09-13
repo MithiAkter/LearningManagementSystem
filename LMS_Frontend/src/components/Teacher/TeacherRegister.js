@@ -1,10 +1,22 @@
 import {Link} from 'react-router-dom';
-import { useEffect } from 'react';
+import {useEffect,useState} from 'react';
+import axios from 'axios';//we can send and receive the data from the server by using axios
 
 function TeacherRegister(){
-    useEffect(()=>{
-        document.title='Teacher Register';
+    const [teacherData, setTeacherData]=useState({
+        'full_name' : '',
+        'email' : '',
+        'password' : '',
+        'qualification' : '',
+        'mobile_no' : '',
+        'skills' : '',
+        'status' : ''
     });
+    //Change Element Value
+    const handleChange=(event)=>{
+        console.log(event.target.name,event.target.value)
+    }
+    //Change Element Value End
     return(
        <div className="container mt-4">
             <div className="row">
@@ -14,33 +26,33 @@ function TeacherRegister(){
                         <div className="card-body">
                         <form>
                             <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Full Name</label>
-                                <input type="text" className="form-control"/>
+                                <label htmlFor="exampleInputEmail1" className="form-label">Full Name</label>
+                                <input onChange={handleChange}  name="full_name"  type="text" className="form-control"/>
                             </div>
 
                             <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Email</label>
-                                <input type="email" className="form-control"/>
+                                <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
+                                <input onChange={handleChange}  name="email" type="email" className="form-control"/>
                             </div>
 
                             <div className="mb-3">
-                                <label for="exampleInputPassword1" className="form-label">Password</label>
-                                <input type="password" className="form-control" id="exampleInputPassword1"/>
+                                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                                <input onChange={handleChange}  name="password" type="password" className="form-control" id="exampleInputPassword1"/>
                             </div>
 
                             <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Qualification</label>
-                                <input type="text" className="form-control"/>
+                                <label htmlFor="exampleInputEmail1" className="form-label">Qualification</label>
+                                <input onChange={handleChange}  name="qualification" type="text" className="form-control"/>
                             </div>
 
                             <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Mobile Number</label>
-                                <input type="number" className="form-control"/>
+                                <label htmlFor="exampleInputEmail1" className="form-label">Mobile Number</label>
+                                <input onChange={handleChange}  name="mobile_no" type="number" className="form-control"/>
                             </div>
 
                             <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Skills</label>
-                                <textarea className="form-control"></textarea>
+                                <label htmlFor="exampleInputEmail1" className="form-label">Skills</label>
+                                <textarea onChange={handleChange}  name="skills" className="form-control"></textarea>
                                 <div id="emailHelp" className="form-text">C, C++, Java, PHP, Python, JavaScripts, etc</div>
                             </div>
 
