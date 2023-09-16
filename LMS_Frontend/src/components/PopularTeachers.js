@@ -5,6 +5,7 @@ import axios from 'axios';
 const baseUrl = 'http://localhost:8000/api';
 
 function PopularTeachers() {
+    
     const [teacher, setTeacher] = useState(null);
    
     useEffect(() => {
