@@ -21,6 +21,7 @@ import TeacherLogout from './Teacher/TeacherLogout';
 import TeacherRegister from './Teacher/TeacherRegister';
 import TeacherDashboard from './Teacher/TeacherDashboard';
 import AddCourses from './Teacher/AddCourses';
+import AddChapter from './Teacher/AddChapter';
 import TeacherCourses from './Teacher/TeacherCourses';
 import UserList from './Teacher/UserList';
 import TeacherProfileSetting from './Teacher/TeacherProfileSetting';
@@ -36,6 +37,7 @@ import CategoryCourses from './CategoryCourses';
 
 
 import {Routes as Switch, Route} from 'react-router-dom';
+
 
 
 
@@ -70,6 +72,7 @@ function Main() {
             <Route path='/teacher-dashboard' element={<TeacherDashboard />} />
             <Route path='/teacher-courses' element={<TeacherCourses />} />
             <Route path='/add-course' element={<AddCourses />} />
+            <Route path='/add-chapter/:course_id' element={<AddChapter />} />
             <Route path='/teacher-users' element={<UserList />} />
             <Route path='/tacher-profile-setting' element={<TeacherProfileSetting />} />
             <Route path='/teacher-change-password' element={<TeacherChangePassword />} />

@@ -3,7 +3,7 @@ import TeacherSidebar from './TeacherSidebar';
 
 
 
-function AddCourses(){
+function AddChapter(){
     return(
        <div className="container mt-4">
             <div className="row">
@@ -12,7 +12,7 @@ function AddCourses(){
                 </aside>
                 <section className='col-md-9'>
                     <div className="card">
-                        <h5 className="card-header">Add Courses</h5>
+                        <h5 className="card-header">Add Chapter</h5>
                         <div className="card-body">
                                 <form>
                                     <div className="mb-3">
@@ -26,15 +26,15 @@ function AddCourses(){
                                     </div>
 
                                     <div className="mb-3">
-                                        <label for="video" className="form-label">Featured Image</label>
+                                        <label for="video" className="form-label">Video</label>
                                         
                                         <input type="file" className="form-control" id="video"/>
                                        
                                     </div>
 
                                     <div className="mb-3">
-                                        <label for="techs" className="form-label">Technologies</label>
-                                        <textarea className="form-control" placeholder='HTML, CSS, Php, python, JavaScript' id="techs"></textarea>
+                                        <label for="techs" className="form-label">Remarks</label>
+                                        <textarea className="form-control" placeholder='This video is focused on basic introduction' id="techs"></textarea>
                                     </div>
 
                                     <button className='btn btn-primary'>Submit</button>
@@ -47,4 +47,4 @@ function AddCourses(){
         </div>
     )
 }
-export default AddCourses;
+export default AddChapter;
