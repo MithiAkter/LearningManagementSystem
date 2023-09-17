@@ -4,9 +4,7 @@ import axios from 'axios';//we can send and receive the data from the server by 
 const baseUrl='http://localhost:8000/api/teacher/';
 
 function TeacherRegister(){
-    // useEffect(()=>{
-    //     document.title='Teacher Register';
-    // });
+    
     const [teacherData, setteacherData]=useState({
         'full_name' : '',
         'email' : '',
@@ -54,6 +52,15 @@ function TeacherRegister(){
         }
 
     };
+    //Submit Form End
+    useEffect(()=>{
+        document.title='Teacher Register';
+    });
+
+    const teacherLoginStatus=localStorage.getItem('teacherLoginStatus')
+    if(teacherLoginStatus=='true'){
+        window.location.href='/teacher-dashboard';
+    }
     //Submit Form End
     return(
        <div className="container mt-4">
