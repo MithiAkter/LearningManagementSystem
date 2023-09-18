@@ -20,7 +20,7 @@ import TeacherLogin from './Teacher/TeacherLogin';
 import TeacherLogout from './Teacher/TeacherLogout';
 import TeacherRegister from './Teacher/TeacherRegister';
 import TeacherDashboard from './Teacher/TeacherDashboard';
-import AddCourses from './Teacher/AddCourses';
+import AddCourses from './Teacher/AddCourse';
 import AddChapter from './Teacher/AddChapter';
 import TeacherCourses from './Teacher/TeacherCourses';
 import UserList from './Teacher/UserList';

@@ -16,8 +16,14 @@ class Teacher(models.Model):
 class CourseCategory(models.Model):
     title = models.CharField(max_length = 150)
     description =  models.TextField()
+
     class Meta:
         verbose_name_plural = "2. Course Categories"
+
+# for showing the title in admin panel
+    def __str__(self): 
+        return self.title
+    
     
 # Course Model
 class Course(models.Model):
@@ -25,6 +31,8 @@ class Course(models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     title = models.CharField(max_length = 150)
     description =  models.TextField()
+    featured_img=models.ImageField(upload_to='course_imgs/',null=True)
+    techs =  models.TextField(null=True)
     class Meta:
         verbose_name_plural = "3. Courses"
 
