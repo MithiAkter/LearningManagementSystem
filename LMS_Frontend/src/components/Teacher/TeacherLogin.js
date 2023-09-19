@@ -21,7 +21,7 @@ function TeacherLogin(){
         
         try{
             axios.post(baseUrl+'/teacher-login',teacherFormData)
-            .then((res) =>{
+            .then((res)=>{
                 if (res.data.bool==true){
                     localStorage.setItem('teacherLoginStatus',true);
                     window.location.href='/teacher-dashboard';

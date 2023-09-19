@@ -79,7 +79,7 @@ function AddCourse(){
                                     <div className="mb-3">
                                         <label for="category" className="form-label">Category</label>
                                             <select name="category" onChange={handleChange} className="form-control" >
-                                                {cats.map((category,index)=>{return <option key={index} value={category.id} >{category.title}</option>})}
+                                                {cats.map((category,index)=>{return <option key={index} value={category.id}>{category.title}</option>})}
                                             </select>
                                     </div>
 

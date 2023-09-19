@@ -1,6 +1,25 @@
 import {Link} from 'react-router-dom';
 import TeacherSidebar from './TeacherSidebar';
-function TeacherCourses() {
+import {useEffect, useState} from 'react';
+import axios from 'axios';
+const baseUrl='http://localhost:8000/api';
+
+function MyCourses() {
+    const [courseData,setCourseData]=useState([]);
+
+    //Fetch courses when page load
+    useEffect(()=>{
+        try{
+            axios.get(baseUrl+'/teacher-courses/2')
+            .then((res)=>{
+                setCourseData(res.data)
+             });
+        }catch(error){
+            console.log(error);
+        }
+
+    },[]);
+    
     return (
             <div className="container mt-4">
                 <div className="row">
@@ -20,12 +39,16 @@ function TeacherCourses() {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <td>Php development</td>
-                                                    <td><Link to="/">123</Link></td>
-                                                    <td>
-                                                        <button className='btn btn-danger btn-sm active'>Delete</button>
-                                                        <Link className='btn btn-success btn-sm active ms-2' to="/add-chapter/2">Add Chapter</Link>
-                                                    </td>
+                                                        {courseData.map((course, index) => 
+                                                            <tr>
+                                                                <td>{course.title}</td>
+                                                                <td><Link to="/">123</Link></td>
+                                                                <td>
+                                                                    <button className='btn btn-danger btn-sm'>Delete</button>
+                                                                    <Link className='btn btn-success btn-sm ms-2' to="/add-chapter/2">Add Chapter</Link>
+                                                                </td>
+                                                            </tr>
+                                                        )}
                                                 </tbody>
                                             </table>
                                     </div>
@@ -36,5 +59,5 @@ function TeacherCourses() {
         )
     }
     
-export default TeacherCourses;
+export default MyCourses;
 
