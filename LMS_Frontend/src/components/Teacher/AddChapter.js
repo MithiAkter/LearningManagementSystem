@@ -2,10 +2,10 @@ import {Link} from 'react-router-dom';
 import TeacherSidebar from './TeacherSidebar';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import {useParams} from 'react-router-dom';
 const baseUrl='http://localhost:8000/api';
 
 function AddChapter(){
-
     const [chapterData, setChapterData]=useState({
         'title' : '',
         'description' : '',
@@ -26,11 +26,12 @@ function AddChapter(){
             [event.target.name]:event.target.files[0]
         });
     }
-
+    const{course_id}=useParams();
     //Submit Form Start
     const formSubmit=()=>{
         const _formData = new FormData();
-        _formData.append('course',18);
+        
+        _formData.append('course',course_id);
         _formData.append('title',chapterData.title);
         _formData.append('description',chapterData.description);
         _formData.append('video',chapterData.video,chapterData.video.name);
