@@ -6,7 +6,7 @@ import TeacherSidebar from './TeacherSidebar';
 
 function TeacherDashboard(){
     useEffect(()=>{
-        document.title='Teacher Dashboard';
+        document.title='My Dashboard';
     });
     return(
        <div className="container mt-4">

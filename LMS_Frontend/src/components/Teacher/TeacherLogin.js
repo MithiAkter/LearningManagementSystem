@@ -18,12 +18,12 @@ function TeacherLogin(){
         const teacherFormData=new FormData;
         teacherFormData.append('email',teacherLoginData.email)
         teacherFormData.append('password',teacherLoginData.password)
-        
         try{
             axios.post(baseUrl+'/teacher-login',teacherFormData)
             .then((res)=>{
                 if (res.data.bool==true){
                     localStorage.setItem('teacherLoginStatus',true);
+                    localStorage.setItem('teacherId',res.data.teacher_id);
                     window.location.href='/teacher-dashboard';
                 }
             });
@@ -31,7 +31,7 @@ function TeacherLogin(){
             console.log(error);
         }    
     }
-    const teacherLoginStatus=localStorage.getItem('teacherLoginStatus')
+    const teacherLoginStatus=localStorage.getItem('teacherLoginStatus');
     if(teacherLoginStatus=='true'){
         window.location.href='/teacher-dashboard';
     }

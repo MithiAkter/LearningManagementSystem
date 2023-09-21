@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import TeacherSidebar from './TeacherSidebar';
-import {useEffect, useState} from 'react';
+import {useState, useEffect} from 'react';
 import axios from 'axios';
 const baseUrl='http://localhost:8000/api';
 
@@ -17,15 +17,15 @@ function AddCourse(){
     //Fetch categories when page load
     useEffect(()=>{
         try{
-            axios.get(baseUrl+'/category')
+            axios.get(baseUrl+'/category/')
             .then((res)=>{
-                setCats(res.data)
+                setCats(res.data);
              });
         }catch(error){
             console.log(error);
         }
-
     },[]);
+
     //Change Element Value
     const handleChange=(event)=>{
         setCourseData({
@@ -41,15 +41,14 @@ function AddCourse(){
     }
 
     //Submit Form Start
-    const formSubmit=()=> {
+    const formSubmit=()=>{
         const _formData = new FormData();
-        _formData.append('category', courseData.category);
-        _formData.append('teacher', 1);
-        _formData.append('title', courseData.title);
-        _formData.append('description', courseData.description);
-        _formData.append('featured_img', courseData.f_img, courseData.f_img.name);
-        _formData.append('techs', courseData.techs);
-
+        _formData.append('category',courseData.category);
+        _formData.append('teacher',21);
+        _formData.append('title',courseData.title);
+        _formData.append('description',courseData.description);
+        _formData.append('featured_img',courseData.f_img,courseData.f_img.name);
+        _formData.append('techs',courseData.techs);
         try{
             axios.post(baseUrl+'/course/',_formData,{
                 headers: {
@@ -57,13 +56,16 @@ function AddCourse(){
                 }
             })
             .then((res)=>{
-                console.log(res.data);
+                //console.log(res.data);
+                window.location.href='/add-course';
              });
         }catch(error){
             console.log(error);
         }
     };
-        
+    useEffect(()=>{
+        document.title='Add Courses';
+    })
     //console.log(cats);
     return(
        <div className="container mt-4">
@@ -79,7 +81,8 @@ function AddCourse(){
                                     <div className="mb-3">
                                         <label for="category" className="form-label">Category</label>
                                             <select name="category" onChange={handleChange} className="form-control" >
-                                                {cats.map((category,index)=>{return <option key={index} value={category.id}>{category.title}</option>})}
+                                                
+                                                {cats.map((category,index)=>{return <option key={index} value={category.id}>{category.title}</option>})} 
                                             </select>
                                     </div>
 
