@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import {useEffect,useState} from 'react';
 import axios from 'axios';//we can send and receive the data from the server by using axios
+
 const baseUrl='http://localhost:8000/api';
 
 function TeacherLogin(){
@@ -8,23 +9,31 @@ function TeacherLogin(){
         email:'',
         password:''
     });
+    const [errorMsg,seterrorMsg]=useState();
+
     const handleChange=(event)=>{
         setteacherLoginData({
             ...teacherLoginData,
             [event.target.name]:event.target.value
         });
     }
-    const submitForm=()=> {
+    const submitForm=()=>{
+        
         const teacherFormData=new FormData;
         teacherFormData.append('email',teacherLoginData.email)
         teacherFormData.append('password',teacherLoginData.password)
         try{
             axios.post(baseUrl+'/teacher-login',teacherFormData)
             .then((res)=>{
+                // Clear the form fields by resetting the state
+                setteacherLoginData({ 'email': '', 'password': '' });
                 if (res.data.bool==true){
                     localStorage.setItem('teacherLoginStatus',true);
                     localStorage.setItem('teacherId',res.data.teacher_id);
+                    
                     window.location.href='/teacher-dashboard';
+                }else{
+                    seterrorMsg('Invalid Email or Password!')
                 }
             });
         }catch(error){
@@ -35,7 +44,6 @@ function TeacherLogin(){
     if(teacherLoginStatus=='true'){
         window.location.href='/teacher-dashboard';
     }
-
     useEffect(()=>{
         document.title='Teacher Login';
     });
@@ -46,6 +54,7 @@ function TeacherLogin(){
                     <div className="card">
                         <h5 className="card-header">Teacher Login</h5>
                         <div className="card-body">
+                            {errorMsg && <p className='text-danger' >{errorMsg}</p>}
                         <form>
                             <div className="mb-3">
                                 <label for="exampleInputEmail1" className="form-label">Username</label>
@@ -59,7 +68,7 @@ function TeacherLogin(){
                                 <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                                 <label className="form-check-label" for="exampleCheck1">Remember Me</label>
                             </div>
-                            <button type="submit" onClick={submitForm} className="btn btn-primary">Login</button>
+                            <button type="button" onClick={submitForm} className="btn btn-primary">Login</button>
                         </form>
                         </div>
                     </div>

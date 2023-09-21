@@ -36,7 +36,7 @@ function TeacherRegister(){
 
 
         try{
-            axios.post(baseUrl,teacherFormData).then((response) => {
+            axios.post(baseUrl,teacherFormData).then((response)=>{
                 setteacherData({
                     'full_name' : '',
                     'email' : '',
