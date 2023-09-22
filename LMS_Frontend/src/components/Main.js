@@ -22,6 +22,8 @@ import TeacherRegister from './Teacher/TeacherRegister';
 import TeacherDashboard from './Teacher/TeacherDashboard';
 import AddCourse from './Teacher/AddCourse';
 import AddChapter from './Teacher/AddChapter';
+import AllChapters from './Teacher/CourseChapters';
+
 import TeacherCourses from './Teacher/TeacherCourses';
 import UserList from './Teacher/UserList';
 import TeacherProfileSetting from './Teacher/TeacherProfileSetting';
@@ -30,6 +32,7 @@ import TeacherChangePassword from './Teacher/TeacherChangePassword';
 
 // List Pages
 import AllCourses from './AllCourses';
+
 import PopularCourses from './PopularCourses';
 import PopularTeachers from './PopularTeachers';
 import CategoryCourses from './CategoryCourses';
@@ -37,6 +40,7 @@ import CategoryCourses from './CategoryCourses';
 
 
 import {Routes as Switch, Route} from 'react-router-dom';
+
 
 
 
@@ -53,6 +57,8 @@ function Main() {
             <Route path='/detail/:course_id' element={<CourseDetail />} />
             <Route path='/teacher-detail/:teacher_id' element={<TeacherDetail />} />
             <Route path='/all-courses' element={<AllCourses />} />
+            <Route path='/all-chapters/:course_id' element={<AllChapters />} />
+            
             <Route path='/popular-courses' element={<PopularCourses />} />
             <Route path='/popular-teachers' element={<PopularTeachers />} />
             <Route path='/category/:category_slug' element={<CategoryCourses />} />
