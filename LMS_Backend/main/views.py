@@ -44,8 +44,13 @@ class CourseList(generics.ListCreateAPIView):
     queryset=models.Course.objects.all()
     serializer_class=CourseSerializer #this serializer refer to the urls
 
+#Chapter
+class ChapterList(generics.ListCreateAPIView):
+    queryset=models.Chapter.objects.all()
+    serializer_class=ChapterSerializer 
+
 #Specific Teacher Course
-class TeacherCourseList(generics.ListAPIView):
+class TeacherCourseList(generics.ListCreateAPIView):
     serializer_class=CourseSerializer
 
     def get_queryset(self):
@@ -53,10 +58,10 @@ class TeacherCourseList(generics.ListAPIView):
         teacher=models.Teacher.objects.get(pk=teacher_id)
         return models.Course.objects.filter(teacher=teacher)
         
-#Chapter
-class ChapterList(generics.ListCreateAPIView):
-    queryset=models.Chapter.objects.all()
-    serializer_class=ChapterSerializer 
+#Teacher Specific Course
+class TeacherCourseDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset=models.Course.objects.all()
+    serializer_class=CourseSerializer
 
 #For Chapter Data
 class CourseChapterList(generics.ListAPIView):
@@ -66,3 +71,8 @@ class CourseChapterList(generics.ListAPIView):
         course_id=self.kwargs['course_id']
         course=models.Course.objects.get(pk=course_id)
         return models.Chapter.objects.filter(course=course)
+    
+#For Editing the chapter fetching data views-
+class ChapterDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset=models.Chapter.objects.all()
+    serializer_class=ChapterSerializer 

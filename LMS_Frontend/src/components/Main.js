@@ -23,6 +23,7 @@ import TeacherDashboard from './Teacher/TeacherDashboard';
 import AddCourse from './Teacher/AddCourse';
 import AddChapter from './Teacher/AddChapter';
 import AllChapters from './Teacher/CourseChapters';
+import EditChapter from './Teacher/EditChapter';
 
 import TeacherCourses from './Teacher/TeacherCourses';
 import UserList from './Teacher/UserList';
@@ -32,7 +33,6 @@ import TeacherChangePassword from './Teacher/TeacherChangePassword';
 
 // List Pages
 import AllCourses from './AllCourses';
-
 import PopularCourses from './PopularCourses';
 import PopularTeachers from './PopularTeachers';
 import CategoryCourses from './CategoryCourses';
@@ -58,6 +58,7 @@ function Main() {
             <Route path='/teacher-detail/:teacher_id' element={<TeacherDetail />} />
             <Route path='/all-courses' element={<AllCourses />} />
             <Route path='/all-chapters/:course_id' element={<AllChapters />} />
+            <Route path='/edit-chapter/:chapter_id' element={<EditChapter />} />
             
             <Route path='/popular-courses' element={<PopularCourses />} />
             <Route path='/popular-teachers' element={<PopularTeachers />} />
