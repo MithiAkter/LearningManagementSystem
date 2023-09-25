@@ -1,0 +1,50 @@
+/* ContentPage.css */
+.sidenav {
+    max-height: 100%; /* Set a maximum height for the sidebar */
+    overflow-y: auto; /* Add a vertical scrollbar when content overflows */
+    scrollbar-width: thin;
+    scrollbar-color: #999 #f1f1f1;
+}
+
+/* HtmlPage.css */
+.css-page {
+    max-width:850px;
+    padding: 15px;
+    margin: left 0;
+    background-color: #f8f8f8; /* Light gray background */
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    background-color: hsl(145, 63%, 42%) ; /* Green #059862 background */
+    color: #fff; /* White text */
+    padding: 10px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+section {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #4CAF50; /* Green text */
+}
+
+p {
+    font-size: 16px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+li {
+    font-size: 16px;
+}

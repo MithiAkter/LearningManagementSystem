@@ -13,10 +13,30 @@ function Header() {
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav ms-auto">
                             <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-                            {/* <a className="nav-link" href="#">Programming Languages</a> */}
+
+                            <li className="nav-item dropdown">
+                                <a style= {{fontSize: '18px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" 
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                    Tutorial
+                                </a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><Link className="dropdown-item" to="/html-home">HTML</Link></li>
+                                    <li><Link className="dropdown-item" to="/css-home">CS</Link></li>
+                                    <li><hr className="dropdown-divider"/></li>
+                                    <li><Link className="dropdown-item" to="/">JS</Link></li>
+                                    <li><Link className="dropdown-item" to="/">DJANGO</Link></li>
+                                </ul>
+                            </li>
+                           
+                            
+
+
+
+
+
                             <Link className="nav-link" to="/all-courses">Courses</Link>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+                                <a style={{fontSize: '18px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" 
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                     Teacher
                                 </a>
@@ -32,7 +52,7 @@ function Header() {
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+                                <a style={{fontSize: '18px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" 
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                     User
                                 </a>
@@ -44,6 +64,8 @@ function Header() {
                                     <li><Link className="dropdown-item" to="/user-logout">Logout</Link></li>
                                 </ul>
                             </li>
+
+                            
                             
                         </div>
                     </div>

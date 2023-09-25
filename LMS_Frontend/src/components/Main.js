@@ -38,6 +38,9 @@ import PopularTeachers from './PopularTeachers';
 import CategoryCourses from './CategoryCourses';
 
 
+//Tutorial
+import HtmlHome from './Tutorial/HTML/HtmlHome';
+import CssHome from './Tutorial/CSS/CssHome';
 
 import {Routes as Switch, Route} from 'react-router-dom';
 
@@ -83,6 +86,10 @@ function Main() {
             <Route path='/teacher-users' element={<UserList />} />
             <Route path='/tacher-profile-setting' element={<TeacherProfileSetting />} />
             <Route path='/teacher-change-password' element={<TeacherChangePassword />} />
+
+
+            <Route path='/html-home' element={<HtmlHome />} />
+            <Route path='/css-home' element={<CssHome />} />
         </Switch>
       <Footer/>
     </div>
