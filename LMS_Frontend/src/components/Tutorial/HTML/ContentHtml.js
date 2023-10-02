@@ -7,17 +7,17 @@ function ContentHtml() {
         <div className="sidenav">
             <div className="html-page">
                 <header>
-                    <h1>HTML - HyperText Markup Language</h1>
+                    <h1 id='html-content-title1' >HTML - HyperText Markup Language</h1>
                 </header>
                 <section>
-                    <h2>Introduction to HTML</h2>
-                    <p>
+                    <div id='html-content-title2'><h2 >Html Basics</h2></div>
+                    <p id='html-paragraph'>
                         HTML (HyperText Markup Language) is the standard markup language for creating web pages. It
                         describes the structure and content of a web page using a system of elements and tags.
                     </p>
                 </section>
                 <section>
-                    <h2>HTML Basics</h2>
+                    <div id='html-content-title2'><h2 >Html Basics</h2></div> 
                     <ul>
                         <li>HTML documents are composed of elements.</li>
                         <li>Elements are represented by opening and closing tags.</li>
@@ -25,14 +25,14 @@ function ContentHtml() {
                     </ul>
                 </section>
                 <section>
-                    <h2>Introduction to HTML</h2>
-                    <p>
+                    <div id='html-content-title2'><h2 >Html Basics</h2></div>
+                    <p id='html-paragraph'>
                         HTML (HyperText Markup Language) is the standard markup language for creating web pages. It
                         describes the structure and content of a web page using a system of elements and tags.
                     </p>
                 </section>
                 <section id="html-basics">
-                    <h2>HTML Basics</h2>
+                    <div id='html-content-title2'><h2 >Test div</h2></div>
                     <ul>
                         <li>HTML documents are composed of elements.</li>
                         <li>Elements are represented by opening and closing tags.</li>

@@ -23,20 +23,23 @@ header {
     padding: 10px;
 }
 
-h1 {
+#html-content-title1 h1{
     font-size: 36px;
 }
 
-section {
+section{
     margin-top: 20px;
 }
 
-h2 {
-    font-size: 24px;
-    color: #4CAF50; /* Green text */
+#html-content-title2 h2{
+    border-radius: 8px;
+    background-color: #BCD0C7; 
+    font-size: 20px;
+    color: hsl(101, 85%, 30%); /* Green text */
+    padding: 10px; /* Add padding to create a gap around the text */
 }
 
-p {
+#html-paragraph p{
     font-size: 16px;
 }
 

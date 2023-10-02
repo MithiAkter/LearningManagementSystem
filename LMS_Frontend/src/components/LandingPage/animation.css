@@ -1,0 +1,36 @@
+/* For animating home title text */
+
+#animated-text {
+    padding: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid transparent; /* Create a transparent border */
+    animation: typing 5s steps(40) forwards, blink 0.5s step-end infinite; /* Apply text animation */
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0; /* Start with no width (hidden) */
+    }
+    to {
+      width: 100%; /* End with full width (revealed) */
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent; /* Make the cursor blink */
+    }
+  }
+/* For animating home paragraph title text */
+#slide-up{
+    margin: 0;
+    padding: 0;
+    transform: translateY(100%);
+    animation: slideUp 3s ease-in-out forwards;
+}
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+    }
+}

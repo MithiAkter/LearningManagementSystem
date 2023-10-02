@@ -8,7 +8,7 @@ function Home(){
     });
     return (
         //container-fluid for the whole pages
-        <div className="container mt-4">
+        <div className="container mt-2">
         {/* start Leatest Courses*/}
             <h3 className="pb-1 mb-4">Leatest Courses<Link to="/all-courses" className="float-end">See all</Link></h3>
             <div className="row"> 

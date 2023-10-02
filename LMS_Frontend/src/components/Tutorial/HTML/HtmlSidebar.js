@@ -9,7 +9,7 @@ function HtmlSidebar(){
         <div className="sidenav list-group list-group-flush">
                 <div className="custom-scrollbar">
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-dark text-center' style={{ fontWeight: 'bold' }}>Learn HTML</Link>
-                <Link to="/html-basics" className='list-group-item list-group-item-action list-group-item-success mt-1'>HTML</Link>
+                <a href="#html-basics" className='list-group-item list-group-item-action list-group-item-success mt-1'>HTML Test</a>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>HTML Introduction</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>HTML Introduction</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>HTML Editors</Link>

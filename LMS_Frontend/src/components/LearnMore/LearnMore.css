@@ -1,0 +1,146 @@
+.learn-moretext{
+    text-align: justify;
+}
+.mid-text{
+    text-align: center;
+}
+#sectionn{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 90vh;
+    width: 85vw;
+    margin: 0 auto;
+}
+.image{
+    width: 100%;
+    margin-top: 30px;
+    background: url("person.jpg") center/cover no-repeat;
+}
+.con-tent{
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.con-tent h2{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    font-size: 36px;
+    letter-spacing: 6px;
+    opacity: 0.9;
+}
+.con-tent span{
+    height: 0.5px;
+    width: 80px;
+    background: #777;
+    margin: 30px 0;
+}
+.con-tent p{
+    padding-bottom: 15px;
+    font-weight: 700;
+    opacity: 0.7;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+.links{
+    margin: 15px 0;
+}
+.links li{
+    border: 0.5px solid #777;
+    list-style: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    width: 160px;
+    text-align: center;
+}
+.links li a{
+    text-transform: uppercase;
+    color: #777;
+    text-decoration: none;
+}
+.links li:hover{
+    border-color: #06d6a0;
+}
+.links li:hover a{
+    color :#06d6a0;
+}
+.vertical-line{
+    height: 30px;
+    width: 0.5px;
+    background: #777;
+    margin: 0 auto;
+}
+.icons{
+    display: flex;
+    padding: 15px 0;
+}
+.icons li{
+    display: block;
+    padding: 5px;
+    margin: 5px;
+}
+.icons li i{
+    font-size: 26px;
+    opacity: 0.8;
+}
+.icons li i:hover{
+    color: #06d6a0;
+}
+
+
+/*****************/
+
+@media(max-width: 992px){
+    section{
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    .image{
+        height: 100vh;
+    }
+    .con-tent{
+        height: 100vh;
+    }
+    .con-tent h2{
+        font-size: 20px;
+        margin-top: 50px;
+    }
+    .con-tent span{
+        margin: 20px 0;
+    }
+    .con-tent p{
+        font-size: 14px;
+    }
+    .links li a{
+        font-size: 14px;
+    }
+    .links{
+        margin: 5px 0;
+    }
+    .links li{
+        padding: 6px 10px;
+    }
+    .icons li i{
+        font-size: 15px;
+    }
+}
+
+.icon-facebook {
+    color: blue; /* Change to your desired color for Facebook icon */
+  }
+  
+  .icon-twitter {
+    color: #1DA1F2; /* Change to your desired color for Twitter icon */
+  }
+  
+  .icon-github {
+    color: black; /* Change to your desired color for Github icon */
+  }
+  
+  .icon-pinterest {
+    color: red; /* Change to your desired color for Pinterest icon */
+  }

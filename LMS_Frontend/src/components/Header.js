@@ -1,18 +1,19 @@
 import React from 'react';
+// import './Header.css';
 import {Link} from 'react-router-dom';
 function Header() {
     const teacherLoginStatus=localStorage.getItem('teacherLoginStatus')
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: '#738678', fontSize: '18px' }}>
+        <nav className="navbar navbar-expand-lg navbar-light" style={{fontSize: '18px' }}>
                 <div className="container">
-                    <Link className="navbar-brand" to="/">Programming Learning System</Link>
+                    <Link className="navbar-brand" to="/landing-page">Programming Learning System</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" 
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav ms-auto">
-                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                            <Link className="nav-link" aria-current="page" to="/">Home</Link>
 
                             <li className="nav-item dropdown">
                                 <a style= {{fontSize: '18px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" 
@@ -20,11 +21,16 @@ function Header() {
                                     Tutorial
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to="/html-home">HTML</Link></li>
-                                    <li><Link className="dropdown-item" to="/css-home">CS</Link></li>
+                                <li><Link className="dropdown-item" to="/">C</Link></li>
+                                    <li><Link className="dropdown-item" to="/">C++</Link></li>
+                                    <li><Link className="dropdown-item" to="/">Python</Link></li>
+                                    <li><Link className="dropdown-item" to="/">Java</Link></li>
                                     <li><hr className="dropdown-divider"/></li>
-                                    <li><Link className="dropdown-item" to="/">JS</Link></li>
+                                    <li><Link className="dropdown-item" to="/html-home">Html</Link></li>
+                                    <li><Link className="dropdown-item" to="/css-home">Css</Link></li>
+                                    <li><Link className="dropdown-item" to="/">JavaScript</Link></li>
                                     <li><Link className="dropdown-item" to="/">DJANGO</Link></li>
+                                    
                                 </ul>
                             </li>
                            
@@ -34,6 +40,7 @@ function Header() {
 
 
 
+                            {/* <Link className="nav-link" to="/contact">Accordian</Link> */}
                             <Link className="nav-link" to="/all-courses">Courses</Link>
                             <li className="nav-item dropdown">
                                 <a style={{fontSize: '18px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" 
@@ -64,7 +71,9 @@ function Header() {
                                     <li><Link className="dropdown-item" to="/user-logout">Logout</Link></li>
                                 </ul>
                             </li>
-
+                            
+                            <Link className="nav-link" to="/about-us">About Us</Link>
+                            <Link className="nav-link" to="/blog-post">Blog</Link>
                             
                             
                         </div>

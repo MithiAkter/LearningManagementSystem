@@ -41,6 +41,20 @@ import CategoryCourses from './CategoryCourses';
 //Tutorial
 import HtmlHome from './Tutorial/HTML/HtmlHome';
 import CssHome from './Tutorial/CSS/CssHome';
+import LandingPage from './LandingPage/LandingPage';
+
+
+
+
+import AboutUs from './About_Us/AboutUs';
+import LearnMore from './LearnMore/LearnMore';
+// import Accordion from './Accordion/Accordion';
+
+
+
+//blog
+import BlogHome from './blogLayout/BlogHome';
+
 
 import {Routes as Switch, Route} from 'react-router-dom';
 
@@ -88,8 +102,14 @@ function Main() {
             <Route path='/teacher-change-password' element={<TeacherChangePassword />} />
 
 
+            
+            <Route path='/landing-page' element={<LandingPage />} />
+            
             <Route path='/html-home' element={<HtmlHome />} />
             <Route path='/css-home' element={<CssHome />} />
+            <Route path='/about-us' element={<AboutUs />} />
+            <Route path='/learn-more' element={<LearnMore />} />
+            <Route path='/blog-post' element={<BlogHome />} />
         </Switch>
       <Footer/>
     </div>

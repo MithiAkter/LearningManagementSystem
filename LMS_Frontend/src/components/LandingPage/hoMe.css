@@ -1,0 +1,66 @@
+/* Home */
+#home{
+    /* background image */
+    background-image: linear-gradient(rgba(9,5,54,0.3),rgba(5,4,46,0.7)),url(images/test1.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;/* Middle text */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 0px;
+    
+}
+#home-title h2{
+    /* Middle text */
+    color: #FDC93B;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+#home p{
+    /* Middle text */
+    width: 50%;
+    color: #fff;
+    font-size: 1.0rem;
+    line-height: 25px;
+}
+#home .btn{
+    /* Middle button */
+    margin-top: 30px;
+}
+#home a{
+    /* Middle button */
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 13px 35px;
+    background-color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+}
+#home a.blue{
+    /* Middle bl button */
+    color: #fff;
+    background: rgb(21, 21, 100);
+    transition: 0.3s ease;
+}
+#home a.blue:hover{
+    /* Middle bl button */
+    color: rgb(21, 21, 100);
+    background: #fff;
+}
+
+#home a.yellow{
+    /* Middle bl button */
+    color: #fff ;
+    background: #FDC93B;
+    transition: 0.3s ease;
+}
+#home a.yellow:hover{
+    /* Middle bl button */
+    color: rgb(21, 21, 100);
+    background:#fff  ;
+}

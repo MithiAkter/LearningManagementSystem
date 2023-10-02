@@ -1,0 +1,67 @@
+.accordian-title{
+    text-align: center;
+}
+.item-span{
+    font-size: 18px;
+    color:rgb(35,35,85);
+  }
+
+.accordion {
+    max-width: 80%;
+    margin: 60px auto 0;
+    border-radius: 3px;
+    background:  #ffffff;
+}
+ 
+  input[type="checkbox"] {
+    display: none;
+    appearance: none;
+  }
+  .accordion-item {
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 500;
+    padding: 2em;
+    background-color:#ffffff;
+    border-radius: 0.5em;
+  }
+  .accordion-item:not(:last-child) {
+    margin-bottom: 1em;
+  }
+  .accordion-content {
+    color: black;
+    font-size: 0.8em;
+    line-height: 1.8em;
+  }
+  label {
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    color: #000000;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 1em 0;
+  }
+  input[type="checkbox"] ~ label .arrow {
+    display: inline-block;
+    transition: 1s;
+  }
+  
+  input[type="checkbox"]:checked ~ label .arrow {
+    transform: rotate(90deg);
+  }
+  input[type="checkbox"]:checked ~ label {
+    color: rgb(35,35,85);
+  }
+  input[type="checkbox"] ~ .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 1s;
+  }
+  input[type="checkbox"]:checked ~ .accordion-content {
+    max-height: 100vh;
+  
+    transition: 1s;
+  }
+  
