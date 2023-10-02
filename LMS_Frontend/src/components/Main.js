@@ -39,9 +39,11 @@ import CategoryCourses from './CategoryCourses';
 
 
 //Tutorial
+import LandingPage from './LandingPage/LandingPage';
 import HtmlHome from './Tutorial/HTML/HtmlHome';
 import CssHome from './Tutorial/CSS/CssHome';
-import LandingPage from './LandingPage/LandingPage';
+import JsHome from './Tutorial/JavaScript/JsHome';
+
 
 
 
@@ -57,6 +59,7 @@ import BlogHome from './blogLayout/BlogHome';
 
 
 import {Routes as Switch, Route} from 'react-router-dom';
+
 
 
 
@@ -106,6 +109,7 @@ function Main() {
             <Route path='/landing-page' element={<LandingPage />} />
             
             <Route path='/html-home' element={<HtmlHome />} />
+            <Route path='/js-home' element={<JsHome/>} />
             <Route path='/css-home' element={<CssHome />} />
             <Route path='/about-us' element={<AboutUs />} />
             <Route path='/learn-more' element={<LearnMore />} />

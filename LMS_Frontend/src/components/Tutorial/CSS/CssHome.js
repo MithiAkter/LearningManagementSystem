@@ -9,9 +9,12 @@ import App from '../CodeEditor/editor/App';
 
 
 function CssHome(){
-    useEffect(()=>{
-        document.title='My Dashboard';
-    });
+
+    
+// title
+useEffect(()=>{
+    document.title='CSS';
+});
     return(
        <div className="container-fluid mt-4">
             <div className="row">

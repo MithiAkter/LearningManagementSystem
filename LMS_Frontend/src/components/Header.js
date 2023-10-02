@@ -28,8 +28,7 @@ function Header() {
                                     <li><hr className="dropdown-divider"/></li>
                                     <li><Link className="dropdown-item" to="/html-home">Html</Link></li>
                                     <li><Link className="dropdown-item" to="/css-home">Css</Link></li>
-                                    <li><Link className="dropdown-item" to="/">JavaScript</Link></li>
-                                    <li><Link className="dropdown-item" to="/">DJANGO</Link></li>
+                                    <li><Link className="dropdown-item" to="/js-home">JavaScript</Link></li>
                                     
                                 </ul>
                             </li>

@@ -1,6 +1,16 @@
 import {Link} from 'react-router-dom';
+import { useEffect } from 'react';
+
+
 
 function AllCourses() {
+
+
+
+  // title
+useEffect(()=>{
+document.title='All Courses';
+});
     return (
         
         <div className="container mt-3">

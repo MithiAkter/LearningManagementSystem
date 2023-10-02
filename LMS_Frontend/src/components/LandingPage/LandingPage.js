@@ -1,6 +1,7 @@
 import React from 'react';
 import {useRef} from 'react';
 import {Link} from 'react-router-dom';
+import { useEffect } from 'react';
 
 import './FaQ_question.css';
 import './animation.css'; //  CSS file
@@ -18,6 +19,12 @@ import {FaHtml5, FaCss3, FaJs, FaReact, FaPython, FaJava } from 'react-icons/fa'
 
 function LandingPage(){
 
+
+
+  // title
+  useEffect(()=>{
+    document.title='Programming Learning System';
+    });
   // contact-us 
   const form = useRef();
 

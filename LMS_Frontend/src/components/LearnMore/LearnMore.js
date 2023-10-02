@@ -1,8 +1,16 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaGithub, FaPinterest } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import './LearnMore.css';
 function LearnMore() {
+
+
+
+  // title
+  useEffect(()=>{
+    document.title='Learn More';
+});
   return (
     <section id='sectionn'>
       <div className="image"></div>

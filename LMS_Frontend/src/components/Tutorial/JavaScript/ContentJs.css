@@ -7,7 +7,7 @@
 }
 
 /* HtmlPage.css */
-.css-page {
+.js-page {
     max-width:850px;
     padding: 15px;
     margin: left 0;
@@ -16,7 +16,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#css-content-title1{
+
+.js-content-title1{
     font-size: 30px;
     padding: 20px;
     margin-bottom: 0px;
@@ -26,14 +27,15 @@ section{
     margin-top: 20px;
 }
 
-#css-content-title2 h2{
+#js-content-title2 h2{
     border-radius: 10px;
     background-color: #BCD0C7; 
     font-size: 20px;
     color: hsl(101, 85%, 30%); /* Green text */
     padding: 10px; /* Add padding to create a gap around the text */
 }
-#css-paragraph p{
+
+#js-paragraph p{
     font-size: 16px;
 }
 

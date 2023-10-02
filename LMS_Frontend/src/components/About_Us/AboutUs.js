@@ -1,7 +1,15 @@
 import React from 'react';
 import './AboutUs.css';
 import {Link} from 'react-router-dom';
+import { useEffect } from 'react';
 function AboutUs(){
+
+
+
+  // title
+  useEffect(()=>{
+    document.title='About Us';
+});
     return(
         <div className="wrapper">
 

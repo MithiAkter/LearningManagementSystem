@@ -2,24 +2,24 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {useEffect,useState} from 'react';
-import ContentHtml from './ContentHtml';
-import HtmlSidebar from './HtmlSidebar';
 import App from '../CodeEditor/editor/App';
+import JsSidebar from './JsSidebar';
+import ContentJs from './ContentJs';
 
 
 
-function HtmlHome(){
+function JsHome(){
     useEffect(()=>{
-        document.title='HTML';
+        document.title='JavaScript';
     });
     return(
        <div className="container-fluid mt-4">
             <div className="row">
                 <aside className='col-md-2'>
-                    <HtmlSidebar />
+                    <JsSidebar />
                 </aside>
                 <section className='col-md-6'>
-                    <ContentHtml />
+                    <ContentJs />
                 </section>
                 <section className='col-md-4'>
                     <App />
@@ -28,4 +28,4 @@ function HtmlHome(){
        </div>
     )
 }
-export default HtmlHome;
+export default JsHome;

@@ -21,7 +21,7 @@ function ContentCss() {
                 <h1 id='css-content-title1' >Css - Cascading Style Sheets</h1>
                 </header>
                 <section>
-                <div id='css-content-title2' ><h2 >Css Basics</h2></div> 
+                <div id='css-content-title2' ><h2 >CSS Introduction</h2></div> 
                 <div style={codeBlockStyle}>
                     <SyntaxHighlighter language="html" style={darcula}>
                     {codeString}
@@ -32,7 +32,7 @@ function ContentCss() {
                 </p>
                 </section>
                 <section>
-                    <div id='css-content-title2' ><h2 >Css Basics</h2></div> 
+                    <div id='css-content-title2' ><h2 >CSS Syntax</h2></div> 
                     <ul>
                         <li>Css documents are composed of elements.</li>
                         <li>Elements are represented by opening and closing tags.</li>
@@ -40,14 +40,14 @@ function ContentCss() {
                     </ul>
                 </section>
                 <section>
-                    <div id='css-content-title2' ><h2 >Css Basics</h2></div> 
+                    <div id='css-content-title2' ><h2 >CSS Selectors</h2></div> 
                     <p id='css-paragraph'>
                         Css is the standard markup language for creating web pages. It
                         describes the structure and content of a web page using a system of elements and tags.
                     </p>
                 </section>
                 <section >
-                    <div id='css-content-title2' ><h2 >Css Basics</h2></div> 
+                    <div id='css-content-title2' ><h2 >How To Add CSS</h2></div> 
                     <ul>
                         <li>Css documents are composed of elements.</li>
                         <li>Elements are represented by opening and closing tags.</li>
@@ -55,14 +55,14 @@ function ContentCss() {
                     </ul>
                 </section>
                 <section>
-                    <div id='css-content-title2' ><h2 >Css Basics</h2></div> 
+                    <div id='css-content-title2' ><h2 >CSS Comments</h2></div> 
                     <p id='css-paragraph'>
                         Css is the standard markup language for creating web pages. It
                         describes the structure and content of a web page using a system of elements and tags.
                     </p>
                 </section>
                 <section>
-                    <div id='css-content-title2' ><h2 >Css Basics</h2></div> 
+                    <div id='css-content-title2' ><h2 >CSS Colors</h2></div> 
                     <ul>
                         <li>Css documents are composed of elements.</li>
                         <li>Elements are represented by opening and closing tags.</li>
@@ -70,14 +70,14 @@ function ContentCss() {
                     </ul>
                 </section>
                 <section>
-                    <div id='css-content-title2' ><h2 >Css Basics</h2></div> 
+                    <div id='css-content-title2' ><h2 >CSS Backgrounds</h2></div> 
                     <p id='css-paragraph'>
                         Css is the standard markup language for creating web pages. It
                         describes the structure and content of a web page using a system of elements and tags.
                     </p>
                 </section>
                 <section>
-                    <div id='css-content-title2' ><h2 >Css Basics</h2></div> 
+                    <div id='css-content-title2' ><h2 >CSS Borders</h2></div> 
                     <ul>
                         <li>Css documents are composed of elements.</li>
                         <li>Elements are represented by opening and closing tags.</li>
@@ -85,7 +85,7 @@ function ContentCss() {
                     </ul>
                 </section>
                 <section id="html-basics">
-                    <div id='css-content-title2' ><h2 >Css Basics</h2></div> 
+                    <div id='css-content-title2' ><h2 >CSS Margins</h2></div> 
                     <ul>
                         <li>Css documents are composed of elements.</li>
                         <li>Elements are represented by opening and closing tags.</li>
@@ -93,7 +93,7 @@ function ContentCss() {
                     </ul>
                 </section>
                 <section>
-                    <div id='css-content-title2' ><h2 >Css Basics</h2></div> 
+                    <div id='css-content-title2' ><h2 >CSS Padding</h2></div> 
                     <p id='css-paragraph'>
                         Css is the standard markup language for creating web pages. It
                         describes the structure and content of a web page using a system of elements and tags.
@@ -101,14 +101,14 @@ function ContentCss() {
                 </section>
                 
                 <section id="css-basics">
-                    <div id='css-content-title2' ><h2 >This is the test div</h2></div> 
+                    <div id='css-content-title2' ><h2 >This is test div</h2></div> 
                     <p id='css-paragraph'>
                         Css is the standard markup language for creating web pages. It
                         describes the structure and content of a web page using a system of elements and tags.
                     </p>
                 </section>
                 <section>
-                    <div id='css-content-title2' ><h2 >Css Basics</h2></div> 
+                    <div id='css-content-title2' ><h2 >CSS Box Model</h2></div> 
                     <ul>
                         <li>Css documents are composed of elements.</li>
                         <li>Elements are represented by opening and closing tags.</li>
