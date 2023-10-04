@@ -21,10 +21,10 @@ function Header() {
                                     Tutorial
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><Link className="dropdown-item" to="/">C</Link></li>
-                                    <li><Link className="dropdown-item" to="/">C++</Link></li>
-                                    <li><Link className="dropdown-item" to="/">Python</Link></li>
-                                    <li><Link className="dropdown-item" to="/">Java</Link></li>
+                                <li><Link className="dropdown-item" to="/c-home">C</Link></li>
+                                    <li><Link className="dropdown-item" to="/cpp-home">C++</Link></li>
+                                    <li><Link className="dropdown-item" to="/python-home">Python</Link></li>
+                                    <li><Link className="dropdown-item" to="/java-home">Java</Link></li>
                                     <li><hr className="dropdown-divider"/></li>
                                     <li><Link className="dropdown-item" to="/html-home">Html</Link></li>
                                     <li><Link className="dropdown-item" to="/css-home">Css</Link></li>
@@ -39,7 +39,7 @@ function Header() {
 
 
 
-                            {/* <Link className="nav-link" to="/contact">Accordian</Link> */}
+                            {/* <Link className="nav-link" to="/compiler">Compiler</Link> */}
                             <Link className="nav-link" to="/all-courses">Courses</Link>
                             <li className="nav-item dropdown">
                                 <a style={{fontSize: '18px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" 

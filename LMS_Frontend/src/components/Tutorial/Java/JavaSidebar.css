@@ -1,0 +1,14 @@
+.sidenav {
+    /* Set a fixed height for the sidebar */
+    height:600px;
+    margin-bottom: 10px;
+    /* Add other styles for your sidebar here */
+}
+
+.custom-scrollbar {
+    /* Set the width and style of the custom scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #999 #f1f1f1;
+    overflow-y: auto;
+    /* Add other styles for your custom scrollbar container here */
+}

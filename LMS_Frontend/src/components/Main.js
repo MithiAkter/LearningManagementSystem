@@ -40,10 +40,13 @@ import CategoryCourses from './CategoryCourses';
 
 //Tutorial
 import LandingPage from './LandingPage/LandingPage';
+import C_Home from './Tutorial/C Programming/C_Home';
+import CPP_Home from './Tutorial/C++ Programming/CPP_Home';
+import Java_Home from './Tutorial/Java/Java_Home';
 import HtmlHome from './Tutorial/HTML/HtmlHome';
 import CssHome from './Tutorial/CSS/CssHome';
 import JsHome from './Tutorial/JavaScript/JsHome';
-
+import PythonHome from './Tutorial/Python/PythonHome';
 
 
 
@@ -56,9 +59,14 @@ import LearnMore from './LearnMore/LearnMore';
 
 //blog
 import BlogHome from './blogLayout/BlogHome';
+import Compiler from './Compiler/Compiler';
 
 
 import {Routes as Switch, Route} from 'react-router-dom';
+
+
+
+
 
 
 
@@ -107,13 +115,17 @@ function Main() {
 
             
             <Route path='/landing-page' element={<LandingPage />} />
-            
+            <Route path='/java-home' element={<Java_Home />} />
+            <Route path='/cpp-home' element={<CPP_Home />} />
+            <Route path='/c-home' element={<C_Home />} />
+            <Route path='/python-home' element={<PythonHome />} />
             <Route path='/html-home' element={<HtmlHome />} />
             <Route path='/js-home' element={<JsHome/>} />
             <Route path='/css-home' element={<CssHome />} />
             <Route path='/about-us' element={<AboutUs />} />
             <Route path='/learn-more' element={<LearnMore />} />
             <Route path='/blog-post' element={<BlogHome />} />
+            <Route path='/compiler' element={<Compiler />} />
         </Switch>
       <Footer/>
     </div>
