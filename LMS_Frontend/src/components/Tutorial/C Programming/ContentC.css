@@ -6,12 +6,11 @@
     scrollbar-color: #999 #f1f1f1;
 }
 
-/* HtmlPage.c */
 .c-page {
     max-width:850px;
     padding: 15px;
     margin: left 0;
-    background-color: #f8f8f8; /* Light gray background */
+    background-color: #f8f8f8; 
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

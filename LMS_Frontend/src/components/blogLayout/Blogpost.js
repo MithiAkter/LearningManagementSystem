@@ -4,7 +4,7 @@ function BlogPost() {
   return ( 
 	<div className="sidenav">
 		<div className='blogpost_header'>Our Contents</div>
-			<div class="blog-container">
+			<div class="blog-contain-er">
 
 
 				<section id="DevOps">

@@ -1,10 +1,10 @@
 import React from 'react';
-// import './Header.css';
+import './Header.css';
 import {Link} from 'react-router-dom';
 function Header() {
     const teacherLoginStatus=localStorage.getItem('teacherLoginStatus')
     return (
-        <nav className="navbar navbar-expand-lg navbar-light" style={{fontSize: '18px' }}>
+        <nav className="navbar navbar-expand-lg navbar-dark" style={{fontSize: '18px' }}>
                 <div className="container">
                     <Link className="navbar-brand" to="/landing-page">Programming Learning System</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" 
@@ -21,14 +21,17 @@ function Header() {
                                     Tutorial
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><Link className="dropdown-item" to="/c-home">C</Link></li>
-                                    <li><Link className="dropdown-item" to="/cpp-home">C++</Link></li>
-                                    <li><Link className="dropdown-item" to="/python-home">Python</Link></li>
-                                    <li><Link className="dropdown-item" to="/java-home">Java</Link></li>
-                                    <li><hr className="dropdown-divider"/></li>
+
                                     <li><Link className="dropdown-item" to="/html-home">Html</Link></li>
                                     <li><Link className="dropdown-item" to="/css-home">Css</Link></li>
                                     <li><Link className="dropdown-item" to="/js-home">JavaScript</Link></li>
+                                    <li><hr className="dropdown-divider"/></li>
+                                    <li><Link className="dropdown-item" to="/python-home">Python</Link></li>
+                                    <li><Link className="dropdown-item" to="/c-home">C</Link></li>
+                                    <li><Link className="dropdown-item" to="/cpp-home">C++</Link></li>
+                                    <li><Link className="dropdown-item" to="/java-home">Java</Link></li>
+                                    
+                                   
                                     
                                 </ul>
                             </li>

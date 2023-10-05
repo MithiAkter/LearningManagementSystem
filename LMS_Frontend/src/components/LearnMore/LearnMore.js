@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaGithub, FaPinterest } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaGithub, FaPinterest} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import './LearnMore.css';
