@@ -209,7 +209,7 @@ function LandingPage(){
             <section id='FaQ-accordian' >
            
             <div className="accordion">
-            <h1 className='accordion-title' id="animated-text" >Frequently Asked Question</h1>
+            <h1 id="animated-text" >Frequently Asked Question</h1>
                     {/* ITEM-1 */}
                     <div className="accordion-item">
                       <input type="checkbox" id="item-1" />

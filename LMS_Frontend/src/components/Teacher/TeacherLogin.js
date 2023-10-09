@@ -1,5 +1,7 @@
 import {Link} from 'react-router-dom';
 import {useEffect,useState} from 'react';
+import './TeacherLogin.css';
+
 import axios from 'axios';//we can send and receive the data from the server by using axios
 
 const baseUrl='http://localhost:8000/api';
@@ -66,7 +68,7 @@ function TeacherLogin(){
                             </div>
                             <div className="mb-3 form-check">
                                 <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                                <label className="form-check-label" for="exampleCheck1">Remember Me</label>
+                                <label id="remember-me-label" className="form-check-label" htmlFor="exampleCheck1">Remember Me</label>
                             </div>
                             <button type="button" onClick={submitForm} className="btn btn-primary">Login</button>
                         </form>

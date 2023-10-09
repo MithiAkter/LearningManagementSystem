@@ -4,7 +4,7 @@
     background-color:  rgb(55, 55, 100); /* Change the background color to your desired color */
     color: #fff; /* Change the text color to your desired color */
     font-size: 18px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
   }
   
   .navbar-brand {
@@ -16,5 +16,4 @@
     padding: 20px 20px; /* Adjust the padding as needed */
   }
   
-  /* Add more styles as needed */
-  
+ 

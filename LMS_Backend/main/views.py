@@ -64,7 +64,7 @@ class TeacherCourseDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=CourseSerializer
 
 #For Chapter Data
-class CourseChapterList(generics.ListAPIView):
+class CourseChapterList(generics.ListCreateAPIView):
     serializer_class=ChapterSerializer 
 
     def get_queryset(self):
