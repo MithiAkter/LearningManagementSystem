@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-owtskmg&(%62*c9*ltr_#nlq0vhlh&(7n0gw+d5_hjj2u)v&zz
 DEBUG = True
 
 
+
 ALLOWED_HOSTS = []
 
 
@@ -151,4 +152,4 @@ CORS_ALLOW_ALL_ORIGINS = True
 import os
 
 MEDIA_URL='/media/'
-MEDIA_ROOT= os.path.join(BASE_DIR,'media')
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media')

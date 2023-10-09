@@ -43,7 +43,7 @@ function AddChapter(){
                 }
             })
             .then((res)=>{
-                //console.log(res.data);
+                // console.log(res.data);
                 window.location.href='/add-chapter/1';
              });
         }catch(error){

@@ -17,7 +17,7 @@ function AddCourse(){
     //Fetch categories when page load
     useEffect(()=>{
         try{
-            axios.get(baseUrl+'/category/')
+            axios.get(baseUrl+'/category')
             .then((res)=>{
                 setCats(res.data);
              });
@@ -44,7 +44,7 @@ function AddCourse(){
     const formSubmit=()=>{
         const _formData = new FormData();
         _formData.append('category',courseData.category);
-        _formData.append('teacher',21);
+        _formData.append('teacher',1);
         _formData.append('title',courseData.title);
         _formData.append('description',courseData.description);
         _formData.append('featured_img',courseData.f_img,courseData.f_img.name);
@@ -57,7 +57,7 @@ function AddCourse(){
             })
             .then((res)=>{
                 //console.log(res.data);
-                window.location.href='/add-course';
+                window.location.href='/add-course';//for clearing data
              });
         }catch(error){
             console.log(error);

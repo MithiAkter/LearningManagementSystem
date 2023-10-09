@@ -21,6 +21,7 @@ import TeacherLogout from './Teacher/TeacherLogout';
 import TeacherRegister from './Teacher/TeacherRegister';
 import TeacherDashboard from './Teacher/TeacherDashboard';
 import AddCourse from './Teacher/AddCourse';
+import EditCourse from './Teacher/EditCourse';
 import AddChapter from './Teacher/AddChapter';
 import AllChapters from './Teacher/CourseChapters';
 import EditChapter from './Teacher/EditChapter';
@@ -75,6 +76,7 @@ import {Routes as Switch, Route} from 'react-router-dom';
 
 
 
+
 function Main() {
   return (
     <div className="App">
@@ -107,6 +109,7 @@ function Main() {
             <Route path='/teacher-dashboard' element={<TeacherDashboard />} />
             <Route path='/teacher-courses' element={<TeacherCourses />} />
             <Route path='/add-course' element={<AddCourse />} />
+            <Route path='/edit-course/:course_id' element={<EditCourse />} />
             <Route path='/add-chapter/:course_id' element={<AddChapter />} />
             <Route path='/teacher-users' element={<UserList />} />
             <Route path='/tacher-profile-setting' element={<TeacherProfileSetting />} />

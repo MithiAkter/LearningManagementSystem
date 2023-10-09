@@ -40,8 +40,9 @@ function EditChapter(){
         }
         // _formData.append('video',chapterData.video,chapterData.video.name);
         _formData.append('remarks',chapterData.remarks);
+        console.log("Form Data:", _formData); 
         try{
-            axios.put(baseUrl+'/chapter/'+chapter_id,_formData,{
+            axios.put(baseUrl + '/chapter/' + chapter_id, _formData, {
                 headers: {
                     'content-type': 'multipart/form-data'
                 }
@@ -56,7 +57,7 @@ function EditChapter(){
                             position:'top-right',
                             timerProgressBar:true,
                             showConfirmButton:false
-                        })
+                        });
                 }
              });
         }catch(error){
@@ -98,6 +99,7 @@ function EditChapter(){
                     <h5 className="card-header">Update Chapter</h5>
                     <div className="card-body">
                             <form>
+                                
                                 <div className="mb-3">
                                     <label for="title" className="form-label">Title</label>
                                     <input type="text" value={chapterData.title} onChange={handleChange} name='title' id='title' className="form-control"/>
