@@ -44,6 +44,16 @@ class CourseList(generics.ListCreateAPIView):
     queryset=models.Course.objects.all()
     serializer_class=CourseSerializer #this serializer refer to the urls
 
+    def get_queryset(self):
+        qs=super().get_queryset()
+        if'result' in self.request.GET:
+            limit=int(self.request.GET['result'])
+            qs=models.Course.objects.all().order_by('-id')[:limit]
+        return qs
+
+    
+
+
 #Chapter
 class ChapterList(generics.ListCreateAPIView):
     queryset=models.Chapter.objects.all()

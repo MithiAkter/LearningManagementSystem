@@ -1,98 +1,51 @@
 import {Link} from 'react-router-dom';
-import { useEffect } from 'react';
+import {useEffect, useState} from 'react';
+import axios from 'axios';
+const baseUrl='http://localhost:8000/api';
 
 
 
 function AllCourses() {
+    const [courseData,setCourseData]=useState([]);
 
+    //Fetch courses when page load
+    useEffect(()=>{
+        try{
+            axios.get(baseUrl+'/course/')
+            .then((res)=>{
+                setCourseData(res.data)
+             });
+        }catch(error){
+            console.log(error);
+        }
+
+    },[]);
 
 
   // title
 useEffect(()=>{
 document.title='All Courses';
 });
+
     return (
         
         <div className="container mt-3">
             {/* Latest Courses Starts */}
                 <h3 className="pb-1 mb-4">Leatest Courses</h3>
-            <div className="row"> 
+            <div className="row mb-4">
+                {courseData && courseData.map((course,index)=>
                 <div className="col-md-3 mb-4">
                     <div className="card">
-                    <Link to="/detail/1"><img src="python.png" className="card-img-top" alt="..."/></Link>
+                    <Link to={`/detail/${course.id}`}><img src={course.featured_img} className="card-img-top" alt={course.title}/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/detail/1">Course title</Link></h5>
+                            <h5 className="card-title"><Link to={`/detail/${course.id}`}>{course.title}</Link></h5>
                         </div>
                     </div>
                 </div> 
+                )}
 
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <a href="#"><img src="python.png" className="card-img-top" alt="..."/></a>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Course title</a></h5>
-                        </div>
-                    </div>
-                </div> 
-
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <a href="#"><img src="python.png" className="card-img-top" alt="..."/></a>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Course title</a></h5>
-                        </div>
-                    </div>
-                </div> 
-
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <a href="#"><img src="python.png" className="card-img-top" alt="..."/></a>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Course title</a></h5>
-                        </div>
-                    </div>
-                </div>   
-
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <Link to="/detail/1"><img src="python.png" className="card-img-top" alt="..."/></Link>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Course title</a></h5>
-                        </div>
-                    </div>
-                </div> 
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <Link to="/detail/1"><img src="python.png" className="card-img-top" alt="..."/></Link>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Course title</a></h5>
-                        </div>
-                    </div>
-                </div> 
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <Link to="/detail/1"><img src="python.png" className="card-img-top" alt="..."/></Link>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Course title</a></h5>
-                        </div>
-                    </div>
-                </div> 
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <Link to="/detail/1"><img src="python.png" className="card-img-top" alt="..."/></Link>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Course title</a></h5>
-                        </div>
-                    </div>
-                </div> 
-            </div>
+                
+        </div>
             {/* Latest Courses ends */}
             {/* Pagination Starts */}
             <nav aria-label="Page navigation example">
