@@ -5,6 +5,7 @@ import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
+
 const baseUrl='http://localhost:8000/api';
 
 function AllChapters() {
@@ -26,7 +27,7 @@ function AllChapters() {
 
     },[]);
     //Delete Data
-    const Swal = require('sweetalert2')
+    // const Swal = require('sweetalert2')
     const handleDeleteClick=(chapter_id)=>{
         Swal.fire({
             title: 'Confirm!',
