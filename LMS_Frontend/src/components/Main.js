@@ -14,6 +14,7 @@ import FavoriteCourses from './User/FavoriteCourses';
 import RecommendedCourses from './User/RecommendedCourses';
 import ProfileSetting from './User/ProfileSetting';
 import ChangePassword from './User/ChangePassword';
+import StudentLogout from './User/StudentLogout';
 
 // Teachers
 import TeacherLogin from './Teacher/TeacherLogin';
@@ -79,6 +80,7 @@ import {Routes as Switch, Route} from 'react-router-dom';
 
 
 
+
 function Main() {
   return (
     <div className="App">
@@ -105,6 +107,7 @@ function Main() {
             <Route path='/recommended-courses' element={<RecommendedCourses />} />
             <Route path='/profile-setting' element={<ProfileSetting />} />
             <Route path='/change-password' element={<ChangePassword />} />
+            <Route path='/user-logout' element={<StudentLogout />} />
 
             <Route path='/teacher-login' element={<TeacherLogin />} />
             <Route path='/teacher-logout' element={<TeacherLogout />} />

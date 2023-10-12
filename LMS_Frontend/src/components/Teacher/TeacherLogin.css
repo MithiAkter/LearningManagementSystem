@@ -9,7 +9,7 @@ body {
   #exampleCheck1 {
     display: inline-block;
     margin-right: 15px; /* Adjust spacing as needed */
-    margin-top: 3px; /* Adjust spacing as needed */
+    margin-top: 10px; /* Adjust spacing as needed */
   }
   
   #remember-me-label {
