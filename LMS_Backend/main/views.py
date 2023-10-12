@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
 from rest_framework import permissions
-from .serializers import TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer
+from .serializers import TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer
 from . import models
 
 # Create your views here.
@@ -103,3 +103,9 @@ class CourseChapterList(generics.ListCreateAPIView):
 class ChapterDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset=models.Chapter.objects.all()
     serializer_class=ChapterSerializer 
+
+
+# Student Data
+class StudentList(generics.ListCreateAPIView):
+    queryset=models.Student.objects.all()
+    serializer_class=StudentSerializer

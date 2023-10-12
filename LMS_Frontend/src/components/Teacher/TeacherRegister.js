@@ -1,7 +1,7 @@
-import {Link} from 'react-router-dom';
 import {useEffect,useState} from 'react';
 import axios from 'axios';//we can send and receive the data from the server by using axios
 const baseUrl='http://localhost:8000/api/teacher/';
+
 
 function TeacherRegister(){
     
@@ -61,7 +61,7 @@ function TeacherRegister(){
     if(teacherLoginStatus=='true'){
         window.location.href='/teacher-dashboard';
     }
-    //Submit Form End
+
     return(
        <div className="container mt-4">
             <div className="row">
