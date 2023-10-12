@@ -14,6 +14,10 @@ class Teacher(models.Model):
     skills = models.TextField()
     class Meta:
         verbose_name_plural = "1. Teachers"
+
+    def skill_list(self):
+        skill_list=self.skills.split(',')
+        return skill_list
     
 # Course Category Model
 class CourseCategory(models.Model):

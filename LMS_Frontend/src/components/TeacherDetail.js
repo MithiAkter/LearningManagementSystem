@@ -7,7 +7,9 @@ const baseUrl='http://localhost:8000/api';
 function TeacherDetail(){
     const [teacherData,setteacherData]=useState([]);
     const [courseData,setcourseData]=useState([]);
+    const [skillList,setskillList]=useState([]);
     let {teacher_id} = useParams();
+    const {skill_name}=useParams();
     //Fetch courses when page load
     useEffect(()=>{
         try{
@@ -15,6 +17,7 @@ function TeacherDetail(){
             .then((res)=>{
                 setteacherData(res.data);
                 setcourseData(res.data.teacher_courses);
+                setskillList(res.data.skill_list);
              });
         }catch(error){
             console.log(error);
@@ -30,9 +33,13 @@ function TeacherDetail(){
                 <div className="col-8">
                      <h3>{teacherData.full_name}</h3>
                      <p>{teacherData.detail}</p>   
-                        <p className="fw-bold">Skills : <Link to="/category/php"> PHP</Link>, <Link to="/category/python"> Python</Link>, 
-                        <Link to="/category/js"> JavaScripts</Link>, <Link to="/category/django"> Django</Link>, 
-                        <Link to="/category/react"> ReactJs</Link></p>
+                        <p className="fw-bold">Skills: &nbsp;
+                            {skillList.map((skill, index) =>
+                                <>
+                                    <Link to={`/teacher-skill-courses/${skill.trim()}/${teacherData.id}`} className="badge badge-pill text-dark bg-warning">{skill.trim()}</Link>&nbsp;&nbsp;
+                                    {/* <Link to={`/category/${skill.trim()}`} className="badge badge-pill text-dark bg-warning">{skill.trim()}</Link>&nbsp;&nbsp; */}
+                                </>
+                            )}</p>
                         <p className="fw-bold">Recent Course : <Link to="/category/laravel">Laravel</Link></p>
                         <p className="fw-bold">Rating:
                         4/5

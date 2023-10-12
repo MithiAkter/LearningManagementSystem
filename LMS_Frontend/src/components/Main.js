@@ -32,12 +32,13 @@ import TeacherProfileSetting from './Teacher/TeacherProfileSetting';
 import TeacherChangePassword from './Teacher/TeacherChangePassword';
 
 
+
 // List Pages
 import AllCourses from './AllCourses';
 import PopularCourses from './PopularCourses';
 import PopularTeachers from './PopularTeachers';
 import CategoryCourses from './CategoryCourses';
-
+import TeacherSkillCourses from './TeacherSkillCourses';
 
 //Tutorial
 import LandingPage from './LandingPage/LandingPage';
@@ -77,6 +78,7 @@ import {Routes as Switch, Route} from 'react-router-dom';
 
 
 
+
 function Main() {
   return (
     <div className="App">
@@ -93,6 +95,7 @@ function Main() {
             <Route path='/popular-courses' element={<PopularCourses />} />
             <Route path='/popular-teachers' element={<PopularTeachers />} />
             <Route path='/category/:category_slug' element={<CategoryCourses />} />
+            <Route path='/teacher-skill-courses/:skill_name/:teacher_id' element={<TeacherSkillCourses />} />
             
             <Route path='/user-login' element={<Login />} />
             <Route path='/user-register' element={<Register />} />
