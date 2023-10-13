@@ -28,6 +28,7 @@ import AllChapters from './Teacher/CourseChapters';
 import EditChapter from './Teacher/EditChapter';
 
 import TeacherCourses from './Teacher/TeacherCourses';
+import EnrolledStudents from './Teacher/EnrolledStudents';
 import UserList from './Teacher/UserList';
 import TeacherProfileSetting from './Teacher/TeacherProfileSetting';
 import TeacherChangePassword from './Teacher/TeacherChangePassword';
@@ -81,6 +82,7 @@ import {Routes as Switch, Route} from 'react-router-dom';
 
 
 
+
 function Main() {
   return (
     <div className="App">
@@ -114,6 +116,7 @@ function Main() {
             <Route path='/teacher-register' element={<TeacherRegister />} />
             <Route path='/teacher-dashboard' element={<TeacherDashboard />} />
             <Route path='/teacher-courses' element={<TeacherCourses />} />
+            <Route path='/enrolled-students/:course_id' element={<EnrolledStudents />} />
             <Route path='/add-course' element={<AddCourse />} />
             <Route path='/edit-course/:course_id' element={<EditCourse />} />
             <Route path='/add-chapter/:course_id' element={<AddChapter />} />

@@ -35,3 +35,4 @@ class StudentCourseEnrollSerializer(serializers.ModelSerializer):
     class Meta:
         model=models.StudentCourseEnrollment
         fields = ['id' , 'course' , 'student','enrolled_time']
+        depth=1
