@@ -6,7 +6,6 @@ const baseUrl='http://localhost:8000/api';
 
 function MyCourses() {
     const [courseData,setCourseData]=useState([]);
-
     const teacherId=localStorage.getItem('teacherId');
     
 
@@ -22,9 +21,13 @@ function MyCourses() {
         }
 
     },[]);
+
+    //page title
     useEffect(()=>{
         document.title='My Courses';
     })
+
+
     return (
             <div className="container mt-4">
                 <div className="row">
@@ -46,7 +49,6 @@ function MyCourses() {
                                                 </thead>
                                                 <tbody>
                                                         {courseData.map((course,index)=> 
-                                                        // it will be <tr>
                                                             <tr> 
                                                                 <td> 
                                                                     <Link to={`/all-chapters/`+course.id}>{course.title}</Link>

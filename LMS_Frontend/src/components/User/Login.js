@@ -1,4 +1,3 @@
-
 import {useEffect,useState} from 'react';
 import axios from 'axios';//we can send and receive the data from the server by using axios
 const baseUrl='http://localhost:8000/api';
@@ -6,10 +5,13 @@ const baseUrl='http://localhost:8000/api';
 
 
 function Login(){
+
+
     const [studentLoginData,setstudentLoginData]=useState({
         email:'',
         password:''
     });
+
     const [errorMsg,seterrorMsg]=useState();
 
     const handleChange=(event)=>{
@@ -18,8 +20,10 @@ function Login(){
             [event.target.name]:event.target.value
         });
     }
+
+
+    // Submit Form Starts
     const submitForm=()=>{
-        
         const studentFormData=new FormData();
         studentFormData.append('email',studentLoginData.email)
         studentFormData.append('password',studentLoginData.password)
@@ -41,14 +45,25 @@ function Login(){
             console.log(error);
         }    
     }
-    
+    // Submit Form Ends
+
+
+
+    // Verifying Login Status
     const studentLoginStatus=localStorage.getItem('studentLoginStatus');
     if(studentLoginStatus==='true'){
         window.location.href='/user-dashboard';
     }
+
+    
+    // Page Title Starts
     useEffect(()=>{
         document.title='Student Login';
     });
+    // Page Title Ends
+
+
+
     return(
        <div className="container mt-4">
             <div className="row">

@@ -5,6 +5,8 @@ import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 const baseUrl='http://localhost:8000/api';
+
+
 function EditChapter(){
     const [chapterData,setChapterData]=useState({
         'course':'',
@@ -14,6 +16,7 @@ function EditChapter(){
         'video' : '',
         'remarks' : ''
     });
+
 
     //Change Element Value
     const handleChange=(event)=>{
@@ -28,6 +31,8 @@ function EditChapter(){
             [event.target.name]:event.target.files[0]
         });
     }
+
+
     const{chapter_id}=useParams();
     //Submit Form Start
     const formSubmit=()=>{
@@ -53,7 +58,7 @@ function EditChapter(){
                             title: 'Data has been updated',
                             icon: 'success',
                             toast:true,
-                            timer:3000,
+                            timer:10000,
                             position:'top-right',
                             timerProgressBar:true,
                             showConfirmButton:false
@@ -85,9 +90,12 @@ function EditChapter(){
     },[]);
 
     //Submit Form End
+
+    //Page Title
     useEffect(()=>{
         document.title='Edit Chapter';
     })
+    //Page Title Ends
     return (
         <div className="container mt-4">
         <div className="row">
