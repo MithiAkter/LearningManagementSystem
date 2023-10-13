@@ -57,7 +57,7 @@ function MyCourses() {
                                                                         <img src={course.featured_img} width='80' className='rounded' alt={course.title} />
                                                                     </td>
 
-                                                                <td><Link to="/">123</Link></td>
+                                                                <td><Link to="/">{course.total_enrolled_students}</Link></td>
                                                                 <td>
                                                                     <Link className='btn btn-info btn-sm ' to={`/edit-course/`+course.id}>Edit</Link>
                                                                     <Link className='btn btn-success btn-sm ms-2' to={`/add-chapter/`+course.id}>Add Chapter</Link>
