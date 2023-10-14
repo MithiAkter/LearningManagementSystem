@@ -51,7 +51,7 @@ function EditChapter(){
                 headers: {
                     'content-type': 'multipart/form-data'
                 }
-            })
+            }) 
             .then((res)=>{
                 if(res.status==200){
                         Swal.fire({

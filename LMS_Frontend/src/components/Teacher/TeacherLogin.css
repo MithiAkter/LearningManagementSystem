@@ -45,8 +45,12 @@ body {
     color: #fff;
     border: 2px solid rgb(55, 55, 100); /* Add a border color to the button */
   }
+  .btn-success {
+    border-radius: 6px;
+  }
   .btn-primary:hover {
-    background-color: #fff;/* Change to a slightly different shade if needed */
-    color: rgb(55, 55, 100);
+    background-color: rgb(85, 85, 137);/* Change to a slightly different shade if needed */
+    color: #f0f0f0;
     border: 2px solid rgb(55, 55, 100);
+    font-weight: 700;
   }

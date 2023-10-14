@@ -50,6 +50,7 @@ function AddChapter(){
             console.log(error);
         }
     };
+    //title
     useEffect(()=>{
         document.title='Add Chapter';
     });
