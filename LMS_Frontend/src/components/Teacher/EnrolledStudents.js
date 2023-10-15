@@ -41,7 +41,7 @@ function EnrolledStudents() {
                                     <div className="card-body">
                                             <table className='table table-bordered'>
                                                 <thead>
-                                                    <tr>
+                                                    <tr style={{ textAlign: 'center'}}>
                                                         <th>Name</th>
                                                         <th>Email</th>
                                                         <th>Username</th>
@@ -51,12 +51,12 @@ function EnrolledStudents() {
                                                 <tbody>
                                                         {StudentData.map((row,student,index)=> 
                                                             <tr> 
-                                                                <td> 
+                                                                <td style={{ textAlign: 'center'}}> 
                                                                     {row.student.full_name}
                                                                 </td>
-                                                                <td>{row.student.email}</td>
-                                                                <td>{row.student.username}</td>
-                                                                <td>
+                                                                <td style={{ textAlign: 'center'}}>{row.student.email}</td>
+                                                                <td style={{ textAlign: 'center'}}>{row.student.username}</td>
+                                                                <td style={{ textAlign: 'center'}}>
                                                                     {row.student.interested_categories}
                                                                 </td>
                                                             </tr>

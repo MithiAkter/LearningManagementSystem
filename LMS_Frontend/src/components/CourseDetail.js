@@ -25,13 +25,13 @@ function CourseDetail(){
             try{
                 axios.get(baseUrl+'/course/'+course_id)
                 .then((res)=>{
-                    // console.log(res.data);
+                    console.log(res.data);
                     setcourseData(res.data);
                     setchaptereData(res.data.course_chapters);
                     setteacherData(res.data.teacher);
                     setrelatedcourseData(JSON.parse(res.data.related_videos));
                     settechList(res.data.tech_list);
-                    if(res.data.course_rating != '' && res.data.course_rating != null){
+                    if(res.data.course_rating !== '' && res.data.course_rating !== null){
                         setAvgRating(res.data.course_rating);
                     }
                  });
@@ -44,7 +44,7 @@ function CourseDetail(){
                 axios.get(baseUrl+'/fetch-enroll-status/'+studentId+'/'+course_id)
                 .then((res)=>{
                     // console.log(res.data);
-                    if(res.data.bool==true){
+                    if(res.data.bool===true){
                         setenrollStatus('success');
                     }
                  });
@@ -56,7 +56,7 @@ function CourseDetail(){
                 axios.get(baseUrl+'/fetch-rating-status/'+studentId+'/'+course_id)
                 .then((res)=>{
                     // console.log(res.data);
-                    if(res.data.bool==true){
+                    if(res.data.bool===true){
                         setratingStatus('success');
                     }
                  });
@@ -170,7 +170,7 @@ function CourseDetail(){
                         </p>
                         <p className="fw-bold">Duration : 3 Hours 30 minutes</p>
                         <p className="fw-bold">Total Enrolled : {courseData.total_enrolled_students} student(s)</p>
-                        <p className="fw-bold">Rating: =={AvgRating}/5
+                        <p className="fw-bold">Rating: {AvgRating}/5
                         {enrollStatus === 'success' && userLoginStatus === 'success' && (
                                         <>
                                         {ratingStatus != 'success' &&

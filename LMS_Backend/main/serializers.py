@@ -63,17 +63,44 @@ class StudentSerializer(serializers.ModelSerializer):
         model=models.Student
         fields = ['id' , 'full_name' , 'email' , 'password' , 'username' , 'interested_categories']
 
+# class StudentCourseEnrollSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model=models.StudentCourseEnrollment
+#         fields = ['id' , 'course' , 'student','enrolled_time']
+#         depth=1
+#         def __init__(self, *args, **kwargs):
+#             super(StudentCourseEnrollSerializer, self).__init__(*args, **kwargs)
+#             request=self.context.get('request')
+#             self.Meta.depth = 0
+#             if request and request.method == 'GET':
+#                 self.Meta.depth=1
+class StudentCourseEnrollSerializerCreate(serializers.ModelSerializer):
+    class Meta:
+        model = models.StudentCourseEnrollment
+        fields = ['id', 'course', 'student', 'enrolled_time']
+
+
+class StudentCourseEnrollSerializerView(serializers.ModelSerializer):
+    class Meta:
+        model = models.StudentCourseEnrollment
+        fields = ['id', 'course', 'student', 'enrolled_time']
+        depth = 1  # Set depth for viewing
+
+
 class StudentCourseEnrollSerializer(serializers.ModelSerializer):
     class Meta:
-        model=models.StudentCourseEnrollment
-        fields = ['id' , 'course' , 'student','enrolled_time']
-        depth=1
-        # def __init__(self, *args, **kwargs):
-        #     super(StudentCourseEnrollSerializer, self).__init__(*args, **kwargs)
-        #     request=self.context.get('request')
-        #     self.Meta.depth = 0
-        #     if request and request.method == 'GET':
-        #         self.Meta.depth=1
+        model = models.StudentCourseEnrollment
+        fields = ['id', 'course', 'student', 'enrolled_time']
+
+    def __init__(self, *args, **kwargs):
+        super(StudentCourseEnrollSerializer, self).__init__(*args, **kwargs)
+        request = self.context.get('request')
+        
+        if request and request.method == 'GET':
+            self.Meta.depth = 1  # Set depth for viewing
+        else:
+            self.Meta.depth = 0  # Don't set depth for other methods
+
 
 class CourseRatingSerializer(serializers.ModelSerializer):
     class Meta:

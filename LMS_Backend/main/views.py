@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
 from rest_framework import permissions
-from .serializers import TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer
+from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer
 from . import models
 
 # Create your views here.
@@ -139,9 +139,19 @@ def student_login(request):
         return JsonResponse({'bool': False})
 
 # Course Enrollment
+# class StudentEnrollCourseList(generics.ListCreateAPIView):
+#     queryset=models.StudentCourseEnrollment.objects.all()
+#     serializer_class=StudentCourseEnrollSerializer
 class StudentEnrollCourseList(generics.ListCreateAPIView):
-    queryset=models.StudentCourseEnrollment.objects.all()
-    serializer_class=StudentCourseEnrollSerializer
+    queryset = models.StudentCourseEnrollment.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return StudentCourseEnrollSerializer  # For viewing (GET)
+        else:
+            return StudentCourseEnrollSerializerCreate  # For adding (POST)
+
+    # Other view methods...
 
 
 def fetch_enroll_status(request,student_id,course_id):
@@ -159,9 +169,14 @@ class EnrolledStudentList(generics.ListAPIView):
     serializer_class=StudentCourseEnrollSerializer
 
     def get_queryset(self):
-        course_id=self.kwargs['course_id']
-        course=models.Course.objects.get(pk=course_id)
-        return models.StudentCourseEnrollment.objects.filter(course=course)
+        if 'course_id' in self.kwargs:
+            course_id=self.kwargs['course_id']
+            course=models.Course.objects.get(pk=course_id)
+            return models.StudentCourseEnrollment.objects.filter(course=course)
+        elif 'teacher_id' in self.kwargs:
+            teacher_id=self.kwargs['teacher_id']
+            teacher=models.Teacher.objects.get(pk=teacher_id)
+            return models.StudentCourseEnrollment.objects.filter(course__teacher=teacher).distinct()
 
 # Course Rating
 class CourseRatingList(generics.ListCreateAPIView):

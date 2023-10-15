@@ -1,6 +1,33 @@
 import {Link} from 'react-router-dom';
+import {useParams} from "react-router-dom";
 import TeacherSidebar from './TeacherSidebar';
-function TeacherUserList() {
+import {useEffect, useState} from 'react';
+import axios from 'axios';
+const baseUrl='http://localhost:8000/api';
+
+function UserList() {
+    const [StudentData,setStudentData]=useState([]);
+
+    const teacherId=localStorage.getItem('teacherId');
+    //Fetch courses when page load
+    useEffect(()=>{
+        try{
+            axios.get(baseUrl+'/fetch-all-enrolled-students/'+teacherId)
+            .then((res)=>{
+                setStudentData(res.data)
+             });
+        }catch(error){
+            console.log(error);
+        }
+
+    },[]);
+
+    //page title
+    useEffect(()=>{
+        document.title='Use-list';
+    })
+
+
     return (
             <div className="container mt-4">
                 <div className="row">
@@ -9,22 +36,30 @@ function TeacherUserList() {
                     </aside>
                     <section className='col-md-9'>
                             <div className="card">
-                            <h5 className="card-header">User List</h5>
+                            <h5 className="card-header">All Students List</h5>
                                     <div className="card-body">
                                             <table className='table table-bordered'>
                                                 <thead>
-                                                    <tr>
+                                                    <tr style={{ textAlign: 'center'}}>
                                                         <th>Name</th>
-                                                        <th>Enrolled Corses</th>
-                                                        <th>Action</th>
+                                                        <th>Email</th>
+                                                        <th>Username</th>
+                                                        <th>Interested Categories</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <td>John Doe</td>
-                                                    <td><Link to="/">php</Link></td>
-                                                    <td>
-                                                        <button className='btn btn-danger btn-sm active'>Delete</button>
-                                                    </td>
+                                                        {StudentData.map((row,student,index)=> 
+                                                            <tr> 
+                                                                <td style={{ textAlign: 'center'}}> 
+                                                                    {row.student.full_name}
+                                                                </td>
+                                                                <td style={{ textAlign: 'center'}}>{row.student.email}</td>
+                                                                <td style={{ textAlign: 'center'}}>{row.student.username}</td>
+                                                                <td style={{ textAlign: 'center'}}>
+                                                                    {row.student.interested_categories}
+                                                                </td>
+                                                            </tr>
+                                                        )}
                                                 </tbody>
                                             </table>
                                     </div>
@@ -35,5 +70,5 @@ function TeacherUserList() {
         )
     }
     
-export default TeacherUserList;
+export default UserList;
 
