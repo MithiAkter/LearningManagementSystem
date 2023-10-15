@@ -45,19 +45,19 @@ function EnrolledStudents() {
                                                         <th>Name</th>
                                                         <th>Email</th>
                                                         <th>Username</th>
-                                                        <th>Action</th>
+                                                        <th>Interested Categories</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                         {StudentData.map((row,student,index)=> 
                                                             <tr> 
                                                                 <td> 
-                                                                    <Link to={`/view-student/`+student.id}>{row.student.full_name}</Link>
+                                                                    {row.student.full_name}
                                                                 </td>
                                                                 <td>{row.student.email}</td>
                                                                 <td>{row.student.username}</td>
                                                                 <td>
-                                                                    <Link className='btn btn-info btn-sm ' to={`/view-student/`+row.student.id}>View</Link>
+                                                                    {row.student.interested_categories}
                                                                 </td>
                                                             </tr>
                                                         )}

@@ -170,7 +170,7 @@ function CourseDetail(){
                         </p>
                         <p className="fw-bold">Duration : 3 Hours 30 minutes</p>
                         <p className="fw-bold">Total Enrolled : {courseData.total_enrolled_students} student(s)</p>
-                        <p className="fw-bold">Rating: {AvgRating}/5
+                        <p className="fw-bold">Rating: =={AvgRating}/5
                         {enrollStatus === 'success' && userLoginStatus === 'success' && (
                                         <>
                                         {ratingStatus != 'success' &&
