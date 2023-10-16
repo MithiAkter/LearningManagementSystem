@@ -17,7 +17,9 @@ function EditCourse(){
         'f_img' : '',
         'techs' : ''
     });
+
     const {course_id}=useParams();
+    
     //Fetch categories when page load
     useEffect(()=>{
         try{
@@ -47,8 +49,9 @@ function EditCourse(){
         }catch(error){
             console.log(error);
         }
-        //End
     },[]);
+    //End
+
 
     //Change Element Value
     const handleChange=(event)=>{
@@ -151,7 +154,7 @@ function EditCourse(){
                                         <input type="file" onChange={handleFileChange} name='f_img' id="image" className="form-control"/>
 
                                         {courseData.prev_img &&
-                                            <p className='mt-2'><img src={courseData.prev_img} width="300"/></p>   
+                                            <p className='mt-2'><img src={courseData.prev_img} alt={courseData.tilte} width="300"/></p>   
                                         }  
                                        
                                     </div>

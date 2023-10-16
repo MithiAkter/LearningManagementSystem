@@ -64,6 +64,7 @@ function TeacherRegister(){
     useEffect(()=>{
         document.title='Teacher Register';
     });
+    
     return(
        <div className="container mt-4">
             <div className="row">
