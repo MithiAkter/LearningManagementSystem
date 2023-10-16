@@ -24,7 +24,7 @@ function UserList() {
 
     //page title
     useEffect(()=>{
-        document.title='Use-list';
+        document.title='User-list';
     })
 
 

@@ -38,7 +38,7 @@ document.title='All Courses';
                     <div className="card">
                     <Link to={`/detail/${course.id}`}><img src={course.featured_img} className="card-img-top" alt={course.title}/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to={`/detail/${course.id}`}>{course.title}</Link></h5>
+                            <h5 className="card-title text-center mt-3"><Link to={`/detail/${course.id}`}>{course.title}</Link></h5>
                         </div>
                     </div>
                 </div> 

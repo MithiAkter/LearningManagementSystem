@@ -6,6 +6,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 const baseUrl='http://localhost:8000/api';
 
+
 function EditCourse(){
     const [cats,setCats]=useState([]);
     const [courseData, setCourseData]=useState({
@@ -23,6 +24,8 @@ function EditCourse(){
             axios.get(baseUrl+'/category')
             .then((res)=>{
                 setCats(res.data);
+                // console.log(res.data);
+                // console.log('Fetched categories:', res.data);
              });
         }catch(error){
             console.log(error);
@@ -97,6 +100,8 @@ function EditCourse(){
             console.log(error);
         }
     };
+
+    //Page title
     useEffect(()=>{
         document.title='Edit Courses';
     })
@@ -114,10 +119,20 @@ function EditCourse(){
                                 <form>
                                     <div className="mb-3">
                                         <label for="category" className="form-label">Category</label>
+                                       
                                             <select name="category" value={courseData.category} onChange={handleChange} className="form-control" >
                                                 
                                                 {cats.map((category,index)=>{return <option key={index} value={category.id}>{category.title}</option>})} 
                                             </select>
+                                            
+
+                                            {/* <input
+                                            type="text"
+                                            value={courseData.category.title}
+                                            readOnly
+                                            className="form-control"
+                                            /> */}
+                                                                                
                                     </div>
 
                                     <div className="mb-3">
