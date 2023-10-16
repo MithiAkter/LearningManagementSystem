@@ -26,12 +26,12 @@ import EditCourse from './Teacher/EditCourse';
 import AddChapter from './Teacher/AddChapter';
 import AllChapters from './Teacher/CourseChapters';
 import EditChapter from './Teacher/EditChapter';
+import TeacherChangePassword from './Teacher/TeacherChangePassword';
 
 import TeacherCourses from './Teacher/TeacherCourses';
 import EnrolledStudents from './Teacher/EnrolledStudents';
 import UserList from './Teacher/UserList';
 import TeacherProfileSetting from './Teacher/TeacherProfileSetting';
-import TeacherChangePassword from './Teacher/TeacherChangePassword';
 
 
 
@@ -67,18 +67,6 @@ import Compiler from './Compiler/Compiler';
 
 
 import {Routes as Switch, Route} from 'react-router-dom';
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
