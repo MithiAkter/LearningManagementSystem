@@ -81,8 +81,6 @@ function TeacherChangePassword(){
                             <button onClick={submitForm} className='btn btn-primary'>Update</button>
                             </div>
                         </div>
-                    
-                    
                 </section>
             </div>
         </div>

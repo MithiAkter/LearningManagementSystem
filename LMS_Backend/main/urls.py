@@ -36,6 +36,7 @@ urlpatterns = [
     #Student
     path('student/', views.StudentList.as_view()),
     path('student-login',views.student_login),
+    path('student/change-password/<int:student_id>/', views.student_change_password),
     path('student-enroll-course/', views.StudentEnrollCourseList.as_view()),
     path('fetch-enroll-status/<int:student_id>/<int:course_id>',views.fetch_enroll_status),
     path('fetch-all-enrolled-students/<int:teacher_id>',views.EnrolledStudentList.as_view()),
