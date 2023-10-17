@@ -19,6 +19,12 @@ class TeacherDashboardSerializer(serializers.ModelSerializer):
         model=models.Teacher
         fields = ['total_teacher_courses' , 'total_teacher_students' ,'total_teacher_chapters']
 
+#student dashboard
+class StudentDashboardSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=models.Student
+        fields = ['enrolled_courses']
+
 
 
 class CategorySerializer(serializers.ModelSerializer):

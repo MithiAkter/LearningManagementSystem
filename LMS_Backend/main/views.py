@@ -6,13 +6,17 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
 from rest_framework import permissions
-from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer,TeacherDashboardSerializer
+from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer,TeacherDashboardSerializer,StudentDashboardSerializer
 from . import models
 
 # Create your views here.
 class TeacherDashboard(generics.RetrieveAPIView):
     queryset=models.Teacher.objects.all()
     serializer_class=TeacherDashboardSerializer
+
+class StudentDashboard(generics.RetrieveAPIView):
+    queryset=models.Student.objects.all()
+    serializer_class=StudentDashboardSerializer
 
 class TeacherList(generics.ListCreateAPIView):
     queryset=models.Teacher.objects.all()

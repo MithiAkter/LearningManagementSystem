@@ -107,6 +107,12 @@ class Student(models.Model):
     def __str__(self): 
         return self.full_name
     
+    #Total Enrolled Courses
+    def enrolled_courses(self):
+        enrolled_courses=StudentCourseEnrollment.objects.filter(student=self).count()
+        return enrolled_courses
+    
+
     class Meta:
         verbose_name_plural = "5. Students"
 
