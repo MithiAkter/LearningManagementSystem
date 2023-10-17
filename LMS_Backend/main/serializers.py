@@ -127,7 +127,7 @@ class StudentCourseEnrollSerializerView(serializers.ModelSerializer):
     class Meta:
         model = models.StudentCourseEnrollment
         fields = ['id', 'course', 'student', 'enrolled_time']
-        depth = 1  # Set depth for viewing
+        depth = 2  # Set depth for viewing
 
 
 class StudentCourseEnrollSerializer(serializers.ModelSerializer):
@@ -140,7 +140,7 @@ class StudentCourseEnrollSerializer(serializers.ModelSerializer):
         request = self.context.get('request')
         
         if request and request.method == 'GET':
-            self.Meta.depth = 1  # Set depth for viewing
+            self.Meta.depth = 2  # Set depth for viewing
         else:
             self.Meta.depth = 0  # Don't set depth for other methods
 
