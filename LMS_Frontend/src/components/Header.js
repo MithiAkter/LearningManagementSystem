@@ -5,9 +5,9 @@ function Header() {
     const teacherLoginStatus=localStorage.getItem('teacherLoginStatus')
     const studentLoginStatus=localStorage.getItem('studentLoginStatus')
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark" style={{fontSize: '18px' }}>
+        <nav className="navbar navbar-expand-lg navbar-dark" style={{fontSize: '20px',backgroundColor: '#1d3158' }}>
                 <div className="container">
-                    <Link className="navbar-brand" to="/landing-page">NextStep</Link>
+                    <Link className="navbar-brand" to="/landing-page" style={{color:'#999' }}>NextStep: Connects Programmers Globally</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" 
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -17,7 +17,7 @@ function Header() {
                             <Link className="nav-link" aria-current="page" to="/">Home</Link>
 
                             <li className="nav-item dropdown">
-                                <a style= {{fontSize: '18px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" 
+                                <a style= {{fontSize: '20px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" 
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                     Tutorial
                                 </a>
@@ -46,7 +46,7 @@ function Header() {
                             {/* <Link className="nav-link" to="/compiler">Compiler</Link> */}
                             <Link className="nav-link" to="/all-courses">Courses</Link>
                             <li className="nav-item dropdown">
-                                <a style={{fontSize: '18px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" 
+                                <a style={{fontSize: '20px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" 
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                     Teacher
                                 </a>
@@ -66,7 +66,7 @@ function Header() {
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
-                                <a style={{fontSize: '18px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" 
+                                <a style={{fontSize: '20px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" 
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                     User
                                 </a>

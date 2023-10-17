@@ -1,19 +1,21 @@
 /* Navbar.css */
 
 .navbar {
-    background-color:  rgb(67, 67, 147); /* Change the background color to your desired color */
+    /* background-color:  #1d3158; Change the background color to your desired color */
     color: #fff; /* Change the text color to your desired color */
-    font-size: 18px;
+    /* font-size: 20px; */
     /* border-radius: 5px; */
   }
   
   .navbar-brand {
-    font-size: 24px; /* Change the font size for the brand/logo */
+    font-size: 25px; /* Change the font size for the brand/logo */
+ 
   }
   
   .navbar-nav .nav-link {
     color: white; /* Change the text color for links */
-    padding: 20px 20px; /* Adjust the padding as needed */
+    padding: 25px 20px; /* Adjust the padding as needed */
+    font-size: 20px;
   }
-  
+
  

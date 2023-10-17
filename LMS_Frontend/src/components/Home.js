@@ -7,7 +7,7 @@ const baseUrl='http://localhost:8000/api';
 function Home(){
     const [courseData,setCourseData]=useState([]);
 
-    //Fetch courses when page load
+    //Fetch 4 courses when page load
     useEffect(()=>{
         try{
             axios.get(baseUrl+'/course/?result=4')
@@ -49,7 +49,7 @@ function Home(){
 
 
             {/* start popular Courses*/}
-            <h3 className="pb-1 mb-4 mt-4">Popular Courses <Link to="/popular-courses" className="float-end">See all</Link></h3>
+            {/* <h3 className="pb-1 mb-4 mt-4">Popular Courses <Link to="/popular-courses" className="float-end">See all</Link></h3>
             <div className="row"> 
                 <div className="col-md-3">
                     <div className="card">
@@ -123,13 +123,13 @@ function Home(){
 
                     </div>
                 </div>   
-            </div>
+            </div> */}
             {/* end popular Courses*/} 
 
 
 
             {/* start popular teachers*/}
-            <h3 className="pb-1 mb-4 mt-4">Popular Teachers <Link to="/popular-teachers" className="float-end">See all</Link></h3>
+            {/* <h3 className="pb-1 mb-4 mt-4">Popular Teachers <Link to="/popular-teachers" className="float-end">See all</Link></h3>
             <div className="row"> 
                 <div className="col-md-3">
                     <div className="card">
@@ -201,12 +201,12 @@ function Home(){
 
                     </div>
                 </div>   
-            </div>
+            </div> */}
             {/* end popular Courses*/} 
 
 
             {/* Start Student Testimonial */}
-            <h3 className="pb-1 mb-4 mt-4">Student Testimonial</h3>
+            {/* <h3 className="pb-1 mb-4 mt-4">Student Testimonial</h3>
             <div id="carouselExampleIndicators" className="carousel slide bg-dark text-white py-5" data-bs-ride="carousel">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -253,7 +253,7 @@ function Home(){
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>
-                </div>
+                </div> */}
             {/* end Student Testimonial */} 
 
             
