@@ -53,9 +53,9 @@ function MyCourses() {
                                                 </thead>
                                                 <tbody>
                                                 {courseData.map((row,index)=> 
-                                                    <tr>
-                                                        <td><Link  style={{ textAlign: 'left', fontSize: '16px', textDecoration: 'none', color: 'blue' }} to={`/detail/`+row.course.id}>{row.course.title}</Link></td>
-                                                        <td style={{ textAlign: 'center',color: '#555', fontSize: '16px', }} >{row.course.teacher.full_name}</td>
+                                                    <tr style={{ textAlign: 'center'}}>
+                                                        <td><Link  style={{fontSize: '17px', textDecoration: 'none', color: 'blue' }} to={`/detail/`+row.course.id}>{row.course.title}</Link></td>
+                                                        <td><Link  style={{fontSize: '17px', textDecoration: 'none', color: 'blue' }} to={`/teacher-detail/`+row.course.teacher.id}>{row.course.teacher.full_name}</Link></td>
                                                         {/* <td>
                                                             <button className='btn btn-primary' style={{ width: '200px',  backgroundColor: 'rgb(31, 174, 91)', color: 'white',border: 'none' }}>Remove Enrollment</button>
                                                         </td> */}
