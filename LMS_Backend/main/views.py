@@ -24,7 +24,8 @@ class TeacherDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset=models.Teacher.objects.all()
     serializer_class=TeacherSerializer
     #permission_classes=[permissions.IsAuthenticated]
-    
+
+
 @csrf_exempt
 def teacher_login(request):
     email=request.POST['email']
@@ -126,6 +127,10 @@ class StudentList(generics.ListCreateAPIView):
     queryset=models.Student.objects.all()
     serializer_class=StudentSerializer
 
+class studentDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset=models.Student.objects.all()
+    serializer_class=StudentSerializer
+    
 # @csrf_exempt
 # def student_login(request):
 #     email=request.POST['email']
