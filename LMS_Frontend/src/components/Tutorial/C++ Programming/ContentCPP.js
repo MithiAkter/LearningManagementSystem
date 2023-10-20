@@ -10,7 +10,7 @@ function ContentCPP() {
   <h1> Hello World! Good Morning! :) </h1>`;
 
   const codeBlockStyle = {
-    borderRadius: '35px', // Adjust the border radius value as needed
+    borderRadius: '20px', // Adjust the border radius value as needed
     overflow: 'hidden', // Prevent content from overflowing the rounded corners
   };
 

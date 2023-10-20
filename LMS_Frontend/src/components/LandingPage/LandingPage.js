@@ -30,7 +30,7 @@ function LandingPage(){
 
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_qy64z95', 'template_5apeh6m', form.current, '8I_xO_gChaqRasE-D')
+    emailjs.sendForm('service_e93m9ms', 'template_x88q6uw', form.current, '8I_xO_gChaqRasE-D')
       .then((result) => {
           console.log(result.text);
       }, (error) => {

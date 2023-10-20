@@ -13,23 +13,23 @@ function PythonSidebar(){
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-dark text-center' style={{ fontWeight: 'bold' }}>Learn Python</Link>
                 <a href="#python-basics" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python</a>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Syntax</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Selectors</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Editors</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>How To Add Python</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Output (Print Text)</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Comments</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Variables</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Data Types</Link>
 
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Colors</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Backgrounds</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Borders</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Margins</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Padding</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Text</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Fonts</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Constants</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Operators</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Booleans</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python If ... Else</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Switch</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python While Loop</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python For Loop</Link>
 
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Icons</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Links</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Lists</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Tables</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Break and Continue</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Arrays</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Strings</Link>
+                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python User Input</Link>
             </div>
         </div>
         

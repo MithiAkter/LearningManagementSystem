@@ -252,14 +252,20 @@ function CourseDetail(){
                                     <div className="modal-dialog modal-xl">
                                         <div className="modal-content">
                                         <div className="modal-header">
-                                            <h5 className="modal-title" id="exampleModalLabel">Video 1</h5>
+                                            <h5 className="modal-title"  id="exampleModalLabel">Video</h5>
                                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div className="modal-body">
-                                            <div class="ratio ratio-16x9">
-                                            <iframe src={chapter.video} title={chapter.title} allowfullscreen></iframe>
+                                            <div className="ratio ratio-16x9">
+                                            {/* <iframe src={chapter.video}  allowfullscreen></iframe> */}
+                                                <video controls width="200">
+                                                    <source src={chapter.video} type="video/webm" />
+                                                    <source src={chapter.video}  type="video/mp4" />
+                                                        Sorry, your browser doesn't suport embadded video.
+                                                </video>
                                             </div>
                                         </div>
+                                        
                                         
                                         </div>
                                     </div>

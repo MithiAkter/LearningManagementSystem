@@ -5,7 +5,7 @@
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid transparent; /* Create a transparent border */
-    animation: typing 5s steps(40) forwards, blink 0.5s step-end infinite; /* Apply text animation */
+    animation: typing 3s steps(40) forwards, blink 0.5s step-end infinite; /* Apply text animation */
   }
   
   @keyframes typing {
