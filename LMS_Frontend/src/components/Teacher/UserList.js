@@ -48,10 +48,11 @@ function UserList() {
                                                         <th>Email</th>
                                                         <th>Username</th>
                                                         <th>Interested Categories</th>
+                                                        <th>Assignments</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                        {StudentData.map((row,student,index)=> 
+                                                        {StudentData.map((row,student)=> 
                                                             <tr> 
                                                                 <td style={{ textAlign: 'center'}}> 
                                                                     {row.student.full_name}
@@ -60,6 +61,10 @@ function UserList() {
                                                                 <td style={{ textAlign: 'center'}}>{row.student.username}</td>
                                                                 <td style={{ textAlign: 'center'}}>
                                                                     {row.student.interested_categories}
+                                                                </td>
+                                                                <td style={{ textAlign: 'center'}}>
+                                                                    <Link to="#" className='btn btn-sm btn-warning'>Assignments</Link>
+                                                                    <Link to={`add-assignment/${row.student.id}/${teacherId}`} className='btn btn-sm btn-success ms-2'>Add Assignments</Link>
                                                                 </td>
                                                             </tr>
                                                         )}

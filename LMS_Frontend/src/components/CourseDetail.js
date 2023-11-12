@@ -17,6 +17,8 @@ function CourseDetail(){
     const [enrollStatus,setenrollStatus]=useState([]);
     const [ratingStatus,setratingStatus]=useState([]);
     const [AvgRating,setAvgRating]=useState([0]);
+    const [favoriteStatus,setfavoriteStatus]=useState();
+
 
     let {course_id} = useParams();
     const studentId=localStorage.getItem('studentId');
@@ -44,7 +46,7 @@ function CourseDetail(){
                 axios.get(baseUrl+'/fetch-enroll-status/'+studentId+'/'+course_id)
                 .then((res)=>{
                     // console.log(res.data);
-                    if(res.data.bool===true){
+                    if(res.data.bool==true){
                         setenrollStatus('success');
                     }
                  });
@@ -56,14 +58,39 @@ function CourseDetail(){
                 axios.get(baseUrl+'/fetch-rating-status/'+studentId+'/'+course_id)
                 .then((res)=>{
                     // console.log(res.data);
-                    if(res.data.bool===true){
+                    if(res.data.bool==true){
                         setratingStatus('success');
                     }
                  });
             }catch(error){
                 console.log(error);
             }
-            
+        //Fetch favorite status 
+            try{
+                axios.get(baseUrl+'/fetch-favorite-status/'+studentId+'/'+course_id)
+                .then((res)=>{
+                    // console.log(res.data);
+                    if(res.data.bool==true){
+                        setfavoriteStatus('success');
+                    }else{
+                        setfavoriteStatus(''); 
+                    }
+                 });
+            }catch(error){
+                console.log(error);
+            }
+            // axios.get(`${baseUrl}/fetch_favorite_status/${studentId}/${course_id}`)
+            // .then((res) => {
+            //     if (res.data.bool === true) {
+            //         setfavoriteStatus('success');
+            //     } else {
+            //         setfavoriteStatus(''); 
+            //     }
+            // })
+            // .catch((error) => {
+            //     console.log(error);
+            // });
+
             // Verifying Login Status
             const studentLoginStatus=localStorage.getItem('studentLoginStatus');
             if(studentLoginStatus==='true'){
@@ -77,7 +104,7 @@ function CourseDetail(){
 
     // Enroll Course Funtionality
     const enrollCourse = () =>{
-        const _formData = new FormData();
+            const _formData = new FormData();
             _formData.append('course',course_id);
             _formData.append('student',studentId);
             try{
@@ -105,7 +132,77 @@ function CourseDetail(){
                 console.log(error);
             }        
     }
+    //Mark as Favourite Course
+    const markAsFavorite = () => {
+            const _formData = new FormData();
+            _formData.append('course',course_id);
+            _formData.append('student',studentId);
+            _formData.append('status',true);
+            try{
+                axios.post(baseUrl+'/student-add-favorite-course/',_formData,{
+                    headers: {
+                        'content-type': 'multipart/form-data'
+                    }
+                })
+                .then((res)=>{
+                    if(res.status===200||res.status===201){
+                        Swal.fire({
+                            title: 'You have successfully added in your wishlist',
+                            icon: 'success',
+                            toast:true,
+                            timer:5000,
+                            position:'top-right',
+                            timerProgressBar:true,
+                            showConfirmButton:false
+                        });
+                        setfavoriteStatus('success');
+                        // window.location.reload();
+                    }
+                });
+            }catch(error){
+                console.log(error);
+            } 
+    }
+    
+    //End
 
+    //Remove from facorite Courses
+    const removeFavorite = (pk) => {
+            const _formData = new FormData();
+            _formData.append('course',course_id);
+            _formData.append('student',studentId);
+            _formData.append('status',false);
+            try{
+                axios.get(baseUrl+'/student-remove-favorite-course/'+course_id+'/'+studentId,{
+                    headers: {
+                        'content-type': 'multipart/form-data'
+                    }
+                })
+                .then((res)=>{
+                    if(res.status==200||res.status==201){
+                        Swal.fire({
+                            title: 'This course has been removed from your wishlist',
+                            icon: 'success',
+                            toast:true,
+                            timer:5000,
+                            position:'top-right',
+                            timerProgressBar:true,
+                            showConfirmButton:false
+                        });
+                        setfavoriteStatus('');
+                    }
+                });
+            }catch(error){
+                console.log(error);
+            } 
+    }
+
+    
+
+
+    
+    
+    //End
     //Add Rating
     const [ratingData, setratingData]=useState({
         'rating' : '',
@@ -221,15 +318,24 @@ function CourseDetail(){
                         </p>
 
 
-                        {enrollStatus == 'success' && userLoginStatus == 'success' &&
+                        {enrollStatus === 'success' && userLoginStatus === 'success' &&
                             <p><span className="btn btn-success">You are already enrolled in this course</span></p>
                         }
-                        {userLoginStatus == 'success' && enrollStatus !== 'success'  &&
+                        {userLoginStatus === 'success' && enrollStatus !== 'success'  &&
                             <p><button onClick={enrollCourse} type="button" className="btn btn-success" >Enroll In This Course</button></p>
+                        }
+                        {userLoginStatus === 'success' && favoriteStatus !== 'success' &&
+                            <p><button onClick={markAsFavorite} title="Add in your favorite Course List" type="button" className="btn btn-outline-danger" ><i 
+                            className="bi bi-heart-fill"></i></button></p>
+                        }
+                        {userLoginStatus === 'success' && favoriteStatus === 'success' &&
+                            <p><button onClick={removeFavorite} title="Remove from your favorite Course List" type="button" className="btn btn-danger" ><i 
+                            className="bi bi-heart-fill"></i></button></p>
                         }
                         {userLoginStatus !== 'success' &&
                             <p><Link to="/user-login" className="btn btn-success" >Please Login to In This Course</Link></p>
                         } 
+                        
                 </div>
             </div>
             {/* Course videos */}

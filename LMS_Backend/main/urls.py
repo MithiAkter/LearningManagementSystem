@@ -4,8 +4,8 @@ urlpatterns = [
     #Teacher
     path('teacher/', views.TeacherList.as_view()),
     path('teacher/dashboard/<int:pk>/', views.TeacherDashboard.as_view()),
-    path('teacher/change-password/<int:teacher_id>/', views.teacher_change_password),
     path('teacher/<int:pk>/', views.TeacherDetail.as_view()),
+    path('teacher/change-password/<int:teacher_id>/', views.teacher_change_password),
     path('teacher-login',views.teacher_login),
 
     #Category
@@ -14,16 +14,9 @@ urlpatterns = [
     #Course
     path('course/', views.CourseList.as_view()),
 
-    #Course
-    path('popular-courses/', views.CourseRatingList.as_view()),
-
     #Course Detail
     path('course/<int:pk>', views.CourseDetailView.as_view()),
 
-    #Chapter
-    path('chapter/', views.ChapterList.as_view()),
-
-    
     #Specific Course Chapter
     path('course-chapters/<int:course_id>', views.CourseChapterList.as_view()),
 
@@ -33,8 +26,14 @@ urlpatterns = [
     #Teacher Courses
     path('teacher-courses/<int:teacher_id>/', views.TeacherCourseList.as_view()),
 
+    #Course
+    path('popular-courses/', views.CourseRatingList.as_view()),
+
     # Course Detail
     path('teacher-course-detail/<int:pk>/', views.TeacherCourseDetail.as_view()),
+
+    #Chapter
+    path('chapter/', views.ChapterList.as_view()),
 
     #Student
     path('student/', views.StudentList.as_view()),
@@ -50,4 +49,12 @@ urlpatterns = [
     path('fetch-recommended-courses/<int:studentId>',views.CourseList.as_view()),
     path('course-rating/', views.CourseRatingList.as_view()),
     path('fetch-rating-status/<int:student_id>/<int:course_id>',views.fetch_rating_status),
+    path('student-add-favorite-course/',views.StudentFavoriteCourseList.as_view()),
+    path('student-remove-favorite-course/<int:course_id>/<int:student_id>',views.remove_favorite_course),
+    path('fetch-favorite-status/<int:student_id>/<int:course_id>',views.fetch_favorite_status),
+    path('fetch-favorite-courses/<int:student_id>/',views.StudentFavoriteCourseList.as_view()),
+    path('student-assignment/<int:teacher_id>/<int:student_id>', views.AssignmentList.as_view()),   
+
+
+    
 ]

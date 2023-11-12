@@ -128,6 +128,20 @@ class StudentCourseEnrollment(models.Model):
     
     def __str__(self): 
         return f"{self.course}-{self.student}"
+
+#Student Favourite Course
+class StudentFavoriteCourse(models.Model):
+    course=models.ForeignKey(Course,on_delete=models.CASCADE)
+    student=models.ForeignKey(Student,on_delete=models.CASCADE)
+    teacher=models.ForeignKey(Teacher,on_delete=models.CASCADE,null=True)
+    status=models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name_plural = "7. Student Favourite Course"
+    
+    def __str__(self): 
+        return f"{self.course}-{self.student}"
+
         
 #Course Rating and Reviews
 class CourseRating(models.Model):
@@ -138,7 +152,23 @@ class CourseRating(models.Model):
     review_time=models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name_plural = "7. Course Ratings"
+        verbose_name_plural = "8. Course Ratings"
 
     def __str__(self): 
         return f"{self.course}-{self.student}-{self.rating}"
+    
+#Course Rating and Reviews
+class StudentAssignment(models.Model):
+    teacher=models.ForeignKey(Teacher,on_delete=models.CASCADE)
+    student=models.ForeignKey(Student,on_delete=models.CASCADE)
+    title=models.CharField(max_length = 200)
+    detail=models.TextField(null=True)
+    add_time=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self): 
+        return f"{self.title}"
+    
+    class Meta:
+        verbose_name_plural = "9. Student Assignments"
+
+

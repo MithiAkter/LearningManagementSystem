@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
 from rest_framework import permissions
-from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer,TeacherDashboardSerializer,StudentDashboardSerializer
+from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer,TeacherDashboardSerializer,StudentDashboardSerializer,StudentFavoriteCourseSerializer,StudentAssignmentSerializer
 from . import models
 
 # Create your views here.
@@ -123,7 +123,14 @@ class CourseChapterList(generics.ListCreateAPIView):
 #For Editing the chapter fetching data views-
 class ChapterDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset=models.Chapter.objects.all()
-    serializer_class=ChapterSerializer 
+    serializer_class=ChapterSerializer
+
+    # def get_serializer_context(self):
+    #     context=super().get_serializer_context()
+    #     context['chapter_duration']=self.chapter_duration
+    #     print('context---------------')
+    #     print(context)
+    #     return context
 
 
 # Student Data
@@ -167,18 +174,30 @@ def student_login(request):
 # class StudentEnrollCourseList(generics.ListCreateAPIView):
 #     queryset=models.StudentCourseEnrollment.objects.all()
 #     serializer_class=StudentCourseEnrollSerializer
+
+
 class StudentEnrollCourseList(generics.ListCreateAPIView):
     queryset = models.StudentCourseEnrollment.objects.all()
 
     def get_serializer_class(self):
         if self.request.method == 'GET':
-            return StudentCourseEnrollSerializer  # For viewing (GET)
+            return StudentCourseEnrollSerializer  #For viewing (GET)
         else:
-            return StudentCourseEnrollSerializerCreate  # For adding (POST)
+            return StudentCourseEnrollSerializerCreate #For adding (POST)
+        
+        
+# Student Favorite Course
+class StudentFavoriteCourseList(generics.ListCreateAPIView):   
+    queryset=models.StudentFavoriteCourse.objects.all()
+    serializer_class=StudentFavoriteCourseSerializer
 
-    # Other view methods...
+    def get_queryset(self):
+        if 'student_id' in self.kwargs:
+            student_id=self.kwargs['student_id'] #kwargs-> key word arguments
+            student=models.Student.objects.get(pk=student_id)
+            return models.StudentFavoriteCourse.objects.filter(student=student).distinct()
 
-
+    
 def fetch_enroll_status(request,student_id,course_id):
     student=models.Student.objects.filter(id=student_id).first()
     course=models.Course.objects.filter(id=course_id).first()
@@ -188,6 +207,28 @@ def fetch_enroll_status(request,student_id,course_id):
     else:
         return JsonResponse({'bool':False})
     
+# Student favorite Course
+def fetch_favorite_status(request,student_id,course_id):
+    student=models.Student.objects.filter(id=student_id).first()
+    course=models.Course.objects.filter(id=course_id).first()
+    favoriteStatus=models.StudentFavoriteCourse.objects.filter(course=course,student=student).first()
+    if favoriteStatus and favoriteStatus.status == True:
+        return JsonResponse({'bool':True})
+    else:
+        return JsonResponse({'bool':False})
+    
+    
+# Student remove Course
+def remove_favorite_course(request,course_id,student_id):
+    student=models.Student.objects.filter(id=student_id).first()
+    course=models.Course.objects.filter(id=course_id).first()
+    favoriteStatus=models.StudentFavoriteCourse.objects.filter(course=course,student=student).delete()
+    if favoriteStatus:
+        return JsonResponse({'bool':True})
+    else:
+        return JsonResponse({'bool':False})
+
+
 
 class EnrolledStudentList(generics.ListAPIView):
     queryset=models.StudentCourseEnrollment.objects.all()
@@ -250,3 +291,13 @@ def student_change_password(request,student_id):
     else:
         return JsonResponse({'bool':False})
 
+class AssignmentList(generics.ListCreateAPIView):
+    queryset=models.StudentAssignment.objects.all()
+    serializer_class=StudentAssignmentSerializer
+
+    def get_queryset(self):
+        student_id=self.kwargs['student_id']
+        teacher_id=self.kwargs['teacher_id']
+        student=models.Student.objects.get(pk=student_id)
+        teacher=models.Teacher.objects.get(pk=teacher_id)
+        return models.StudentAssignment.objects.filter(student=student,teacher=teacher)
