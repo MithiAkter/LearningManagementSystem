@@ -25,7 +25,7 @@ function FavoriteCourses() {
 
     //page title
     useEffect(()=>{
-        document.title='Favorite Courses';
+        document.title='My Favorite Courses';
     })
     return (
             <div className="container mt-4">
@@ -35,7 +35,7 @@ function FavoriteCourses() {
                     </aside>
                     <section className='col-md-9'>
                             <div className="card">
-                            <h5 className="card-header">Favorite Courses</h5>
+                            <h5 className="card-header">My Favorite Courses</h5>
                                     <div className="card-body">
                                             <table className='table table-bordered'>
                                                 <thead>
