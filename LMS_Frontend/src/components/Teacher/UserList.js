@@ -52,7 +52,7 @@ function UserList() {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                        {StudentData.map((row,student)=> 
+                                                        {StudentData.map((row,index)=> 
                                                             <tr> 
                                                                 <td style={{ textAlign: 'center'}}> 
                                                                     {row.student.full_name}
@@ -63,8 +63,8 @@ function UserList() {
                                                                     {row.student.interested_categories}
                                                                 </td>
                                                                 <td style={{ textAlign: 'center'}}>
-                                                                    <Link to="#" className='btn btn-sm btn-warning'>Assignments</Link>
-                                                                    <Link to={`add-assignment/${row.student.id}/${teacherId}`} className='btn btn-sm btn-success ms-2'>Add Assignments</Link>
+                                                                    <Link to={`/show-assignment/${teacherId}/${row.student.id}`} className='btn btn-sm btn-warning'>Assignments</Link>
+                                                                    <Link to={`/add-assignment/${teacherId}/${row.student.id}`} className='btn btn-sm btn-success ms-2'>Add Assignments</Link>
                                                                 </td>
                                                             </tr>
                                                         )}

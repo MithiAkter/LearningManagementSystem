@@ -3,6 +3,8 @@ import TeacherSidebar from './TeacherSidebar';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useParams} from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 const baseUrl='http://localhost:8000/api';
 
 function AddAssignment(){
@@ -18,34 +20,49 @@ function AddAssignment(){
             [event.target.name]:event.target.value
         });
     }
-
-    const{course_id}=useParams();
+    
+    const{teacher_id}=useParams();
+    const{student_id}=useParams();
+    
     //Submit Form Start
     const formSubmit=()=>{
         const _formData = new FormData();
-        
-        _formData.append('course',course_id);
-        _formData.append('title',chapterData.title);
-        _formData.append('description',chapterData.description);
-        _formData.append('video',chapterData.video,chapterData.video.name);
-        _formData.append('remarks',chapterData.remarks);
+        _formData.append('teacher',teacher_id);
+        _formData.append('title',assignmentData.title);
+        _formData.append('detail',assignmentData.detail);
+        _formData.append('student',student_id);
+
         try{
-            axios.post(baseUrl+'/chapter/',_formData,{
+            axios.post(baseUrl+'/student-assignment/'+teacher_id+'/'+student_id,_formData,{
                 headers: {
                     'content-type': 'multipart/form-data'
                 }
             })
             .then((res)=>{
-                // console.log(res.data);
-                window.location.href='/add-chapter/1';
-             });
+                if(res.status==200||res.status==201){
+                    Swal.fire({
+                        title: 'Assignment has been added!',
+                        icon: 'success',
+                        toast:true,
+                        timer:5000,
+                        position:'top-right',
+                        timerProgressBar:true,
+                        showConfirmButton:false
+                    });
+                    // setenrollStatus('success');
+                    window.location.reload();
+                }
+            });
+
         }catch(error){
             console.log(error);
         }
     };
+    //End
+
     //title
     useEffect(()=>{
-        document.title='Add Chapter';
+        document.title='Add Assignment';
     });
     return(
        <div className="container mt-4">
@@ -55,7 +72,7 @@ function AddAssignment(){
                 </aside>
                 <section className='col-md-9'>
                     <div className="card">
-                        <h5 className="card-header">Add Chapter</h5>
+                        <h5 className="card-header">Add Assignment</h5>
                         <div className="card-body">
                                 <form>
                                     <div className="mb-3">
@@ -64,20 +81,8 @@ function AddAssignment(){
                                     </div>
 
                                     <div className="mb-3">
-                                        <label for="description" className="form-label">Description</label>
-                                        <textarea onChange={handleChange} name='description' id='description' className="form-control"></textarea>
-                                    </div>
-
-                                    <div className="mb-3">
-                                        <label for="video" className="form-label">Video</label>
-                                        
-                                        <input type="file" id='video' onChange={handleFileChange} name='video' className="form-control"/>
-                                       
-                                    </div>
-
-                                    <div className="mb-3">
-                                        <label for="techs" className="form-label">Remarks</label>
-                                        <textarea onChange={handleChange} name='remarks' className="form-control" placeholder='This video is focused on basic introduction' id="techs"></textarea>
+                                        <label for="detail" className="form-label">Detail</label>
+                                        <textarea onChange={handleChange} name='detail' id='detail' className="form-control"></textarea>
                                     </div>
 
                                     <button type="button" onClick={formSubmit} className='btn btn-primary'>Submit</button>

@@ -31,6 +31,8 @@ import TeacherChangePassword from './Teacher/TeacherChangePassword';
 import TeacherCourses from './Teacher/TeacherCourses';
 import EnrolledStudents from './Teacher/EnrolledStudents';
 import UserList from './Teacher/UserList';
+import AddAssignment from './Teacher/AddAssignment';
+import ShowAssignment from './Teacher/ShowAssignment';
 import TeacherProfileSetting from './Teacher/TeacherProfileSetting';
 
 
@@ -67,6 +69,7 @@ import Compiler from './Compiler/Compiler';
 
 
 import {Routes as Switch, Route} from 'react-router-dom';
+
 
 
 
@@ -108,6 +111,9 @@ function Main() {
             <Route path='/add-course' element={<AddCourse />} />
             <Route path='/edit-course/:course_id' element={<EditCourse />} />
             <Route path='/add-chapter/:course_id' element={<AddChapter />} />
+            
+            <Route path='/add-assignment/:student_id/:teacher_id' element={<AddAssignment />} />
+            <Route path='/show-assignment/:student_id/:teacher_id' element={<ShowAssignment />} />
             <Route path='/teacher-users' element={<UserList />} />
             <Route path='/tacher-profile-setting' element={<TeacherProfileSetting />} />
             <Route path='/teacher-change-password' element={<TeacherChangePassword />} />
