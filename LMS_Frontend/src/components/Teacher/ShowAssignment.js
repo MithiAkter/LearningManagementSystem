@@ -49,13 +49,24 @@ function ShowAssignment() {
                                                     <tr>
                                                         <th>Title</th>
                                                         <th>Detail</th>
+                                                        <th>Status</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody style={{ textAlign: 'center'}}>
-                                                        {assignmentData.map((assignment,index)=>
+                                                        {assignmentData.map((row,index)=>
                                                             <tr> 
-                                                                <td>{assignment.title}</td>
-                                                                <td>{assignment.detail}</td>
+                                                                <td>{row.title}</td>
+                                                                <td>{row.detail}</td>
+                                                                <td>
+                                                                    {row.student_status == false &&
+                                                                        <span className='badge bg-warning' style={{ width: '100px', padding: '8px'}}>Pending</span>
+                                                                    } 
+                                                                    {row.student_status == true &&
+                                                                        // <span className='badge bg-primary' style={{ width: '200px', borderRadius: '7px', padding: '8px' }}>Completed</span>
+                                                                        <span className='badge bg-success' style={{ width: '100px', padding: '8px'}}>Completed</span>
+                                                                    } 
+                                                                </td> 
+
                                                             </tr>
                                                         )}
                                                 </tbody>

@@ -12,6 +12,7 @@ import Dashboard from './User/Dashboard';
 import MyCourses from './User/MyCourses';
 import FavoriteCourses from './User/FavoriteCourses';
 import RecommendedCourses from './User/RecommendedCourses';
+import StudentAssignments from './User/StudentAssignments';
 import ProfileSetting from './User/ProfileSetting';
 import ChangePassword from './User/ChangePassword';
 import StudentLogout from './User/StudentLogout';
@@ -98,6 +99,7 @@ function Main() {
             <Route path='/my-courses' element={<MyCourses />} />
             <Route path='/favorite-courses' element={<FavoriteCourses />} />
             <Route path='/recommended-courses' element={<RecommendedCourses />} />
+            <Route path='/my-assignments/' element={<StudentAssignments />} />
             <Route path='/profile-setting' element={<ProfileSetting />} />
             <Route path='/change-password' element={<ChangePassword />} />
             <Route path='/user-logout' element={<StudentLogout />} />

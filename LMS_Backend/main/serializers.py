@@ -186,6 +186,7 @@ class StudentAssignmentSerializer(serializers.ModelSerializer):
             'student',
             'title',
             'detail',
+            'student_status',
             'add_time'
             ]
     def __init__(self, *args, **kwargs):

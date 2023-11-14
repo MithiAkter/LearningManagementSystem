@@ -55,7 +55,7 @@ class CourseList(generics.ListCreateAPIView):
 
     def get_queryset(self):
         qs=super().get_queryset()
-        if'result' in self.request.GET:
+        if 'result' in self.request.GET:
             limit=int(self.request.GET['result'])
             qs=models.Course.objects.all().order_by('-id')[:limit]
 
@@ -301,3 +301,17 @@ class AssignmentList(generics.ListCreateAPIView):
         student=models.Student.objects.get(pk=student_id)
         teacher=models.Teacher.objects.get(pk=teacher_id)
         return models.StudentAssignment.objects.filter(student=student,teacher=teacher)
+    
+
+class MyAssignmentList(generics.ListCreateAPIView):
+    queryset=models.StudentAssignment.objects.all()
+    serializer_class=StudentAssignmentSerializer
+
+    def get_queryset(self):
+        student_id=self.kwargs['student_id']
+        student=models.Student.objects.get(pk=student_id)
+        return models.StudentAssignment.objects.filter(student=student)
+
+class UpdateAssignment(generics.RetrieveUpdateDestroyAPIView):
+    queryset=models.StudentAssignment.objects.all()
+    serializer_class=StudentAssignmentSerializer
