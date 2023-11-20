@@ -171,14 +171,13 @@ function LandingPage(){
                   <div className="phone details">
                     <i className="fas fa-phone-alt"></i>
                     <div className="topic">Phone</div>
-                    <div className="text-one">01881490188</div>
+                    <div className="text-one">+880 1881490188</div>
                     {/* <div className="text-two">01*********8</div> */}
                   </div>
                   <div className="email details">
                     <i className="fas fa-envelope"></i>
                     <div className="topic">Email</div>
                     <div className="text-one">mithilakona@gmail.com</div>
-                    <div className="text-two">mithiakter.19100004@gmail.com</div>
                   </div>
                 </div>
                 <div className="right-side">

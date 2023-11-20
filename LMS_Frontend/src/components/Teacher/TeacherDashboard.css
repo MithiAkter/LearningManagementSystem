@@ -8,6 +8,11 @@
     font-size: 40px;
     text-decoration: none;
 }
+.clr-stu{
+    color:rgb(106, 106, 171);
+    font-size: 20px;
+    text-decoration: none;
+}
 .clr:hover{
     color: rgb(31, 174, 91);
     font-size: 40px;

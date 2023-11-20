@@ -111,6 +111,27 @@ class Student(models.Model):
     def enrolled_courses(self):
         enrolled_courses=StudentCourseEnrollment.objects.filter(student=self).count()
         return enrolled_courses
+  
+    #Total Favorite Courses
+    def favorite_courses(self):
+        favorite_courses=StudentFavoriteCourse.objects.filter(student=self).count()
+        return favorite_courses
+    
+    #Completed Assignments
+    def complete_assignments(self):
+        complete_assignments=StudentAssignment.objects.filter(student=self,student_status=True).count()
+        if complete_assignments>0:
+            return complete_assignments
+        else:
+            return 0
+    
+    #Pending Assignments
+    def pending_assignments(self):
+        pending_assignments=StudentAssignment.objects.filter(student=self,student_status=False).count()
+        if pending_assignments>0:
+            return pending_assignments
+        else:
+            return 0
     
 
     class Meta:
@@ -172,4 +193,14 @@ class StudentAssignment(models.Model):
     class Meta:
         verbose_name_plural = "9. Student Assignments"
 
+#Notification Model
+class Notification(models.Model):
+    teacher=models.ForeignKey(Teacher,on_delete=models.CASCADE,null=True)
+    student=models.ForeignKey(Student,on_delete=models.CASCADE,null=True)
+    notif_subject=models.CharField(max_length = 200,verbose_name='Notification Subject',null=True)
+    notif_for=models.CharField(max_length = 200,verbose_name='Notification for')
+    notif_created_time=models.DateTimeField(auto_now_add=True)
+    notifiread_status=models.BooleanField(default=False,verbose_name='Notification Status')
 
+    class Meta:
+        verbose_name_plural = "10. Notifications"

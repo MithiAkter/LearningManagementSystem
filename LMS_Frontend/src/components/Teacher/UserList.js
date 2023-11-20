@@ -59,9 +59,7 @@ function UserList() {
                                                                 </td>
                                                                 <td style={{ textAlign: 'center'}}>{row.student.email}</td>
                                                                 <td style={{ textAlign: 'center'}}>{row.student.username}</td>
-                                                                <td style={{ textAlign: 'center'}}>
-                                                                    {row.student.interested_categories}
-                                                                </td>
+                                                                <td style={{ textAlign: 'center'}}>{row.student.interested_categories}</td>
                                                                 <td style={{ textAlign: 'center'}}>
                                                                     <Link to={`/show-assignment/${teacherId}/${row.student.id}`} className='btn btn-sm btn-warning'>Assignments</Link>
                                                                     <Link to={`/add-assignment/${teacherId}/${row.student.id}`} className='btn btn-sm btn-success ms-2'>Add Assignments</Link>

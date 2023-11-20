@@ -10,7 +10,7 @@ function FavoriteCourses() {
     const [courseData,setcourseData]=useState([]);
     const studentId=localStorage.getItem('studentId');
     
-    //Fetch all courses when page load
+    //Fetch all fav courses when page load
     useEffect(()=>{
         try{
             axios.get(baseUrl+'/fetch-favorite-courses/'+studentId)

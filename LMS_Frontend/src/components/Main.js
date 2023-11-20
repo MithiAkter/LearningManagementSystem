@@ -16,6 +16,7 @@ import StudentAssignments from './User/StudentAssignments';
 import ProfileSetting from './User/ProfileSetting';
 import ChangePassword from './User/ChangePassword';
 import StudentLogout from './User/StudentLogout';
+import Payment from './User/Payment';
 
 // Teachers
 import TeacherLogin from './Teacher/TeacherLogin';
@@ -75,6 +76,7 @@ import {Routes as Switch, Route} from 'react-router-dom';
 
 
 
+
 function Main() {
   return (
     <div className="App">
@@ -122,6 +124,8 @@ function Main() {
 
 
             
+            <Route path='/payment-contact' element={<Payment />} />
+
             <Route path='/landing-page' element={<LandingPage />} />
             <Route path='/java-home' element={<Java_Home />} />
             <Route path='/cpp-home' element={<CPP_Home />} />

@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
 from rest_framework import permissions
-from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer,TeacherDashboardSerializer,StudentDashboardSerializer,StudentFavoriteCourseSerializer,StudentAssignmentSerializer
+from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer,TeacherDashboardSerializer,StudentDashboardSerializer,StudentFavoriteCourseSerializer,StudentAssignmentSerializer,NotificationSerializer
 from . import models
 
 # Create your views here.
@@ -290,7 +290,7 @@ def student_change_password(request,student_id):
         return JsonResponse({'bool':True})
     else:
         return JsonResponse({'bool':False})
-
+    
 class AssignmentList(generics.ListCreateAPIView):
     queryset=models.StudentAssignment.objects.all()
     serializer_class=StudentAssignmentSerializer
@@ -310,8 +310,21 @@ class MyAssignmentList(generics.ListCreateAPIView):
     def get_queryset(self):
         student_id=self.kwargs['student_id']
         student=models.Student.objects.get(pk=student_id)
+        #Update Notifications
+        models.Notification.objects.filter(student=student,notif_for='student',notif_subject='assignment').update(notifiread_status=True)
         return models.StudentAssignment.objects.filter(student=student)
 
 class UpdateAssignment(generics.RetrieveUpdateDestroyAPIView):
     queryset=models.StudentAssignment.objects.all()
     serializer_class=StudentAssignmentSerializer
+
+
+class NotificationList(generics.ListCreateAPIView):
+    queryset=models.Notification.objects.all()
+    serializer_class=NotificationSerializer
+
+    def get_queryset(self):
+        student_id=self.kwargs['student_id']
+        student=models.Student.objects.get(pk=student_id)
+        return models.Notification.objects.filter(student=student,notif_for='student',notif_subject='assignment',notifiread_status=False)
+    

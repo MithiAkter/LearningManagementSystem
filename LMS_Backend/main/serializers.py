@@ -25,7 +25,7 @@ class TeacherDashboardSerializer(serializers.ModelSerializer):
 class StudentDashboardSerializer(serializers.ModelSerializer):
     class Meta:
         model=models.Student
-        fields = ['enrolled_courses']
+        fields = ['enrolled_courses','favorite_courses','complete_assignments','pending_assignments']
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -195,3 +195,16 @@ class StudentAssignmentSerializer(serializers.ModelSerializer):
         self.Meta.depth = 0
         if request and request.method == 'GET':
             self.Meta.depth=2
+
+class NotificationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=models.Notification
+        fields = ['teacher' , 'student', 'notif_subject', 'notif_for']
+        
+    def __init__(self, *args, **kwargs):
+        super(NotificationSerializer, self).__init__(*args, **kwargs)
+        request=self.context.get('request')
+        self.Meta.depth = 0
+        if request and request.method == 'GET':
+            self.Meta.depth=2
+   

@@ -119,7 +119,7 @@ function CourseDetail(){
                             title: 'You have successfully enrolled in this course',
                             icon: 'success',
                             toast:true,
-                            timer:10000,
+                            timer:4000,
                             position:'top-right',
                             timerProgressBar:true,
                             showConfirmButton:false
@@ -150,7 +150,7 @@ function CourseDetail(){
                             title: 'You have successfully added in your wishlist',
                             icon: 'success',
                             toast:true,
-                            timer:5000,
+                            timer:4000,
                             position:'top-right',
                             timerProgressBar:true,
                             showConfirmButton:false
@@ -184,7 +184,7 @@ function CourseDetail(){
                             title: 'This course has been removed from your wishlist',
                             icon: 'success',
                             toast:true,
-                            timer:5000,
+                            timer:4000,
                             position:'top-right',
                             timerProgressBar:true,
                             showConfirmButton:false
@@ -234,7 +234,7 @@ function CourseDetail(){
                         title: 'Rating Has Been Saved',
                         icon: 'success',
                         toast:true,
-                        timer:5000,
+                        timer:4000,
                         position:'top-right',
                         timerProgressBar:true,
                         showConfirmButton:false
@@ -319,10 +319,19 @@ function CourseDetail(){
 
 
                         {enrollStatus === 'success' && userLoginStatus === 'success' &&
-                            <p><span className="btn btn-success">You are already enrolled in this course</span></p>
+                            <div>
+                                <p className="fw-bold">Status: <span className="btn btn-success ms-2" 
+                                style={{ width: '290px', padding: '2px'}} >You are already enrolled in this course</span></p>
+                            </div>
                         }
-                        {userLoginStatus === 'success' && enrollStatus !== 'success'  &&
+                        {/* {userLoginStatus === 'success' && enrollStatus !== 'success'  &&
                             <p><button onClick={enrollCourse} type="button" className="btn btn-success" >Enroll In This Course</button></p>
+                        } */}
+                        {userLoginStatus === 'success' && enrollStatus !== 'success'  &&
+                            <div>
+                                 <p><Link to="/payment-contact" type="button" className='btn btn-sm btn-warning' style={{ width: '150px', padding: '8px'}} >Enroll In This Course</Link></p>
+                            </div>
+                           
                         }
                         {userLoginStatus === 'success' && favoriteStatus !== 'success' &&
                             <p><button onClick={markAsFavorite} title="Add in your favorite Course List" type="button" className="btn btn-outline-danger" ><i 
