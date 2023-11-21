@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
 from rest_framework import permissions
-from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer,TeacherDashboardSerializer,StudentDashboardSerializer,StudentFavoriteCourseSerializer,StudentAssignmentSerializer,NotificationSerializer
+from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer,TeacherDashboardSerializer,StudentDashboardSerializer,StudentFavoriteCourseSerializer,StudentAssignmentSerializer,NotificationSerializer,QuizSerializer
 from . import models
 
 # Create your views here.
@@ -327,4 +327,16 @@ class NotificationList(generics.ListCreateAPIView):
         student_id=self.kwargs['student_id']
         student=models.Student.objects.get(pk=student_id)
         return models.Notification.objects.filter(student=student,notif_for='student',notif_subject='assignment',notifiread_status=False)
-    
+
+class QuizList(generics.ListCreateAPIView):
+    queryset=models.Quiz.objects.all()
+    serializer_class=QuizSerializer 
+
+#Specific Teacher Quiz
+class TeacherQuizList(generics.ListCreateAPIView):
+    serializer_class=QuizSerializer
+
+    def get_queryset(self):
+        teacher_id=self.kwargs['teacher_id']
+        teacher=models.Teacher.objects.get(pk=teacher_id)
+        return models.Quiz.objects.filter(teacher=teacher)

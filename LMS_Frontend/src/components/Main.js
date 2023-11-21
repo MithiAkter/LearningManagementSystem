@@ -37,6 +37,9 @@ import AddAssignment from './Teacher/AddAssignment';
 import ShowAssignment from './Teacher/ShowAssignment';
 import TeacherProfileSetting from './Teacher/TeacherProfileSetting';
 
+//Quiz
+import AddQuiz from './Teacher/AddQuiz';
+import AllQuiz from './Teacher/AllQuiz';
 
 
 // List Pages
@@ -71,6 +74,7 @@ import Compiler from './Compiler/Compiler';
 
 
 import {Routes as Switch, Route} from 'react-router-dom';
+
 
 
 
@@ -115,6 +119,9 @@ function Main() {
             <Route path='/add-course' element={<AddCourse />} />
             <Route path='/edit-course/:course_id' element={<EditCourse />} />
             <Route path='/add-chapter/:course_id' element={<AddChapter />} />
+
+            <Route path='/add-quiz' element={<AddQuiz />} />
+            <Route path='/quiz' element={<AllQuiz />} />
             
             <Route path='/add-assignment/:student_id/:teacher_id' element={<AddAssignment />} />
             <Route path='/show-assignment/:student_id/:teacher_id' element={<ShowAssignment />} />
