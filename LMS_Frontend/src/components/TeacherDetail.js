@@ -28,11 +28,14 @@ function TeacherDetail(){
         <div className="container mt-3">
             <div className="row">
                 <div className="col-4">
-                <img src="/logo512.png" className="img-thumbnail" alt="Teacher Image"/>
+                <img style={{ height: '100%', width: '80%', objectFit: 'cover' }} src={teacherData.profile_img} className="img-thumbnail" alt="Teacher Image"/>
                 </div>
                 <div className="col-8">
-                     <h3>{teacherData.full_name}</h3>
-                     <p>{teacherData.detail}</p>   
+                     <h3 className="mt-3" style={{ color: 'rgb(76, 76, 150)' }} >{teacherData.full_name}</h3>
+                     <p>{teacherData.detail}</p>
+                     <p className="fw-bold">Email:&nbsp;{teacherData.email}</p>  
+                     <p className="fw-bold">Qualification:&nbsp;{teacherData.qualification}</p>  
+                     <p className="fw-bold">Contact:&nbsp;{teacherData.mobile_no}</p>  
                         <p className="fw-bold">Skills: &nbsp;
                             {skillList.map((skill, index) =>
                                 <>
@@ -40,10 +43,22 @@ function TeacherDetail(){
                                     {/* <Link to={`/category/${skill.trim()}`} className="badge badge-pill text-dark bg-warning">{skill.trim()}</Link>&nbsp;&nbsp; */}
                                 </>
                             )}</p>
-                        <p className="fw-bold">Recent Course : <Link to="/category/laravel">Laravel</Link></p>
-                        <p className="fw-bold">Rating:
+                        {/* <p className="fw-bold">Recent Course : <Link to="/category/laravel">Laravel</Link></p> */}
+                        {/* <p className="fw-bold">Rating:
                         4/5
+                        </p> */}
+                        <p className="fw-bold">Recent Course : &nbsp;
+                            {courseData.map((course,index)=> 
+                                    <>
+                                        <Link to={`/detail/`+course.id} className="badge badge-pill text-dark bg-success text-white">{course.title}</Link>&nbsp;&nbsp;
+                                        
+                                        {/* <Link to={`/category/${skill.trim()}`} className="badge badge-pill text-dark bg-warning">{skill.trim()}</Link>&nbsp;&nbsp; */}
+                                    </>
+                            )}
                         </p>
+                        {/* <p className="fw-bold">Rating:4/5</p> */}
+
+
                 </div>
             </div>
             {/* Course videos */}

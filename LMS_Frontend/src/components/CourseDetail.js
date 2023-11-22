@@ -392,14 +392,14 @@ function CourseDetail(){
                 </div>
             }
 
-            <h3 className="pb-1 mb-4 mt-5">Related Courses</h3>
+            <h3 className="pb-1 mb-4 mt-2">Related Courses</h3>
             <div className="row mb-4">
             {relatedcourseData.map((rcourse,index)=>
                 <div className="col-md-3">
                     <div className="card" style={{ width: '300px', height: '300px' }}>
-                    <Link target="__blank" to={`/detail/${rcourse.pk}`}><img src={`${siteUrl}media/${rcourse.fields.featured_img}`} className="card-img-top" alt={rcourse.fields.title}/></Link>
+                    <Link target="__blank" to={`/detail/${rcourse.pk}`}><img src={`${siteUrl}media/${rcourse.fields.featured_img}`} className="card-img-top" alt={rcourse.fields.title} style={{ height: '190px', width: '100%', objectFit: 'cover' }}/></Link>
                         <div className="card-body">
-                            <h5 className="card-title text-center mt-3"><Link target="__blank" to={`/detail/${rcourse.pk}`} style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }}
+                            <h5 className="card-title text-center mt-1"><Link target="__blank" to={`/detail/${rcourse.pk}`} style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }}
                                 onMouseOver={(event) => (event.target.style.color = 'rgb(76, 76, 150)')}
                                 onMouseOut={(event) => (event.target.style.color = 'rgb(21, 21, 100)')}
                                 >{rcourse.fields.title}</Link></h5>

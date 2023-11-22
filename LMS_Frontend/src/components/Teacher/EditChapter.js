@@ -37,7 +37,7 @@ function EditChapter(){
     //Submit Form Start
     const formSubmit=()=>{
         const _formData =new FormData();
-        _formData.append('course',chapterData.course);
+        _formData.append('course',chapterData.course.id);
         _formData.append('title',chapterData.title);
         _formData.append('description',chapterData.description);
         if(chapterData.video!==''){
@@ -45,7 +45,6 @@ function EditChapter(){
         }
         // _formData.append('video',chapterData.video,chapterData.video.name);
         _formData.append('remarks',chapterData.remarks);
-        console.log("Form Data:", _formData); 
         try{
             axios.put(baseUrl + '/chapter/' + chapter_id, _formData, {
                 headers: {
@@ -53,17 +52,19 @@ function EditChapter(){
                 }
             }) 
             .then((res)=>{
+                console.log("Response:", res);
                 if(res.status==200){
                         Swal.fire({
                             title: 'Data has been updated',
                             icon: 'success',
                             toast:true,
-                            timer:10000,
+                            timer:3000,
                             position:'top-right',
                             timerProgressBar:true,
                             showConfirmButton:false
                         });
                 }
+                //console.log(res.data);
              });
         }catch(error){
             console.log(error);

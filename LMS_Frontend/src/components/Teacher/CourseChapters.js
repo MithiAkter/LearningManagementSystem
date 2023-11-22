@@ -76,7 +76,7 @@ function AllChapters() {
                                 <h5 className="card-header">All Chapters - [{totalResult}] <Link className='btn btn-success btn-sm float-end' to={`/add-chapter/`+ course_id}>Add Chapter</Link> </h5>
                                     <div className="card-body">
                                         <table className='table table-bordered'>
-                                                <thead>
+                                                <thead style={{ textAlign: 'center' }}>
                                                     <tr>
                                                         <th>Title</th>
                                                         <th>Video</th>
@@ -84,7 +84,7 @@ function AllChapters() {
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody style={{ textAlign: 'center' }}>
                                                         {chapterData.map((chapter,index)=>
                                                             <tr> 
                                                                 <td> 
@@ -103,8 +103,8 @@ function AllChapters() {
                                                                 <td>{chapter.remarks}</td>
 
                                                                 <td>
-                                                                    <Link  to={`/edit-chapter/`+chapter.id} className='btn btn-success btn-sm text-white'><i class="bi bi-pencil-square"></i></Link>
-                                                                    <button onClick={()=>handleDeleteClick(chapter.id)} to={`delete-chapter`+chapter.id} className='btn btn-danger btn-sm ms-1'><i class="bi bi-trash"></i></button>
+                                                                    <Link  to={`/edit-chapter/`+chapter.id} className='btn btn-success btn-sm text-white mt-3'><i class="bi bi-pencil-square"></i></Link>
+                                                                    <button onClick={()=>handleDeleteClick(chapter.id)} to={`delete-chapter`+chapter.id} className='btn btn-danger btn-sm ms-1 mt-3 '><i class="bi bi-trash"></i></button>
                                                                     
                                                                 </td>
                                                             </tr>

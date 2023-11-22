@@ -50,7 +50,7 @@ function MyCourses() {
                                                 <tbody>
                                                         {courseData.map((course,index)=> 
                                                             <tr> 
-                                                                <td> 
+                                                                <td > 
                                                                     <Link to={`/all-chapters/`+course.id}>{course.title}</Link>
                                                                         <hr />
                                                                         {course.course_rating && 
@@ -62,14 +62,14 @@ function MyCourses() {
                                                                     
                                                                 </td>
                                                                     <td style={{ textAlign: 'center' }}>
-                                                                        <img src={course.featured_img} width='80' className='rounded' alt={course.title} />
+                                                                        <img src={course.featured_img} width='80' className='rounded mt-3' alt={course.title} />
                                                                     </td>
 
                                                                 <td style={{ textAlign: 'center'}}><Link to={`/enrolled-students/`+course.id}>{course.total_enrolled_students}</Link></td>
                                                                 <td style={{ textAlign: 'center' }}>
-                                                                    <Link className='btn btn-info btn-sm ' to={`/edit-course/`+course.id}>Edit</Link>
-                                                                    <Link className='btn btn-success btn-sm ms-2' to={`/add-chapter/`+course.id}>Add Chapter</Link>
-                                                                    <button className='btn btn-danger btn-sm ms-2'>Delete</button>
+                                                                    <Link className='btn btn-warning mt-3 text-white' to={`/edit-course/`+course.id}><i class="bi bi-pencil-square"></i></Link>
+                                                                    <Link className='btn btn-success mt-3 ms-2' to={`/add-chapter/`+course.id}><i class="bi bi-folder-plus"></i></Link>
+                                                                    {/* <button className='btn btn-danger btn-sm ms-2'>Delete</button> */}
                                                                 </td>
                                                             </tr>
                                                         )}

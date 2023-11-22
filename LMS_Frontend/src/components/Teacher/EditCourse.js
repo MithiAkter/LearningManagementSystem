@@ -23,7 +23,7 @@ function EditCourse(){
     //Fetch categories when page load
     useEffect(()=>{
         try{
-            axios.get(baseUrl+'/category')
+            axios.get(baseUrl+'/category/')
             .then((res)=>{
                 setCats(res.data);
                 // console.log(res.data);
@@ -69,9 +69,10 @@ function EditCourse(){
 
     //Submit Form Start
     const formSubmit=()=>{
+        const teacherId=localStorage.getItem('teacherId');
         const _formData = new FormData();
         _formData.append('category',courseData.category);
-        _formData.append('teacher',1);
+        _formData.append('teacher',teacherId);
         _formData.append('title',courseData.title);
         _formData.append('description',courseData.description);
         if(courseData.f_img!==''){
@@ -121,21 +122,22 @@ function EditCourse(){
                         <div className="card-body">
                                 <form>
                                     <div className="mb-3">
-                                        <label for="category" className="form-label">Category</label>
-                                       
-                                            <select name="category" value={courseData.category} onChange={handleChange} className="form-control" >
-                                                
-                                                {cats.map((category,index)=>{return <option key={index} value={category.id}>{category.title}</option>})} 
-                                            </select>
-                                            
+                                        <label for="category" className="form-label">Existing Category</label>
 
-                                            {/* <input
+                                            <input
                                             type="text"
                                             value={courseData.category.title}
                                             readOnly
                                             className="form-control"
-                                            /> */}
-                                                                                
+                                            />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label for="category" className="form-label">New Category</label>
+
+                                            <select name="category" value={courseData.category} onChange={handleChange} className="form-control" >
+                                                
+                                                {cats.map((category,index)=>{return <option key={index} value={category.id}>{category.title}</option>})} 
+                                            </select>                                         
                                     </div>
 
                                     <div className="mb-3">
