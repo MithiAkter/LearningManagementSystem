@@ -89,8 +89,9 @@ function AllChapters() {
                                                         {chapterData.map((chapter,index)=>
                                                             <tr> 
                                                                 <td> 
-                                                                    <Link style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }}>{chapter.title}</Link>
+                                                                    {/* <Link style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }}>{chapter.title}</Link> */}
                                                                     {/* <Link to={`delete-chapter`+chapter.id}>{chapter.title}</Link> */}
+                                                                    <Link style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }} to={`/edit-chapter/`+chapter.id}>{chapter.title}</Link>
                                                                 </td>
                                                                    
                                                                     <td>

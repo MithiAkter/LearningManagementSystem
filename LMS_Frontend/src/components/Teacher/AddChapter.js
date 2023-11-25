@@ -3,6 +3,8 @@ import TeacherSidebar from './TeacherSidebar';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useParams} from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 const baseUrl='http://localhost:8000/api';
 
 function AddChapter(){
@@ -37,23 +39,37 @@ function AddChapter(){
         _formData.append('video',chapterData.video,chapterData.video.name);
         _formData.append('remarks',chapterData.remarks);
         try{
-            axios.post(baseUrl+'/chapter/',_formData,{
+            axios.post(baseUrl+'/course-chapters/'+course_id,_formData,{
                 headers: {
                     'content-type': 'multipart/form-data'
                 }
             })
             .then((res)=>{
-                // console.log(res.data);
-                window.location.href='/add-chapter/1';
+                if(res.status==200||res.status==201){
+                    Swal.fire({
+                        title: 'Chapter has been added',
+                        icon: 'success',
+                        toast:true,
+                        timer:3000,
+                        position:'top-right',
+                        timerProgressBar:true,
+                        showConfirmButton:false
+                    });
+                }
+                //console.log(res.data);
+                // window.location.reload();
              });
         }catch(error){
             console.log(error);
         }
     };
+
     //title
     useEffect(()=>{
         document.title='Add Chapter';
     });
+
+    
     return(
        <div className="container mt-4">
             <div className="row">
