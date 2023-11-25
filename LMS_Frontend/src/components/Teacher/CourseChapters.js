@@ -26,8 +26,8 @@ function AllChapters() {
         }
 
     },[]);
+
     //Delete Data
-    // const Swal = require('sweetalert2')
     const handleDeleteClick=(chapter_id)=>{
         Swal.fire({
             title: 'Confirm!',
@@ -62,6 +62,7 @@ function AllChapters() {
             }
           });
     }
+    
     useEffect(()=>{
         document.title='All Chapters';
     })
@@ -88,7 +89,8 @@ function AllChapters() {
                                                         {chapterData.map((chapter,index)=>
                                                             <tr> 
                                                                 <td> 
-                                                                    <Link to={`delete-chapter`+chapter.id}>{chapter.title}</Link>
+                                                                    <Link style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }}>{chapter.title}</Link>
+                                                                    {/* <Link to={`delete-chapter`+chapter.id}>{chapter.title}</Link> */}
                                                                 </td>
                                                                    
                                                                     <td>
