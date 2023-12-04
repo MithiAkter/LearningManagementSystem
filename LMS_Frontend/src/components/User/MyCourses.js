@@ -48,17 +48,20 @@ function MyCourses() {
                                                     <tr style={{ textAlign: 'center', fontSize: '18px', }}>
                                                         <th>Name</th>
                                                         <th>Created By</th>
-                                                        {/* <th>Action</th> */}
+                                                        <th>quiz</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                 {courseData.map((row,index)=> 
                                                     <tr style={{ textAlign: 'center'}}>
-                                                        <td><Link  style={{fontSize: '17px', textDecoration: 'none', color: 'blue' }} to={`/detail/`+row.course.id}>{row.course.title}</Link></td>
-                                                        <td><Link  style={{fontSize: '17px', textDecoration: 'none', color: 'blue' }} to={`/teacher-detail/`+row.course.teacher.id}>{row.course.teacher.full_name}</Link></td>
-                                                        {/* <td>
-                                                            <button className='btn btn-primary' style={{ width: '200px',  backgroundColor: 'rgb(31, 174, 91)', color: 'white',border: 'none' }}>Remove Enrollment</button>
-                                                        </td> */}
+                                                        <td><Link  style={{fontSize: '17px', textDecoration: 'none', color: 'blue' }} 
+                                                        to={`/detail/`+row.course.id}>{row.course.title}</Link></td>
+                                                        <td><Link  style={{fontSize: '17px', textDecoration: 'none', color: 'blue' }} 
+                                                        to={`/teacher-detail/`+row.course.teacher.id}>{row.course.teacher.full_name}</Link></td>
+                                                        <td>
+                                                            <Link className='btn btn-warning btn-sm ms-2 text-white' 
+                                                            to={`/course-quiz/`+row.course.id}><i class="bi bi-file-earmark-plus-fill"></i></Link>
+                                                        </td>
                                                     </tr>
                                                 )}
                                                 </tbody>

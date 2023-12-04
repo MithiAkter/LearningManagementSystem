@@ -37,12 +37,17 @@ import AddAssignment from './Teacher/AddAssignment';
 import ShowAssignment from './Teacher/ShowAssignment';
 import TeacherProfileSetting from './Teacher/TeacherProfileSetting';
 
-//Quiz
+//Teacher DAshboard Quiz
 import AddQuiz from './Teacher/AddQuiz';
 import AllQuiz from './Teacher/AllQuiz';
 import EditQuiz from './Teacher/EditQuiz';
 import QuizQuestions from './Teacher/QuizQuestions';
 import AddQuizQuestion from './Teacher/AddQuizQuestion';
+import AssignQuiz from './Teacher/AssignQuiz';
+
+//Student Dashboard Quiz
+import CourseQuizList from './User/CourseQuizList';
+import TakeQuiz from './User/TakeQuiz';
 
 // List Pages
 import AllCourses from './AllCourses';
@@ -85,6 +90,9 @@ import {Routes as Switch, Route} from 'react-router-dom';
 
 
 
+
+
+
 function Main() {
   return (
     <div className="App">
@@ -102,7 +110,9 @@ function Main() {
             <Route path='/popular-teachers' element={<PopularTeachers />} />
             <Route path='/category/:category_slug' element={<CategoryCourses />} />
             <Route path='/teacher-skill-courses/:skill_name/:teacher_id' element={<TeacherSkillCourses />} />
+
             
+            {/* User */}
             <Route path='/user-login' element={<Login />} />
             <Route path='/user-register' element={<Register />} />
             <Route path='/user-dashboard' element={<Dashboard />} />
@@ -114,6 +124,7 @@ function Main() {
             <Route path='/change-password' element={<ChangePassword />} />
             <Route path='/user-logout' element={<StudentLogout />} />
 
+            {/* Teacher */}
             <Route path='/teacher-login' element={<TeacherLogin />} />
             <Route path='/teacher-logout' element={<TeacherLogout />} />
             <Route path='/teacher-register' element={<TeacherRegister />} />
@@ -123,23 +134,30 @@ function Main() {
             <Route path='/add-course' element={<AddCourse />} />
             <Route path='/edit-course/:course_id' element={<EditCourse />} />
             <Route path='/add-chapter/:course_id' element={<AddChapter />} />
+            <Route path='/teacher-users' element={<UserList />} />
+            <Route path='/tacher-profile-setting' element={<TeacherProfileSetting />} />
+            <Route path='/teacher-change-password' element={<TeacherChangePassword />} />
 
+            {/*Teacher Dashboard quiz */}
             <Route path='/add-quiz' element={<AddQuiz />} />
             <Route path='/quiz' element={<AllQuiz />} />
             <Route path='/edit-quiz/:quiz_id' element={<EditQuiz />} />
             <Route path='/all-questions/:quiz_id' element={<QuizQuestions />} />
             <Route path='/add-quiz-questions/:quiz_id' element={<AddQuizQuestion />} />
-            
+            <Route path='/assign-quiz/:course_id' element={<AssignQuiz />} />
+
+            {/*Student Dashboard quiz */}
+            <Route path='/course-quiz/:course_id' element={<CourseQuizList />} />
+            <Route path='/take-quiz/:quiz_id' element={<TakeQuiz />} />
+
+            {/* assignment */}
             <Route path='/add-assignment/:student_id/:teacher_id' element={<AddAssignment />} />
             <Route path='/show-assignment/:student_id/:teacher_id' element={<ShowAssignment />} />
-            <Route path='/teacher-users' element={<UserList />} />
-            <Route path='/tacher-profile-setting' element={<TeacherProfileSetting />} />
-            <Route path='/teacher-change-password' element={<TeacherChangePassword />} />
-
-
             
+            {/* payment */}
             <Route path='/payment-contact' element={<Payment />} />
 
+            {/* landing page & tutorial */}
             <Route path='/landing-page' element={<LandingPage />} />
             <Route path='/java-home' element={<Java_Home />} />
             <Route path='/cpp-home' element={<CPP_Home />} />
@@ -152,6 +170,8 @@ function Main() {
             <Route path='/learn-more' element={<LearnMore />} />
             <Route path='/blog-post' element={<BlogHome />} />
             <Route path='/compiler' element={<Compiler />} />
+
+
         </Switch>
       <Footer/>
     </div>
