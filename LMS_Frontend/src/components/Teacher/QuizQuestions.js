@@ -13,7 +13,7 @@ function QuizQuestions() {
     const [totalResult,settotalResult]=useState([0]);
     const{quiz_id}=useParams();
 
-    //Fetch courses when page load
+    //Fetch question when page load
     useEffect(()=>{
         try{
             axios.get(baseUrl+'/quiz-questions/'+quiz_id)
@@ -88,7 +88,8 @@ function QuizQuestions() {
                                                         {questionData.map((row,index)=>
                                                             <tr> 
                                                                 <td> 
-                                                                    <Link className='mt-1' style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }} to={`/edit-question/`+row.id}>{row.questions}</Link>
+                                                                    <Link className='mt-1' style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }} 
+                                                                    to={`/edit-question/`+row.id}>{row.questions}</Link>
                                                                 </td>
                                                                 <td>
                                                                     <Link  to={`/edit-question/`+row.id} className='btn btn-success btn-sm text-white mt-1'><i class="bi bi-pencil-square"></i></Link>

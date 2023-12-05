@@ -1,12 +1,30 @@
 import React from 'react';
 import './Header.css';
+import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 function Header() {
+    const [searchString,setsearchString]=useState({
+        'search':''
+    });
     const teacherLoginStatus=localStorage.getItem('teacherLoginStatus')
     const studentLoginStatus=localStorage.getItem('studentLoginStatus')
+
+    //Change Input Value
+    const handleChange=(event)=>{
+        setsearchString({
+            ...searchString,
+            [event.target.name]:event.target.value
+        });
+    }
+    const searchCourse=()=>{
+        if (searchString.search!=''){
+            window.location.href='/search/'+searchString.search
+        }
+        
+    }
     return (
         <nav className="navbar navbar-expand-lg navbar-dark" style={{fontSize: '20px',backgroundColor: '#1d3158' }}>
-                <div className="container">
+                <div className="container-fluid">{/* for the whole page navbar-container-fluid */}
                     <Link className="navbar-brand" to="/landing-page" style={{color:'#999' }}>NextStep : Connects Programmers Globally</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" 
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,10 +35,10 @@ function Header() {
                             <Link className="nav-link" aria-current="page" to="/">Home</Link>
 
                             <li className="nav-item dropdown">
-                                <a style= {{fontSize: '20px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" 
+                                <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown3" role="button" 
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                     Tutorial
-                                </a>
+                                </Link>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
 
                                     <li><Link className="dropdown-item" to="/html-home">Html</Link></li>
@@ -30,26 +48,16 @@ function Header() {
                                     <li><Link className="dropdown-item" to="/python-home">Python</Link></li>
                                     <li><Link className="dropdown-item" to="/c-home">C</Link></li>
                                     <li><Link className="dropdown-item" to="/cpp-home">C++</Link></li>
-                                    <li><Link className="dropdown-item" to="/java-home">Java</Link></li>
-                                    
-                                   
-                                    
+                                    <li><Link className="dropdown-item" to="/java-home">Java</Link></li> 
                                 </ul>
                             </li>
                            
-                            
-
-
-
-
-
-                            {/* <Link className="nav-link" to="/compiler">Compiler</Link> */}
                             <Link className="nav-link" to="/all-courses">Courses</Link>
                             <li className="nav-item dropdown">
-                                <a style={{fontSize: '20px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" 
+                                <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown2" role="button" 
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                     Teacher
-                                </a>
+                                </Link>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     {teacherLoginStatus!='true' && 
                                         <>
@@ -65,11 +73,12 @@ function Header() {
                                     }
                                 </ul>
                             </li>
+
                             <li className="nav-item dropdown">
-                                <a style={{fontSize: '20px'}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" 
+                                <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown3" role="button" 
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                     User
-                                </a>
+                                </Link>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     {studentLoginStatus!='true' && 
                                         <>
@@ -88,8 +97,13 @@ function Header() {
                             
                             <Link className="nav-link" to="/about-us">About Us</Link>
                             <Link className="nav-link" to="/blog-post">Blog</Link>
-                            
-                            
+
+                            {/* searchbar */}
+                            <form className="customSearchForm d-flex">
+                                <input name='search' onChange={handleChange} className="form-control me-2" type="search" placeholder="Search by Course Title" aria-label="Search"/>
+                                <button onClick={searchCourse} className="btn btn-srch" type="button">Search</button>
+                            </form>
+ 
                         </div>
                     </div>
                 </div>

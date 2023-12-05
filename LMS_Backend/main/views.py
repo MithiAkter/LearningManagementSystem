@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
 from rest_framework import permissions
-from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer,TeacherDashboardSerializer,StudentDashboardSerializer,StudentFavoriteCourseSerializer,StudentAssignmentSerializer,NotificationSerializer,QuizSerializer,QuestionSerializer,CourseQuizSerializer
+from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer,TeacherDashboardSerializer,StudentDashboardSerializer,StudentFavoriteCourseSerializer,StudentAssignmentSerializer,NotificationSerializer,QuizSerializer,QuestionSerializer,CourseQuizSerializer,AttemptQuizSerializer
 from . import models
 
 # Create your views here.
@@ -68,6 +68,12 @@ class CourseList(generics.ListCreateAPIView):
             teacher=self.request.GET['teacher']
             teacher=models.Teacher.objects.filter(id=teacher).first()
             qs=models.Course.objects.filter(techs__icontains=skill_name,teacher=teacher)
+
+        if 'searchstring' in self.kwargs:
+            search=self.kwargs['searchstring']
+            if search:
+                qs=models.Course.objects.filter(Q(title__icontains=search)|Q(techs__icontains=search))
+           
 
         elif 'studentId' in self.kwargs:
             student_id=self.kwargs['studentId'] #kwargs-> key word arguments
@@ -351,11 +357,17 @@ class QuizDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 class QuizQuestionList(generics.ListCreateAPIView):
     serializer_class=QuestionSerializer 
-
+    
     def get_queryset(self):
         quiz_id=self.kwargs['quiz_id']
         quiz=models.Quiz.objects.get(pk=quiz_id)
-        return models.QuizQuestions.objects.filter(quiz=quiz)
+        if 'limit' in self.kwargs:
+            return models.QuizQuestions.objects.filter(quiz=quiz).order_by('id')[:1]
+        elif 'question_id' in self.kwargs:
+            current_question=self.kwargs['question_id']
+            return models.QuizQuestions.objects.filter(quiz=quiz,id__gt=current_question).order_by('id')[:1]
+        else:
+            return models.QuizQuestions.objects.filter(quiz=quiz)
 
 # Assign Quiz
 class CourseQuizList(generics.ListCreateAPIView):
@@ -377,3 +389,15 @@ def fetch_quiz_assign_status(request,quiz_id,course_id):
     else:
         return JsonResponse({'bool':False})
 
+class AttemptQuizList(generics.ListCreateAPIView):
+    queryset=models.AttemptQuiz.objects.all()
+    serializer_class=AttemptQuizSerializer
+
+def fetch_quiz_attempt_status(request,quiz_id,student_id):
+    quiz=models.Quiz.objects.filter(id=quiz_id).first()
+    student=models.Student.objects.filter(id=student_id).first()
+    attemptStatus=models.AttemptQuiz.objects.filter(student=student,question__quiz=quiz).count()
+    if attemptStatus > 0:
+        return JsonResponse({'bool':True})
+    else:
+        return JsonResponse({'bool':False})

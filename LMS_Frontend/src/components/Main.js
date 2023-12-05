@@ -79,15 +79,10 @@ import LearnMore from './LearnMore/LearnMore';
 import BlogHome from './blogLayout/BlogHome';
 import Compiler from './Compiler/Compiler';
 
+//Search
+import Search from './Search';
 
 import {Routes as Switch, Route} from 'react-router-dom';
-
-
-
-
-
-
-
 
 
 
@@ -101,6 +96,7 @@ function Main() {
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/detail/:course_id' element={<CourseDetail />} />
+            <Route path='/search/:searchstring' element={<Search />} />
             <Route path='/teacher-detail/:teacher_id' element={<TeacherDetail />} />
             <Route path='/all-courses' element={<AllCourses />} />
             <Route path='/all-chapters/:course_id' element={<AllChapters />} />

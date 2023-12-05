@@ -8,14 +8,26 @@
   }
   
   .navbar-brand {
-    font-size: 25px; /* Change the font size for the brand/logo */
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-size: 21px; 
  
   }
   
   .navbar-nav .nav-link {
-    color: white; /* Change the text color for links */
-    padding: 25px 20px; /* Adjust the padding as needed */
+    color: white; 
+    padding: 25px;
     font-size: 20px;
   }
-
+  .customSearchForm{
+    padding: 25px 20px 0px 20px;
+  }
+.btn-srch{
+  color: #fff;
+  border-color: #fff;
+}
+.btn-srch:hover{
+  color: #afafb6;
+  border-color:  #afafb6;
+}
  

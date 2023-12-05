@@ -22,7 +22,7 @@ function Home(){
 
 
     useEffect(()=>{
-        document.title='PLMS | Home';
+        document.title='Home';
     });
     return (
         //container-fluid for the whole pages

@@ -2,6 +2,7 @@ import {Link} from 'react-router-dom';
 import Sidebar from './Sidebar';
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from 'react';
+import CheckQuizStatusForStudent from './CheckQuizStatusForStudent';
 import axios from 'axios';
 const baseUrl='http://localhost:8000/api';
 
@@ -9,6 +10,7 @@ const baseUrl='http://localhost:8000/api';
 
 function CourseQuizList() {
     const [quizData,setquizData]=useState([]);
+    const studentId=localStorage.getItem('studentId');
     const{course_id}=useParams();
     
     //Fetch all courses when page load
@@ -54,11 +56,8 @@ function CourseQuizList() {
                                                         <td>
                                                             {row.quiz.title}
                                                         </td>
-                                                                                                                
-                                                        <td>
-                                                            <Link className='btn btn-warning btn-sm ms-2 text-white' 
-                                                            to={`/take-quiz/`+row.quiz.id}>Take Quiz</Link>
-                                                        </td>
+                                                          <CheckQuizStatusForStudent quiz={row.quiz.id} student={studentId}/>                                                      
+                                                        
                                                     </tr>
                                                 )}
                                                 </tbody>

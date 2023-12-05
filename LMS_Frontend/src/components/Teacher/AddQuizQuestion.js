@@ -56,7 +56,7 @@ function AddQuizQuestion(){
                     });
                 }
                 //console.log(res.data);
-                // window.location.reload();
+                window.location.reload();
              });
         }catch(error){
             console.log(error);
@@ -82,7 +82,7 @@ function AddQuizQuestion(){
                                 <form>
                                     <div className="mb-3">
                                         <label for="title" className="form-label">Title</label>
-                                        <input type="text" onChange={handleChange} name='title' id='title' className="form-control"/>
+                                        <input type="text" onChange={handleChange} name='questions' id='questions' className="form-control"/>
                                     </div>
 
                                     <div className="mb-3">
