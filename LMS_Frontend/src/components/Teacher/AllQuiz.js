@@ -85,7 +85,8 @@ function AllQuiz() {
                                                         {quizData.map((row,index)=> 
                                                             <tr> 
                                                                 <td style={{ textAlign: 'center'}}> 
-                                                                    <Link to={`/all-questions/`+row.id}>{row.title}</Link>
+                                                                    {/* <Link to={`/all-questions/`+row.id}>{row.title}</Link> */}
+                                                                    {row.title}
                                                                 </td>
                                                                 <td style={{ textAlign: 'center'}}><Link to="#">123</Link></td>
                                                                 <td style={{ textAlign: 'center' }}>

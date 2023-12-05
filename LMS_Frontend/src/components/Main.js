@@ -37,6 +37,10 @@ import AddAssignment from './Teacher/AddAssignment';
 import ShowAssignment from './Teacher/ShowAssignment';
 import TeacherProfileSetting from './Teacher/TeacherProfileSetting';
 
+//Study Materials
+import StudyMaterials from './Teacher/StudyMaterials';
+import AddStudyMaterial from './Teacher/AddStudyMaterial';
+
 //Teacher DAshboard Quiz
 import AddQuiz from './Teacher/AddQuiz';
 import AllQuiz from './Teacher/AllQuiz';
@@ -88,6 +92,8 @@ import {Routes as Switch, Route} from 'react-router-dom';
 
 
 
+
+
 function Main() {
   return (
     <div className="App">
@@ -133,6 +139,8 @@ function Main() {
             <Route path='/teacher-users' element={<UserList />} />
             <Route path='/tacher-profile-setting' element={<TeacherProfileSetting />} />
             <Route path='/teacher-change-password' element={<TeacherChangePassword />} />
+            <Route path='/study-materials/:course_id' element={<StudyMaterials />} />
+            <Route path='/add-study/:course_id' element={<AddStudyMaterial />} />
 
             {/*Teacher Dashboard quiz */}
             <Route path='/add-quiz' element={<AddQuiz />} />
@@ -166,6 +174,7 @@ function Main() {
             <Route path='/learn-more' element={<LearnMore />} />
             <Route path='/blog-post' element={<BlogHome />} />
             <Route path='/compiler' element={<Compiler />} />
+            
 
 
         </Switch>

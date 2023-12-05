@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
 from rest_framework import permissions
-from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer,TeacherDashboardSerializer,StudentDashboardSerializer,StudentFavoriteCourseSerializer,StudentAssignmentSerializer,NotificationSerializer,QuizSerializer,QuestionSerializer,CourseQuizSerializer,AttemptQuizSerializer
+from .serializers import StudentCourseEnrollSerializerCreate, TeacherSerializer, CategorySerializer, CourseSerializer, ChapterSerializer,StudentSerializer,StudentCourseEnrollSerializer,CourseRatingSerializer,TeacherDashboardSerializer,StudentDashboardSerializer,StudentFavoriteCourseSerializer,StudentAssignmentSerializer,NotificationSerializer,QuizSerializer,QuestionSerializer,CourseQuizSerializer,AttemptQuizSerializer,StudyMaterialSerializer
 from . import models
 
 # Create your views here.
@@ -401,3 +401,16 @@ def fetch_quiz_attempt_status(request,quiz_id,student_id):
         return JsonResponse({'bool':True})
     else:
         return JsonResponse({'bool':False})
+
+#For Study Material
+class StudyMaterialList(generics.ListCreateAPIView):
+    serializer_class=StudyMaterialSerializer 
+
+    def get_queryset(self):
+        course_id=self.kwargs['course_id']
+        course=models.Course.objects.get(pk=course_id)
+        return models.StudyMaterial.objects.filter(course=course)
+
+class StudyMaterialDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset=models.StudyMaterial.objects.all()
+    serializer_class=StudyMaterialSerializer

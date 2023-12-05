@@ -67,7 +67,8 @@ function MyCourses() {
 
                                                                 <td style={{ textAlign: 'center'}}><Link to={`/enrolled-students/`+course.id}>{course.total_enrolled_students}</Link></td>
                                                                 <td style={{ textAlign: 'center' }}>
-                                                                    <Link className='btn btn-secondary mt-3 text-white' to={`/edit-course/`+course.id}><i class="bi bi-pencil-square"></i></Link>
+                                                                    <Link className='btn btn-light mt-3 border' to={`/study-materials/`+course.id}><i class="bi bi-plus-circle-fill"></i></Link>
+                                                                    <Link className='btn btn-secondary mt-3 ms-2 text-white' to={`/edit-course/`+course.id}><i class="bi bi-pencil-square"></i></Link>
                                                                     <Link className='btn btn-success mt-3 ms-2' to={`/add-chapter/`+course.id}><i class="bi bi-folder-plus"></i></Link>
                                                                     <Link className='btn btn-warning mt-3 ms-2 text-white' to={`/assign-quiz/`+course.id}><i class="bi bi-file-earmark-plus-fill"></i></Link>
 
