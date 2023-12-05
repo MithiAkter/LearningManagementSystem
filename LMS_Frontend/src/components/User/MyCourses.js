@@ -48,7 +48,8 @@ function MyCourses() {
                                                     <tr style={{ textAlign: 'center', fontSize: '18px', }}>
                                                         <th>Name</th>
                                                         <th>Created By</th>
-                                                        <th>quiz</th>
+                                                        <th>All Quiz List</th>
+                                                        <th>Study Material</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -61,6 +62,10 @@ function MyCourses() {
                                                         <td>
                                                             <Link className='btn btn-warning btn-sm ms-2 text-white' 
                                                             to={`/course-quiz/`+row.course.id}><i class="bi bi-file-earmark-plus-fill"></i></Link>
+                                                        </td>
+                                                        <td>
+                                                            <Link className='btn btn-sm btn-dark text-white' to={`/user/study-materials/`+row.course.id}>
+                                                            <i class="bi bi-book-half"></i></Link>
                                                         </td>
                                                     </tr>
                                                 )}

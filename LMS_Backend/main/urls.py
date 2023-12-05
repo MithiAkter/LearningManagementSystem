@@ -77,7 +77,10 @@ urlpatterns = [
     path('fetch-quiz-attempt-status/<int:quiz_id>/<int:student_id>', views.fetch_quiz_attempt_status),
 
 
-    #Study Materials
+    #Teacher Study Materials
     path('study-materials/<int:course_id>', views.StudyMaterialList.as_view()),
     path('study-material/<int:pk>', views.StudyMaterialDetailView.as_view()),
+
+    #User Study Materials
+    path('user/study-materials/<int:course_id>', views.StudyMaterialList.as_view()),
 ]

@@ -18,6 +18,9 @@ import ChangePassword from './User/ChangePassword';
 import StudentLogout from './User/StudentLogout';
 import Payment from './User/Payment';
 
+//User Study Materials
+import UserStudyMaterials from './User/UserStudyMaterials';
+
 // Teachers
 import TeacherLogin from './Teacher/TeacherLogin';
 import TeacherLogout from './Teacher/TeacherLogout';
@@ -125,6 +128,8 @@ function Main() {
             <Route path='/profile-setting' element={<ProfileSetting />} />
             <Route path='/change-password' element={<ChangePassword />} />
             <Route path='/user-logout' element={<StudentLogout />} />
+            {/*User study materials */}
+            <Route path='/user/study-materials/:course_id' element={<UserStudyMaterials />} />
 
             {/* Teacher */}
             <Route path='/teacher-login' element={<TeacherLogin />} />
@@ -139,6 +144,7 @@ function Main() {
             <Route path='/teacher-users' element={<UserList />} />
             <Route path='/tacher-profile-setting' element={<TeacherProfileSetting />} />
             <Route path='/teacher-change-password' element={<TeacherChangePassword />} />
+            {/* study materials */}
             <Route path='/study-materials/:course_id' element={<StudyMaterials />} />
             <Route path='/add-study/:course_id' element={<AddStudyMaterial />} />
 

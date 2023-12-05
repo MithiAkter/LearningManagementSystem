@@ -62,7 +62,11 @@ function StudyMaterials() {
             }
           });
     }
-    
+    //for downloading the file
+    // const downloadFile = (file_url)=>{
+    //     window.location.href=file_url;
+    // }
+
     useEffect(()=>{
         document.title='All Study Materials';
     })
@@ -91,7 +95,9 @@ function StudyMaterials() {
                                                                 <td style={{ textDecoration: 'none', color: 'green' }}>{row.title}</td>
                                                                    
                                                                     <td>
-                                                                        <Link to={row.upload}>File</Link>
+                                                                        <Link className='btn btn-outline-primary' to={row.upload}>See Uploaded File</Link>
+                                                                        {/* <Link to={row.upload}>Uploaded File</Link> */}
+                                                                        {/* <button className='btn btn-outline-primary' onClick={()=>downloadFile(row.upload)}>Download File</button> */}
                                                                     </td>
 
                                                                 <td>{row.remarks}</td>
