@@ -256,7 +256,7 @@ function CourseDetail(){
                 </div>
                 <div className="col-8">
                      <h3>{courseData.title}</h3>
-                     <p>{courseData.description}</p>   
+                     <p style={{ textAlign: 'justify', fontStyle: 'italic' }} >{courseData.description}</p>   
                         <p className="fw-bold">Course By : <Link to={`/teacher-detail/${teacherData.id}`} >{teacherData.full_name}</Link></p>
                         <p className="fw-bold">Techs:&nbsp;
                             {techList.map((tech, index) =>

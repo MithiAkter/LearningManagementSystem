@@ -9,11 +9,11 @@ function JsSidebar(){
         <div className="sidenav list-group list-group-flush">
                 <div className="custom-scrollbar">
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-dark text-center' style={{ fontWeight: 'bold' }}>Learn JavaScript</Link>
-                <a href="#js-basics" className='list-group-item list-group-item-action list-group-item-success mt-1'>JS Introduction</a>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>JS Editors</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>JS Basics</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>JS Elements</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>JS Elements</Link>
+                <a href="#js-introduction" className='list-group-item list-group-item-action list-group-item-success mt-1'>JS Introduction</a>
+                <a href="#js-example" className='list-group-item list-group-item-action list-group-item-success mt-1'>JS Example</a>
+                <a href="#js-output" className='list-group-item list-group-item-action list-group-item-success mt-1'>JavaScript Output</a>
+                <a href="#js-comment" className='list-group-item list-group-item-action list-group-item-success mt-1'>JavaScript Comments</a>
+                <a href="#js-test" className='list-group-item list-group-item-action list-group-item-success mt-1'>JS Elements(test)</a>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>JS Attributes</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>JS Headings</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>JS Paragraphs</Link>

@@ -51,6 +51,7 @@ import EditQuiz from './Teacher/EditQuiz';
 import QuizQuestions from './Teacher/QuizQuestions';
 import AddQuizQuestion from './Teacher/AddQuizQuestion';
 import AssignQuiz from './Teacher/AssignQuiz';
+import AttemptedStudents from './Teacher/AttemptedStudents';
 
 //Student Dashboard Quiz
 import CourseQuizList from './User/CourseQuizList';
@@ -97,12 +98,13 @@ import {Routes as Switch, Route} from 'react-router-dom';
 
 
 
+
 function Main() {
   return (
     <div className="App">
       <Header/>
         <Switch>
-            <Route path='/' element={<Home />} />
+            <Route path='/home-page' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/detail/:course_id' element={<CourseDetail />} />
             <Route path='/search/:searchstring' element={<Search />} />
@@ -155,6 +157,7 @@ function Main() {
             <Route path='/all-questions/:quiz_id' element={<QuizQuestions />} />
             <Route path='/add-quiz-questions/:quiz_id' element={<AddQuizQuestion />} />
             <Route path='/assign-quiz/:course_id' element={<AssignQuiz />} />
+            <Route path='/attempted-students/:quiz_id' element={<AttemptedStudents />} />
 
             {/*Student Dashboard quiz */}
             <Route path='/course-quiz/:course_id' element={<CourseQuizList />} />
@@ -168,6 +171,7 @@ function Main() {
             <Route path='/payment-contact' element={<Payment />} />
 
             {/* landing page & tutorial */}
+            <Route path='/' element={<LandingPage />} />
             <Route path='/landing-page' element={<LandingPage />} />
             <Route path='/java-home' element={<Java_Home />} />
             <Route path='/cpp-home' element={<CPP_Home />} />

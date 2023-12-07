@@ -25,14 +25,18 @@ function AboutUs(){
 
             <div className="text-container">
                 <h1>About us</h1>
-                <p>Our mission is simple: To provide a dynamic platform for learning 
+                <p style={{ textAlign: 'justify', fontStyle: 'italic', color:'rgb(35,35,85)'}}>Whether you want to learn or to share what you know, you’ve come to the right place.
+                    As a global destination for online learning, 
+                    we empower organizations and individuals with flexible and effective skill development. 
+                </p>
+                <p style={{ textAlign: 'justify', fontStyle: 'italic'}}>Our mission is simple: To provide a dynamic platform for learning 
                     and mastering programming languages and technologies.<br />We believe that 
                     coding is more than lines of text; it's a gateway to creativity, 
                     problem-solving, 
                     and innovation. Our goal is to foster a community of lifelong 
                     learners who are not just fluent in code but can use it to bring 
                     their ideas to life.
-                     </p>
+                </p>
                 <Link to="/learn-more">Learn More</Link>
             </div>
             

@@ -32,7 +32,7 @@ function Header() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav ms-auto">
-                            <Link className="nav-link" aria-current="page" to="/">Home</Link>
+                            <Link className="nav-link" aria-current="page" to="/home-page">Home</Link>
 
                             <li className="nav-item dropdown">
                                 <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown3" role="button" 

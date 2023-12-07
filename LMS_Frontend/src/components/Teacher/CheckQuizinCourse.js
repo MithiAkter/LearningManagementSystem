@@ -52,11 +52,19 @@ function CheckQuizinCourse(props) {
 
     return (
         <td style={{ textAlign: 'center'}}> 
-            {quizData.bool==false &&
-             <button onClick={()=>assignQuiz(props.quiz)} className='btn btn-success btn-sm ms-2'>Assign Quiz</button>
-            }
+            
             {quizData.bool==true &&
-             <span className='text-success'>Assigned</span>
+            <>
+                <span className='btn btn-sm btn-success text-white'>
+                    Assigned
+                </span>
+
+                <Link className='btn btn-sm btn-secondary ms-3' to={`/attempted-students/`+props.quiz}>Attempted Students</Link>
+            </>
+             
+            }
+            {quizData.bool==false &&
+             <button onClick={()=>assignQuiz(props.quiz)} className='btn btn-warning btn-sm ms-2'>Assign Quiz</button>
             }
         </td>
         )

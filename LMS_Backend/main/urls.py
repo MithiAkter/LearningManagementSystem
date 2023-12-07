@@ -83,4 +83,6 @@ urlpatterns = [
 
     #User Study Materials
     path('user/study-materials/<int:course_id>', views.StudyMaterialList.as_view()),
+    #attempted Quiz page
+    path('attempted-quiz/<int:quiz_id>', views.AttemptQuizList.as_view()),
 ]

@@ -28,7 +28,7 @@ section{
 }
 
 #js-content-title2 h2{
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #BCD0C7; 
     font-size: 20px;
     color: hsl(101, 85%, 30%); /* Green text */

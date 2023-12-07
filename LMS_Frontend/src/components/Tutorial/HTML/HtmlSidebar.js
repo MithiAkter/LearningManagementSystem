@@ -10,6 +10,7 @@ function HtmlSidebar(){
                 <div className="custom-scrollbar">
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-dark text-center' style={{ fontWeight: 'bold' }}>Learn HTML</Link>
                 <a href="#html-basics" className='list-group-item list-group-item-action list-group-item-success mt-1'>HTML Introduction</a>
+                <a href="#html-output" className='list-group-item list-group-item-action list-group-item-success mt-1'>HTML Output(test)</a>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>HTML Editors</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>HTML Basics</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>HTML Elements</Link>

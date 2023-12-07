@@ -1,46 +1,33 @@
 import {Link} from 'react-router-dom';
-import TeacherSidebar from './TeacherSidebar';
-import CheckQuizinCourse from './CheckQuizinCourse';
-import {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
+import TeacherSidebar from './TeacherSidebar';
+import {useEffect, useState} from 'react';
 import axios from 'axios';
-// import Swal from 'sweetalert2';
-
-
 const baseUrl='http://localhost:8000/api';
 
-function AssignQuiz() {
-    const [quizData,setquizData]=useState([]);
-    const [courseData,setcourseData]=useState([]);
-    const teacherId=localStorage.getItem('teacherId');
-    const{course_id}=useParams();
-    
 
-    //Fetch courses when page load
+function AttemptedStudents() {
+    const [studentData,setstudentData]=useState([]);
+    const{quiz_id}=useParams();
+
+
+    
+    //Fetch students when page load
     useEffect(()=>{
         try{
-            axios.get(baseUrl+'/teacher-quiz/'+teacherId)
+            axios.get(baseUrl+'/attempted-quiz/'+quiz_id)
             .then((res)=>{
-                setquizData(res.data);
+                setstudentData(res.data)
              });
         }catch(error){
             console.log(error);
         }
-        //fetch courses
-        try{
-            axios.get(baseUrl+'/course/'+course_id)
-            .then((res)=>{
-                // console.log(res.data);
-                setcourseData(res.data);
-                });
-            }catch(error){
-            console.log(error);
-        }
+
     },[]);
 
     //page title
     useEffect(()=>{
-        document.title='Assign Quiz';
+        document.title='User-list';
     })
 
 
@@ -52,25 +39,29 @@ function AssignQuiz() {
                     </aside>
                     <section className='col-md-9'>
                             <div className="card">
-                            <h5 className="card-header">Assign Quiz to <span className='text-success'>[{courseData.title}]</span> </h5>
+                            <h5 className="card-header">All Students List</h5>
                                     <div className="card-body">
                                             <table className='table table-bordered'>
                                                 <thead>
-                                                    <tr style={{ textAlign: 'center' }}>
+                                                    <tr style={{ textAlign: 'center'}}>
                                                         <th>Name</th>
-                                                        <th>Action</th>
+                                                        <th>Email</th>
+                                                        <th>Username</th>
+                                                        <th>Result</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                        {quizData.map((row,index)=> 
+                                                        {studentData.map((row,index)=> 
                                                             <tr> 
                                                                 <td style={{ textAlign: 'center'}}> 
-                                                                    <Link to={`/all-questions/`+row.id}>{row.title}</Link>
+                                                                    {row.student.full_name}
                                                                 </td>
-                                                                <CheckQuizinCourse quiz={row.id} course={course_id}/>
-                                                                
+                                                                <td style={{ textAlign: 'center'}}>{row.student.email}</td>
+                                                                <td style={{ textAlign: 'center'}}>{row.student.username}</td>
+                                                                <td style={{ textAlign: 'center'}}>
+                                                                    <Link to="#">Quiz Result</Link>
+                                                                </td>
                                                             </tr>
-                                                            
                                                         )}
                                                 </tbody>
                                             </table>
@@ -82,5 +73,5 @@ function AssignQuiz() {
         )
     }
     
-export default AssignQuiz;
+export default AttemptedStudents;
 

@@ -11,10 +11,10 @@ function CssSidebar(){
         <div className="sidenav list-group list-group-flush">
                 <div className="custom-scrollbar">
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-dark text-center' style={{ fontWeight: 'bold' }}>Learn CSS</Link>
-                <a href="#css-basics" className='list-group-item list-group-item-action list-group-item-success mt-1'>CSS</a>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>CSS Syntax</Link>
+                <a href="#css-introduction" className='list-group-item list-group-item-action list-group-item-success mt-1'>CSS Introduction</a>
+                <a href="#css-example" className='list-group-item list-group-item-action list-group-item-success mt-1'>CSS Example</a>
+                <a href="#test-div" className='list-group-item list-group-item-action list-group-item-success mt-1'>CSS Syntax(test)</a>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>CSS Selectors</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>CSS Editors</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>How To Add CSS</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>CSS Comments</Link>
 
