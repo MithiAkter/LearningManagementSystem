@@ -11,12 +11,12 @@ function PythonSidebar(){
         <div className="sidenav list-group list-group-flush">
                 <div className="custom-scrollbar">
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-dark text-center' style={{ fontWeight: 'bold' }}>Learn Python</Link>
-                <a href="#python-basics" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python</a>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Syntax</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Output (Print Text)</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Comments</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Variables</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Data Types</Link>
+                <a href="#python-basics" className='list-group-item list-group-item-action list-group-item-success mt-1'>What is Python?</a>
+                <a href="#python-definition" className='list-group-item list-group-item-action list-group-item-success mt-1'>What can Python do?</a>
+                <a href="#python-syntax" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Syntax</a>
+                <a href="#python-variables" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Variables</a>
+                <a href="#python-comments" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Comments</a>
+                <a href="#test" className='list-group-item list-group-item-action list-group-item-success mt-1'>Good to know(Test)</a>
 
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Constants</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Python Operators</Link>

@@ -27,11 +27,12 @@ section{
 }
 
 #python-content-title2 h2{
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #BCD0C7; 
     font-size: 20px;
-    color: hsl(101, 85%, 30%); /* Green text */
-    padding: 10px; /* Add padding to create a gap around the text */
+    color: rgb(21, 21, 100);
+    /* hsl(101, 85%, 30%); */
+    padding: 10px; /* padding to create a gap around the text */
 }
 #python-paragraph p{
     font-size: 16px;
