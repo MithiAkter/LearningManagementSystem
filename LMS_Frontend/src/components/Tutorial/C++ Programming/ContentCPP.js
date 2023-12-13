@@ -4,13 +4,16 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 function ContentCPP() {
-  const codeString = `// Your code here
-  <h1> Hello World! Good Morning! :) </h1>
-  <h1> Hello World! Good Morning! :) </h1>
-  <h1> Hello World! Good Morning! :) </h1>`;
+  const codeString = `#include <iostream>
+  using namespace std;
+  
+  int main() {
+    cout << "Hello World!";
+    return 0;
+  } `;
 
   const codeBlockStyle = {
-    borderRadius: '20px', // Adjust the border radius value as needed
+    borderRadius: '10px', //border radius
     overflow: 'hidden', // Prevent content from overflowing the rounded corners
   };
 
@@ -21,7 +24,7 @@ function ContentCPP() {
                 <h1 id='cpp-content-title1' >C++ Programming</h1>
                 </header>
 
-                <section>
+                <section id='cpp-introduction'>
                     <div id='cpp-content-title2' ><h2 >What is C++?</h2></div> 
                     <ul>
                         <li>C++ is a cross-platform language that can be used to create high-performance applications.</li>
@@ -32,7 +35,7 @@ function ContentCPP() {
                     </ul>
                 </section>
 
-                <section>
+                <section id='cpp-use'>
                     <div id='cpp-content-title2' ><h2>Why Use C++</h2></div> 
                     <ul>
                         <li>C++ is one of the world's most popular programming languages.</li>
@@ -45,7 +48,7 @@ function ContentCPP() {
                     </ul>
                 </section>
 
-                <section>
+                <section id='cpp-difference'>
                     <div id='cpp-content-title2'><h2>Difference between C and C++</h2></div> 
                     <ul>
                         <li>C++ was developed as an extension of C, and both languages have almost the same syntax.</li>
@@ -54,7 +57,7 @@ function ContentCPP() {
                     </ul>
                 </section>
 
-                <section>
+                <section id='cpp-getstart'>
                     <div id='cpp-content-title2'><h2>C++ Get Started</h2></div> 
                     <ul>
                         <li>C++ was developed as an extension of C, and both languages have almost the same syntax.</li>
@@ -64,105 +67,47 @@ function ContentCPP() {
                     </ul>
                 </section>
 
-                <section>
-                <div id='cpp-content-title2' ><h2 >Why Use C++?</h2></div> 
+                <section id='cpp-syntax'>
+                <div id='cpp-content-title2' ><h2 >C++ Syntax</h2></div> 
                 <div style={codeBlockStyle}>
-                    <SyntaxHighlighter language="html" style={darcula}>
+                    <SyntaxHighlighter language="cpp" style={darcula}>
                     {codeString}
                     </SyntaxHighlighter>
                 </div>
-                <p id='cpp-paragraph'>
-                c++ is the standard markup language for creating web pages. It describes the structure and content of a web page using a system of elements and tags.
-                </p>
                 </section>
 
-                <section>
-                    <div id='cpp-content-title2' ><h2 >c++ Syntax</h2></div> 
+                <section id='cpp-example'>
+                    <div id='cpp-content-title2' ><h2 >Example explained</h2></div> 
                     <ul>
-                        <li>c++ documents are composed of elements.</li>
-                        <li>Elements are represented by opening and closing tags.</li>
-                        <li>Common elements include &lt;p&gt;, &lt;h1&gt;, &lt;a&gt;, and more.</li>
+                        <li>Line 1: #include 'iostream' is a header file library that lets us work with input and output objects, 
+                            such as cout (used in line 5). Header files add functionality to C++ programs.</li>
+                        <li>Line 2: using namespace std means that we can use names for objects and variables from the standard library.</li>
+                        <li>Line 3: A blank line. C++ ignores white space. But we use it to make the code more readable.</li>
+                        <li>Line 4: Another thing that always appear in a C++ program, is int main(). This is called a function. Any code inside its curly brackets will be executed.</li>
+                        <li>Line 5: cout (pronounced "see-out") is an object used together with the insertion operator to output/print text. In our example it will output "Hello World!".</li>
+                        <br />
+                        <p>Note: Every C++ statement ends with a semicolon ;.</p>
+                        <br />
+                        <p>Remember: The compiler ignores white spaces. However, multiple lines makes the code more readable.</p>
+                        <li>Line 6: return 0 ends the main function.</li>
+                        <li>Line 7: Do not forget to add the closing curly bracket to actually end the main function.</li>
                     </ul>
                 </section>
 
-                <section>
-                    <div id='cpp-content-title2' ><h2 >c++ Selectors</h2></div> 
+                <section id='cpp-ide'>
+                    <div id='cpp-content-title2'><h2 >C++ Install IDE</h2></div> 
                     <p id='cpp-paragraph'>
-                        c++ is the standard markup language for creating web pages. It
-                        describes the structure and content of a web page using a system of elements and tags.
+                        An IDE (Integrated Development Environment) is used to edit AND compile the code.
+                    </p>
+                    <p>
+                        Popular IDE's include Code::Blocks, Eclipse, and Visual Studio. These are all free, and they can be used to both edit and debug C++ code.
+                    </p>
+                    <p>
+                        Note: Web-based IDE's can work as well, but functionality is limited.
                     </p>
                 </section>
 
-                <section >
-                    <div id='cpp-content-title2' ><h2 >How To Add c</h2></div> 
-                    <ul>
-                        <li>c++ documents are composed of elements.</li>
-                        <li>Elements are represented by opening and closing tags.</li>
-                        <li>Common elements include &lt;p&gt;, &lt;h1&gt;, &lt;a&gt;, and more.</li>
-                    </ul>
-                </section>
-                <section>
-                    <div id='cpp-content-title2' ><h2 >c++ Comments</h2></div> 
-                    <p id='cpp-paragraph'>
-                        c++ is the standard markup language for creating web pages. It
-                        describes the structure and content of a web page using a system of elements and tags.
-                    </p>
-                </section>
-                <section>
-                    <div id='cpp-content-title2' ><h2 >c++ Colors</h2></div> 
-                    <ul>
-                        <li>c++ documents are composed of elements.</li>
-                        <li>Elements are represented by opening and closing tags.</li>
-                        <li>Common elements include &lt;p&gt;, &lt;h1&gt;, &lt;a&gt;, and more.</li>
-                    </ul>
-                </section>
-                <section>
-                    <div id='cpp-content-title2' ><h2 >c++ Backgrounds</h2></div> 
-                    <p id='cpp-paragraph'>
-                        c++ is the standard markup language for creating web pages. It
-                        describes the structure and content of a web page using a system of elements and tags.
-                    </p>
-                </section>
-                <section>
-                    <div id='cpp-content-title2' ><h2 >c++ Borders</h2></div> 
-                    <ul>
-                        <li>c++ documents are composed of elements.</li>
-                        <li>Elements are represented by opening and closing tags.</li>
-                        <li>Common elements include &lt;p&gt;, &lt;h1&gt;, &lt;a&gt;, and more.</li>
-                    </ul>
-                </section>
-                <section>
-                    <div id='cpp-content-title2' ><h2 >c++ Margins</h2></div> 
-                    <ul>
-                        <li>c++ documents are composed of elements.</li>
-                        <li>Elements are represented by opening and closing tags.</li>
-                        <li>Common elements include &lt;p&gt;, &lt;h1&gt;, &lt;a&gt;, and more.</li>
-                    </ul>
-                </section>
-                <section>
-                    <div id='cpp-content-title2' ><h2 >c++ Padding</h2></div> 
-                    <p id='cpp-paragraph'>
-                        c++ is the standard markup language for creating web pages. It
-                        describes the structure and content of a web page using a system of elements and tags.
-                    </p>
-                </section>
                 
-                <section id="cpp-basics">
-                    <div id='cpp-content-title2' ><h2 >This is test div</h2></div> 
-                    <p id='cpp-paragraph'>
-                        c++ is the standard markup language for creating web pages. It
-                        describes the structure and content of a web page using a system of elements and tags.
-                    </p>
-                </section>
-                <section>
-                    <div id='cpp-content-title2' ><h2 >c++ Box Model</h2></div> 
-                    <ul>
-                        <li>c++ documents are composed of elements.</li>
-                        <li>Elements are represented by opening and closing tags.</li>
-                        <li>Common elements include &lt;p&gt;, &lt;h1&gt;, &lt;a&gt;, and more.</li>
-                    </ul>
-                </section>
-                {/* Add more sections with content as needed */}
             </div>
     </div>
     );

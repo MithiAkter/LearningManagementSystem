@@ -1,17 +1,17 @@
-/* ContentPage.c */
+/* ContentPage.java */
 .sidenav {
-    max-height: 100%; /* Set a maximum height for the sidebar */
-    overflow-y: auto; /* Add a vertical scrollbar when content overflows */
+    max-height: 100%; 
+    overflow-y: auto; 
     scrollbar-width: thin;
     scrollbar-color: #999 #f1f1f1;
 }
 
-/* HtmlPage.c */
+/* HtmlPage.java */
 .java-page {
     max-width:850px;
     padding: 15px;
     margin: left 0;
-    background-color: #f8f8f8; /* Light gray background */
+    background-color: #f8f8f8; 
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -27,11 +27,11 @@ section{
 }
 
 #java-content-title2 h2{
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #BCD0C7; 
     font-size: 20px;
-    color: hsl(101, 85%, 30%); /* Green text */
-    padding: 10px; /* Add padding to create a gap around the text */
+    color: rgb(21, 21, 100); 
+    padding: 10px; 
 }
 #java-paragraph p{
     font-size: 16px;

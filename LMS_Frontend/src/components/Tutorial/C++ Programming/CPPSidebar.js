@@ -11,12 +11,14 @@ function CPPSidebar(){
         <div className="sidenav list-group list-group-flush">
                 <div className="custom-scrollbar">
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-dark text-center' style={{ fontWeight: 'bold' }}>Learn C++ Programming</Link>
-                <a href="#cpp-basics" className='list-group-item list-group-item-action list-group-item-success mt-1'>C++ Introduction</a>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C++ Syntax</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C++ Output (Print Text)</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C++ Comments</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C++ Variables</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C++ Data Types</Link>
+                <a href="#cpp-introduction" className='list-group-item list-group-item-action list-group-item-success mt-1'>C++ Introduction</a>
+                <a href="#cpp-use" className='list-group-item list-group-item-action list-group-item-success mt-1'>Why Use C++</a>
+                <a href="#cpp-difference" className='list-group-item list-group-item-action list-group-item-success mt-1'>Difference between C and C++</a>
+                <a href="#cpp-getstart" className='list-group-item list-group-item-action list-group-item-success mt-1'>C++ Get Started</a>
+                <a href="#cpp-syntax" className='list-group-item list-group-item-action list-group-item-success mt-1'>C++ Syntax</a>
+                <a href="#cpp-example" className='list-group-item list-group-item-action list-group-item-success mt-1'>Example explained</a>
+                <a href="#cpp-ide" className='list-group-item list-group-item-action list-group-item-success mt-1'>C++ Install IDE (Test)</a>
+
 
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C++ Constants</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C++ Operators</Link>

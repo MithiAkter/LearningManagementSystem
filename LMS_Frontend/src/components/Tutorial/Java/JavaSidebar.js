@@ -11,12 +11,13 @@ function JavaSidebar(){
         <div className="sidenav list-group list-group-flush">
                 <div className="custom-scrollbar">
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-dark text-center' style={{ fontWeight: 'bold' }}>Learn Java Programming</Link>
-                <a href="#java-basics" className='list-group-item list-group-item-action list-group-item-success mt-1'>C</a>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Java Syntax</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Java Selectors</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Java Editors</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>How To Add Java</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Java Comments</Link>
+                <a href="#java-learning" className='list-group-item list-group-item-action list-group-item-success mt-1'>Learn Java</a>
+                <a href="#java-introduction" className='list-group-item list-group-item-action list-group-item-success mt-1'>Java Introduction</a>
+                <a href="#java-use" className='list-group-item list-group-item-action list-group-item-success mt-1'>Why Use Java?</a>
+                <a href="#java-syntax" className='list-group-item list-group-item-action list-group-item-success mt-1'>Java Syntax</a>
+                <a href="#java-example-explained" className='list-group-item list-group-item-action list-group-item-success mt-1'>Example explained</a>
+                <a href="#java-comments" className='list-group-item list-group-item-action list-group-item-success mt-1'>Java Comments</a>
+                <a href="#java-variable" className='list-group-item list-group-item-action list-group-item-success mt-1'>Java Variables(Test)</a>
 
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Java Colors</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>Java Backgrounds</Link>
