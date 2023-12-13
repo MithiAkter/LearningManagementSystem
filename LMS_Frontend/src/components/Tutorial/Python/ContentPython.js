@@ -8,21 +8,21 @@ function ContentPython() {
   Hello, World!`;
 
   const codeBlockStyle = {
-    borderRadius: '15px', // Adjust the border radius value as needed
+    borderRadius: '15px', //border radius
     overflow: 'hidden', // Prevent content from overflowing the rounded corners
   };
   const codeString1 = `x = 5
 y = "Hello, World!"`;
 
   const codeBlockStyle1 = {
-    borderRadius: '15px', // Adjust the border radius value as needed
+    borderRadius: '15px', // border radius
     overflow: 'hidden', // Prevent content from overflowing the rounded corners
   };
   const codeString2 = `#This is a comment.
 print("Hello, World!")`;
 
   const codeBlockStyle2 = {
-    borderRadius: '15px', // Adjust the border radius value as needed
+    borderRadius: '15px', // border radius
     overflow: 'hidden', // Prevent content from overflowing the rounded corners
   };
 
