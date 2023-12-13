@@ -30,8 +30,8 @@ section{
     border-radius: 10px;
     background-color: #BCD0C7; 
     font-size: 20px;
-    color: hsl(101, 85%, 30%); /* Green text */
-    padding: 10px; /* Add padding to create a gap around the text */
+    color: rgb(21, 21, 100); 
+    padding: 10px; 
 }
 #cpp-paragraph p{
     font-size: 16px;

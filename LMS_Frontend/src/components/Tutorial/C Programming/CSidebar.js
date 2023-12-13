@@ -12,11 +12,11 @@ function CSidebar(){
                 <div className="custom-scrollbar">
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-dark text-center' style={{ fontWeight: 'bold' }}>Learn C Programming</Link>
                 <a href="#c-basics" className='list-group-item list-group-item-action list-group-item-success mt-1'>C Introduction</a>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C Syntax</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C Output (Print Text)</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C Comments</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C Variables</Link>
-                <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C Data Types</Link>
+                <a href="#learn-c" className='list-group-item list-group-item-action list-group-item-success mt-1'>Why Learn C?</a>
+                <a href="#c-difference" className='list-group-item list-group-item-action list-group-item-success mt-1'>Difference between C and C++</a>
+                <a href="#c-syntax" className='list-group-item list-group-item-action list-group-item-success mt-1'>C Syntax</a>
+                <a href="#c-exaple-explanation" className='list-group-item list-group-item-action list-group-item-success mt-1'>C Example explained</a>
+                <a href="#c-ide" className='list-group-item list-group-item-action list-group-item-success mt-1'>C IDE(Test)</a>
 
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C Constants</Link>
                 <Link to="/" className='list-group-item list-group-item-action list-group-item-success mt-1'>C Operators</Link>

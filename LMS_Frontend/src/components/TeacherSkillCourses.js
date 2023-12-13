@@ -26,10 +26,13 @@ function TeacherSkillCourses() {
             <div className="row mb-4"> 
                 {courseData && courseData.map((course,index)=>
                     <div className="col-md-3 mb-4">
-                        <div className="card">
-                        <Link to={`/detail/${course.id}`}><img src={course.featured_img} className="card-img-top" alt={course.title}/></Link>
+                        <div className="card" style={{ width: '300px', height: '300px' }}>
+                        <Link to={`/detail/${course.id}`}><img src={course.featured_img} className="card-img-top" alt={course.title} style={{ height: '190px', width: '100%', objectFit: 'cover' }}/></Link>
                             <div className="card-body">
-                                <h5 className="card-title"><Link to={`/detail/${course.id}`}>{course.title}</Link></h5>
+                                <h5 className="card-title text-center mt-2"><Link to={`/detail/${course.id}`} style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }}
+                                onMouseOver={(event) => (event.target.style.color = 'rgb(76, 76, 150)')}
+                                onMouseOut={(event) => (event.target.style.color = 'rgb(21, 21, 100)')}
+                            >{course.title}</Link></h5>
                             </div>
                         </div>
                     </div> 
