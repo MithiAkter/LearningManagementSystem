@@ -36,7 +36,7 @@ function TeacherLogin(){
                     
                     window.location.href='/teacher-dashboard';
                 }else{
-                    seterrorMsg('Invalid Email or Password!')
+                    seterrorMsg(res.data.message)
                 }
             });
         }catch(error){
@@ -61,7 +61,7 @@ function TeacherLogin(){
                             {errorMsg && <p className='text-danger' >{errorMsg}</p>}
                         <form>
                             <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Username</label>
+                                <label for="exampleInputEmail1" className="form-label">Email</label>
                                 <input type="email" value={teacherLoginData.email} name='email' onChange={handleChange} className="form-control"/>
                             </div>
                             <div className="mb-3">

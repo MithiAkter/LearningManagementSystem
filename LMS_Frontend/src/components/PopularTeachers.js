@@ -5,159 +5,63 @@ import axios from 'axios';
 const baseUrl = 'http://localhost:8000/api';
 
 function PopularTeachers() {
-    
-    const [teacher, setTeacher] = useState(null);
+    const [popularteacherData,setpopularteacherData]=useState([]);
+    // const [teacher, setTeacher] = useState(null);
+    //Fetch 4 courses when page load
+    useEffect(()=>{
+    //Fetch popular teachers 
+        try{
+            axios.get(baseUrl+'/popular-teachers/?popular=1')
+            .then((res)=>{
+                setpopularteacherData(res.data)
+             });
+        }catch(error){
+            console.log(error);
+        }
+
+    },[]);
+
+
+    useEffect(()=>{
+        document.title='Popular Teachers';
+    });
    
-    useEffect(() => {
-        axios.get(baseUrl+'/teacher/').then((response) => {
-            setTeacher(response.data);
+    // useEffect(() => {
+    //     axios.get(baseUrl+'/teacher/').then((response) => {
+    //         setTeacher(response.data);
             
-        });
-    }, []);
-    console.log(teacher);
+    //     });
+    // }, []);
+    // console.log(teacher);
     return (
          <div className="container mt-3">
-            {/* Popular Teacher Starts */}
-                <h3 className="pb-1 mb-4">Popular Teachers</h3>
-            <div className="row"> 
-                <div className="col-md-3 mb-4">
+            {/* start popular teachers*/}
+            <h3 className="pb-1 mb-4 mt-4">Popular Teachers <Link to="/popular-teachers" className="float-end">See all</Link></h3>
+            <div className="row mb-4">
+            {popularteacherData && popularteacherData.map((teacher,index)=>
+                <div className="col-md-3">
                     <div className="card">
-                    <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
+                    <Link to={`/teacher-detail/${teacher.id}`}><img src={teacher.profile_img} style={{ height: '100%', width: '100%', objectFit: 'cover' }} className="card-img-top" alt={teacher.full_name}/></Link>
                         <div className="card-body">
-                            <h5 className="card-title"><Link to="/teacher-detail/1">Teacher's Name</Link></h5>
+                            {/* <h5 className="card-title"><Link to={`/teacher-detail/${teacher.id}`}>{teacher.full_name}</Link></h5> */}
+                            <h5 className="card-title text-center mt-1"><Link to={`/teacher-detail/${teacher.id}`} style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }}
+                                onMouseOver={(event) => (event.target.style.color = 'rgb(76, 76, 150)')}
+                                onMouseOut={(event) => (event.target.style.color = 'rgb(21, 21, 100)')}
+                            >{teacher.full_name}</Link></h5>
                         </div>
-
                         <div className="card-footer">
                             <div className="title">
-                                <span>Rating : 4.5/5</span>
+                                <span>Total Courses : {teacher.total_teacher_courses}</span>
                             </div>
                         </div>
-
                     </div>
-                </div> 
-
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <a href="#"><img src="teacher.png" className="card-img-top" alt="..."/></a>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
-                        </div>
-
-                        <div className="card-footer">
-                            <div className="title">
-                                <span>Rating : 4.5/5</span>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div> 
-
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <a href="#"><img src="teacher.png" className="card-img-top" alt="..."/></a>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
-                        </div>
-
-                        <div className="card-footer">
-                            <div className="title">
-                                <span>Rating : 4.5/5</span>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div> 
-
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <a href="#"><img src="teacher.png" className="card-img-top" alt="..."/></a>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
-                        </div>
-
-                        <div className="card-footer">
-                            <div className="title">
-                                <span>Rating : 4.5/5</span>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>   
-
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
-                        </div>
-
-                        <div className="card-footer">
-                            <div className="title">
-                                <span>Rating : 4.5/5</span>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div> 
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
-                        </div>
-
-                        <div className="card-footer">
-                            <div className="title">
-                                <span>Rating : 4.5/5</span>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div> 
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
-                        </div>
-
-                        <div className="card-footer">
-                            <div className="title">
-                                <span>Rating : 4.5/5</span>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div> 
-
-                <div className="col-md-3 mb-4">
-                    <div className="card">
-                    <Link to="/detail/1"><img src="teacher.png" className="card-img-top" alt="..."/></Link>
-                        <div className="card-body">
-                            <h5 className="card-title"><a href="#">Teacher's Name</a></h5>
-                        </div>
-
-                        <div className="card-footer">
-                            <div className="title">
-                                <span>Rating : 4.5/5</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div> 
+                
             </div>
+            )}
+            </div>
+            
+            {/* end popular Teachers*/} 
+            
             {/* Popular Teachers ends */}
             {/* Pagination Starts */}
             <nav aria-label="Page navigation example">

@@ -82,6 +82,7 @@ function EditChapter(){
                     prev_video:res.data.video,
                     remarks:res.data.remarks,
                     video:''
+                    
                 });
              });
         }catch(error){

@@ -17,7 +17,7 @@ function Payment() {
   
     const sendEmail = (e) => {
       e.preventDefault();
-      emailjs.sendForm('service_e93m9ms', 'template_x88q6uw', form.current, '8I_xO_gChaqRasE-D')
+      emailjs.sendForm('service_i507blj', 'template_vbe2ygm', form.current, '8I_xO_gChaqRasE-D')
         .then((result) => {
             console.log(result.text);
         }, (error) => {
@@ -62,13 +62,13 @@ function Payment() {
                   <p>If you are interested in purchasing this course or have any questions related to the content, feel free to send me a message.I'm here to assist you with any inquiries about the course material or the buying process.</p>
                 <form ref={form} onSubmit={sendEmail}>
                   <div className="input-box">
-                    <input type="text" name="from_name" placeholder="Enter your name"/>
+                    <input type="text" name="from_name" placeholder="Enter Course Name You want to enroll"/>
                   </div>
                   <div className="input-box">
-                    <input type="email" name="from_name" placeholder="Enter Course Title"/>
+                    <input type="email" name="from_name" placeholder="Enter your email"/>
                   </div>
                   <div className="input-box message-box">
-                  <textarea placeholder='Send us a message' name="message" id="" cols="30" rows="10"></textarea>
+                  <textarea placeholder='Send us your massage with your approprite contact information by using which we can contact you further' name="message" id="" cols="30" rows="10"></textarea>
                   </div>
                   <div className="button">
                     <input type="submit" value="Send" />

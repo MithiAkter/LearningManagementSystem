@@ -37,6 +37,7 @@ function TeacherRegister(){
 
         try{
             axios.post(baseUrl,teacherFormData).then((response)=>{
+                // window.location.href='/verify-teacher/'+response.id;
                 setteacherData({
                     'full_name' : '',
                     'email' : '',
@@ -74,7 +75,7 @@ function TeacherRegister(){
                     <div className="card">
                         <h5 className="card-header">Teacher Register</h5>
                         <div className="card-body">
-                        <form>
+                        
                             <div className="mb-3">
                                 <label for="exampleInputEmail1" className="form-label">Full Name</label>
                                 <input value={teacherData.full_name} onChange={handleChange}  name="full_name"  type="text" className="form-control"/>
@@ -107,7 +108,7 @@ function TeacherRegister(){
                             </div>
 
                             <button onClick={submitForm} type="submit" className="btn btn-primary">Register</button>
-                        </form>
+                        
                         </div>
                     </div>
                 </div>

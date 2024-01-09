@@ -81,21 +81,22 @@ function QuizQuestions() {
                                                 <thead style={{ textAlign: 'center' }}>
                                                     <tr>
                                                         <th>Question</th>
-                                                        <th>Action</th>
+                                                        {/* <th>Action</th> */}
                                                     </tr>
                                                 </thead>
                                                 <tbody style={{ textAlign: 'center' }}>
                                                         {questionData.map((row,index)=>
                                                             <tr> 
-                                                                <td> 
-                                                                    <Link className='mt-1' style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }} 
-                                                                    to={`/edit-question/`+row.id}>{row.questions}</Link>
+                                                                <td style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }} > 
+                                                                    {/* <Link className='mt-1' style={{ textDecoration: 'none', color: 'rgb(21, 21, 100)' }} 
+                                                                    to={`/edit-question/`+row.id}>{row.questions}</Link> */}
+                                                                    {row.questions}
                                                                 </td>
-                                                                <td>
-                                                                    <Link  to={`/edit-question/`+row.id} className='btn btn-success btn-sm text-white mt-1'><i class="bi bi-pencil-square"></i></Link>
-                                                                    <button onClick={()=>handleDeleteClick(row.id)} to={`delete-question`+row.id} className='btn btn-danger btn-sm ms-1 mt-1'><i class="bi bi-trash"></i></button>
+                                                                
+                                                                    {/* <Link  to={`/edit-question/`+row.id} className='btn btn-success btn-sm text-white mt-1'><i class="bi bi-pencil-square"></i></Link> */}
+                                                                    {/* <button onClick={()=>handleDeleteClick(row.id)} to={`delete-question`+row.id} className='btn btn-danger btn-sm ms-1 mt-1'><i class="bi bi-trash"></i></button> */}
                                                                     
-                                                                </td>
+                                                                
                                                             </tr>
                                                         )}
                                                 </tbody>

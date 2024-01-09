@@ -4,7 +4,7 @@
 
 .contai-ner{
   margin: 60px auto;
-  width: 85%;
+  width: 80%;
   background: #fff;
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
@@ -55,8 +55,9 @@
   color: #afafb6;
 }
 .contai-ner .content .right-side{
-  width: 75%;
-  margin-left: 75px;
+  align-items: center;
+  width: 100%;
+  margin-left: 30px;
 }
 .content .right-side .topic-text{
   margin-bottom: 10px;

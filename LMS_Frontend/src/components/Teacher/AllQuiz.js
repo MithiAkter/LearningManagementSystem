@@ -77,7 +77,7 @@ function AllQuiz() {
                                                 <thead>
                                                     <tr style={{ textAlign: 'center' }}>
                                                         <th>Name</th>
-                                                        <th>Total Questions</th>
+                                                        {/* <th>Total Questions</th> */}
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -88,7 +88,7 @@ function AllQuiz() {
                                                                     {/* <Link to={`/all-questions/`+row.id}>{row.title}</Link> */}
                                                                     {row.title}
                                                                 </td>
-                                                                <td style={{ textAlign: 'center'}}><Link to="#">123</Link></td>
+                                                                {/* <td style={{ textAlign: 'center'}}><Link to="#">123</Link></td> */}
                                                                 <td style={{ textAlign: 'center' }}>
                                                                     <Link className='btn btn-info btn-sm ' to={`/edit-quiz/`+row.id}>Edit</Link>
                                                                     <Link className='btn btn-success btn-sm ms-2' to={`/add-quiz-questions/`+row.id}>Add Questions</Link>

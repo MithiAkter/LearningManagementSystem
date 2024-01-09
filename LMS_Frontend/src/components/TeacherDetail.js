@@ -39,7 +39,8 @@ function TeacherDetail(){
                         <p className="fw-bold">Skills: &nbsp;
                             {skillList.map((skill, index) =>
                                 <>
-                                    <Link to={`/teacher-skill-courses/${skill.trim()}/${teacherData.id}`} className="badge badge-pill text-dark bg-warning">{skill.trim()}</Link>&nbsp;&nbsp;
+                                    {/* <Link to={`/teacher-skill-courses/${skill.trim()}/${teacherData.id}`} className="badge badge-pill text-dark bg-warning">{skill.trim()}</Link>&nbsp;&nbsp; */}
+                                    <p className="badge badge-pill text-dark bg-warning">{skill.trim()}</p>&nbsp;&nbsp;
                                     {/* <Link to={`/category/${skill.trim()}`} className="badge badge-pill text-dark bg-warning">{skill.trim()}</Link>&nbsp;&nbsp; */}
                                 </>
                             )}</p>

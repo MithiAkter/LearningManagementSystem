@@ -24,6 +24,7 @@ import UserStudyMaterials from './User/UserStudyMaterials';
 // Teachers
 import TeacherLogin from './Teacher/TeacherLogin';
 import TeacherLogout from './Teacher/TeacherLogout';
+import VerifyTeacher from './Teacher/VerifyTeacher';
 import TeacherRegister from './Teacher/TeacherRegister';
 import TeacherDashboard from './Teacher/TeacherDashboard';
 import AddCourse from './Teacher/AddCourse';
@@ -58,6 +59,7 @@ import CourseQuizList from './User/CourseQuizList';
 import TakeQuiz from './User/TakeQuiz';
 
 // List Pages
+import Category from './Category';
 import AllCourses from './AllCourses';
 import PopularCourses from './PopularCourses';
 import PopularTeachers from './PopularTeachers';
@@ -84,6 +86,7 @@ import LearnMore from './LearnMore/LearnMore';
 
 
 //blog
+import Books from './Books/Books';
 import BlogHome from './blogLayout/BlogHome';
 import Compiler from './Compiler/Compiler';
 
@@ -91,6 +94,9 @@ import Compiler from './Compiler/Compiler';
 import Search from './Search';
 
 import {Routes as Switch, Route} from 'react-router-dom';
+
+
+
 
 
 
@@ -115,7 +121,11 @@ function Main() {
             
             <Route path='/popular-courses' element={<PopularCourses />} />
             <Route path='/popular-teachers' element={<PopularTeachers />} />
-            <Route path='/category/:category_slug' element={<CategoryCourses />} />
+            <Route path='/category' element={<Category />} />
+
+            <Route path='/category/:course_id/' element={<Category />} />
+            
+            <Route path='/course/:category_id/:category_slug' element={<CategoryCourses />} />
             <Route path='/teacher-skill-courses/:skill_name/:teacher_id' element={<TeacherSkillCourses />} />
 
             
@@ -137,6 +147,7 @@ function Main() {
             <Route path='/teacher-login' element={<TeacherLogin />} />
             <Route path='/teacher-logout' element={<TeacherLogout />} />
             <Route path='/teacher-register' element={<TeacherRegister />} />
+            <Route path='/verify-teacher/:teacher_id' element={<VerifyTeacher />} />
             <Route path='/teacher-dashboard' element={<TeacherDashboard />} />
             <Route path='/teacher-courses' element={<TeacherCourses />} />
             <Route path='/enrolled-students/:course_id' element={<EnrolledStudents />} />
@@ -184,6 +195,7 @@ function Main() {
             <Route path='/learn-more' element={<LearnMore />} />
             <Route path='/blog-post' element={<BlogHome />} />
             <Route path='/compiler' element={<Compiler />} />
+            <Route path='/books' element={<Books />} />
             
 
 

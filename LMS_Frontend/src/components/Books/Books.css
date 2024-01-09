@@ -1,0 +1,14 @@
+
+.heading{
+    width:400px;
+    text-align: center;
+    color: rgb(241, 240, 245);
+    background-color: #5f7185;
+    padding: 10px;
+    border-radius: 5px;
+}
+.MyPdf{
+    width:400px;
+    height:450px;
+    border-radius: 8px;
+}

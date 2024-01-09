@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {Link} from 'react-router-dom';
 function Header() {
     const [searchString,setsearchString]=useState({
@@ -51,8 +51,8 @@ function Header() {
                                     <li><Link className="dropdown-item" to="/java-home">Java</Link></li> 
                                 </ul>
                             </li>
-                           
                             <Link className="nav-link" to="/all-courses">Courses</Link>
+                            <Link className="nav-link" to="/category">Categories</Link>
                             <li className="nav-item dropdown">
                                 <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown2" role="button" 
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -97,6 +97,7 @@ function Header() {
                             
                             <Link className="nav-link" to="/about-us">About Us</Link>
                             <Link className="nav-link" to="/blog-post">Blog</Link>
+                            <Link className="nav-link" to="/books">Books</Link>
 
                             {/* searchbar */}
                             <form className="customSearchForm d-flex">

@@ -16,8 +16,10 @@ function CourseDetail(){
     const [userLoginStatus,setuserLoginStatus]=useState([]);
     const [enrollStatus,setenrollStatus]=useState([]);
     const [ratingStatus,setratingStatus]=useState([]);
-    const [AvgRating,setAvgRating]=useState([0]);
+    const [courseViews,setcourseViews]=useState(0);
+    const [AvgRating,setAvgRating]=useState(0);
     const [favoriteStatus,setfavoriteStatus]=useState();
+    const [viewCountUpdated, setViewCountUpdated] = useState(false);
 
 
     let {course_id} = useParams();
@@ -37,6 +39,21 @@ function CourseDetail(){
                         setAvgRating(res.data.course_rating);
                     }
                  });
+                //Update View
+                // axios.get(baseUrl+'/update-view/'+course_id)
+                // .then((res)=>{
+                //     console.log(res.data);
+                //     setcourseViews(res.data.views);
+                //  });
+                if (!viewCountUpdated) {
+                    axios.get(baseUrl + '/update-view/' + course_id)
+                        .then((res) => {
+                            console.log(res.data);
+                            setcourseViews(res.data.views);
+                            setViewCountUpdated(true);
+                        });
+                }
+
             }catch(error){
                 console.log(error);
             }
@@ -265,9 +282,18 @@ function CourseDetail(){
                             </>
                             )}
                         </p>
-                        <p className="fw-bold">Duration : 3 Hours 30 minutes</p>
-                        <p className="fw-bold">Total Enrolled : {courseData.total_enrolled_students} student(s)</p>
-                        <p className="fw-bold">Rating: {AvgRating}/5
+                        {/* <p className="fw-bold">Techs:&nbsp;
+                            {techList.map((tech, index) =>
+                            <>
+                                <p className="badge badge-pill text-dark bg-warning">{tech.trim()}</p>&nbsp;&nbsp;
+                            </>
+                            )}
+                        </p> */}
+                        <p className="fw-bold mt-0">Total Enrolled : {courseData.total_enrolled_students} student(s)</p>
+                        <p className="fw-bold">Rating: {AvgRating}/5</p>
+                        <p className="fw-bold">Views: {courseViews}
+                        {/* <p className="fw-bold">Duration : 3 Hours 30 minutes</p> */}
+                        
                         {enrollStatus === 'success' && userLoginStatus === 'success' && (
                                         <>
                                         {ratingStatus != 'success' &&
@@ -355,14 +381,14 @@ function CourseDetail(){
                             In this Course
                         </h5>
                         <ul className="list-group list-group-flush">
-                            {chapterData.map((chapter,index)=>
+                            {/* {chapterData.map((chapter,index)=>
                                 <li className="list-group-item d-flex justify-content-between align-items-center" key={chapter.id} >{chapter.title}
                                     <span className="float-end">
                                         <span className="me-5">1 Hour 30 Minutes</span>
                                         <button className="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#videoModal1"><i class="bi bi-youtube"></i></button>
                                     </span> 
 
-                                    {/* Video Modal Starts */}
+                                    Video Modal Starts
                                     <div className="modal fade" id="videoModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div className="modal-dialog modal-xl">
                                         <div className="modal-content">
@@ -372,7 +398,7 @@ function CourseDetail(){
                                         </div>
                                         <div className="modal-body">
                                             <div className="ratio ratio-16x9">
-                                            {/* <iframe src={chapter.video}  allowfullscreen></iframe> */}
+                                            <iframe src={chapter.video}  allowfullscreen></iframe>
                                                 <video controls width="200">
                                                     <source src={chapter.video} type="video/webm" />
                                                     <source src={chapter.video}  type="video/mp4" />
@@ -385,9 +411,45 @@ function CourseDetail(){
                                         </div>
                                     </div>
                                     </div>
-                                    {/* Video Modal Ends  */}
+                                    Video Modal Ends 
                                 </li>
-                            )}
+                            )} */}
+                            {chapterData.map((chapter, index) => (
+                            <li className="list-group-item d-flex justify-content-between align-items-center" key={chapter.id}>
+                                {chapter.title}
+                                <span className="float-end">
+                                    <button
+                                        className="btn btn-sm btn-danger"
+                                        data-bs-toggle="modal"
+                                        data-bs-target={`#videoModal${index + 1}`}
+                                    >
+                                        <i className="bi bi-youtube"></i>
+                                    </button>
+                                </span>
+
+                                {/* Video Modal Starts */}
+                                <div className="modal fade" id={`videoModal${index + 1}`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div className="modal-dialog modal-xl">
+                                        <div className="modal-content">
+                                            <div className="modal-header">
+                                                <h5 className="modal-title" id="exampleModalLabel">Video</h5>
+                                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div className="modal-body">
+                                                <div className="ratio ratio-16x9">
+                                                    <video controls width="200">
+                                                        <source src={chapter.video} type="video/webm" />
+                                                        <source src={chapter.video} type="video/mp4" />
+                                                        Sorry, your browser doesn't support embedded video.
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Video Modal Ends */}
+                            </li>
+                        ))}
                         </ul>
                 </div>
             }

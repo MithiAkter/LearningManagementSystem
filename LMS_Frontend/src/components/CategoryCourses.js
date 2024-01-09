@@ -5,23 +5,30 @@ const baseUrl='http://localhost:8000/api';
 
 function CategoryCourses() {
     const [courseData,setCourseData]=useState([]);
-    const {category_slug}=useParams();
+    const [nextUrl,setnextUrl]=useState();
+    const [previousUrl,setpreviousUrl]=useState();
+    const {category_id,category_slug}=useParams();
     //Fetch courses when page load
     useEffect(()=>{
+        fetchData(baseUrl+'/course/?category='+category_id);
+    },[]);
+    const paginationHandler = (url) => {
+        fetchData(url);
+    }
+    function fetchData(url){
         try{
-            axios.get(baseUrl+'/course/?category='+category_slug)
+            axios.get(url)
             .then((res)=>{
-                setCourseData(res.data)
+                setCourseData(res.data.results)
              });
         }catch(error){
             console.log(error);
         }
-
-    },[]);
+    }
     return (
         
         <div className="container mt-3">
-            {/* Latest Courses Starts */}
+            {/* category Courses Starts */}
                 <h3 className="pb-1 mb-4">{category_slug}</h3>
             <div className="row mb-4"> 
                 {courseData && courseData.map((course,index)=>
@@ -41,17 +48,19 @@ function CategoryCourses() {
 
 
             </div>
-            {/* Latest Courses ends */}
+            {/* category Courses ends */}
+
             {/* Pagination Starts */}
-            {/* <nav aria-label="Page navigation example">
-                <ul class="pagination mt-5 justify-content-center">
-                    <li className ="page-item"><a className ="page-link" href="#">Previous</a></li>
-                    <li className ="page-item"><a className ="page-link" href="#">1</a></li>
-                    <li className ="page-item"><a className ="page-link" href="#">2</a></li>
-                    <li className ="page-item"><a className ="page-link" href="#">3</a></li>
-                    <li className ="page-item"><a className ="page-link" href="#">Next</a></li>
+            <nav aria-label="Page navigation example">
+                <ul className="pagination mt-5 justify-content-center">
+                    {previousUrl &&
+                        <li className ="page-item"><button className ="page-link" onClick={()=>paginationHandler(previousUrl)}><i className="bi bi-arrow-left"></i>Previous</button></li>
+                    }
+                    {nextUrl &&
+                        <li className ="page-item"><button className ="page-link" onClick={()=>paginationHandler(nextUrl)}><i className="bi bi-arrow-right"></i>Next</button></li>
+                    }
                 </ul>
-            </nav> */}
+            </nav>
             {/* Pagination Ends */}
         </div>
         

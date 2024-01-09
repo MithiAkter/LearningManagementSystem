@@ -1,6 +1,6 @@
-import {Link} from 'react-router-dom';
-import {useParams} from "react-router-dom";
 import TeacherSidebar from './TeacherSidebar';
+import QuizResult from './QuizResult';
+import {useParams} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 const baseUrl='http://localhost:8000/api';
@@ -27,7 +27,7 @@ function AttemptedStudents() {
 
     //page title
     useEffect(()=>{
-        document.title='User-list';
+        document.title='Attempt User-list';
     })
 
 
@@ -51,7 +51,7 @@ function AttemptedStudents() {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                        {studentData.map((row,index)=> 
+                                                        {studentData.map((row,index) => 
                                                             <tr> 
                                                                 <td style={{ textAlign: 'center'}}> 
                                                                     {row.student.full_name}
@@ -59,7 +59,13 @@ function AttemptedStudents() {
                                                                 <td style={{ textAlign: 'center'}}>{row.student.email}</td>
                                                                 <td style={{ textAlign: 'center'}}>{row.student.username}</td>
                                                                 <td style={{ textAlign: 'center'}}>
-                                                                    <Link to="#">Quiz Result</Link>
+                                                                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target={`#resultModal${row.id}`}>
+                                                                    Quiz Result
+                                                                    </button>
+
+                                                                    <div className="modal fade" id={`resultModal${row.id}`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                        <QuizResult quiz={row.quiz.id} student={row.student.id}/>
+                                                                    </div>
                                                                 </td>
                                                             </tr>
                                                         )}

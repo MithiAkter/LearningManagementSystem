@@ -30,7 +30,7 @@ function LandingPage(){
 
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_e93m9ms', 'template_x88q6uw', form.current, '8I_xO_gChaqRasE-D')
+    emailjs.sendForm('service_la7jcoo', 'template_7g0189z', form.current, '8I_xO_gChaqRasE-D')
       .then((result) => {
           console.log(result.text);
       }, (error) => {
@@ -57,7 +57,7 @@ function LandingPage(){
               <Link className="blue" to="/learn-more">
                 Learn More
               </Link>
-              <a className="yellow" href="/">
+              <a className="yellow" href="/all-courses">
                 Visit Courses
               </a>
             </div>
@@ -161,7 +161,7 @@ function LandingPage(){
           <div className="contai-ner">
           <h1 className='contact-title' id="animated-text" >Contact With Us</h1>
               <div className="content">
-                <div className="left-side">
+                {/* <div className="left-side">
                   <div className="address details">
                     <i className="fas fa-map-marker-alt"></i>
                     <div className="topic">Address</div>
@@ -172,14 +172,14 @@ function LandingPage(){
                     <i className="fas fa-phone-alt"></i>
                     <div className="topic">Phone</div>
                     <div className="text-one">+880 1881490188</div>
-                    {/* <div className="text-two">01*********8</div> */}
+                    
                   </div>
                   <div className="email details">
                     <i className="fas fa-envelope"></i>
                     <div className="topic">Email</div>
                     <div className="text-one">mithilakona@gmail.com</div>
                   </div>
-                </div>
+                </div> */}
                 <div className="right-side">
                   <div className="topic-text">Send us a message</div>
                   <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>

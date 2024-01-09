@@ -12,6 +12,8 @@ class Teacher(models.Model):
     mobile_no = models.CharField(max_length = 20)
     profile_img=models.ImageField(upload_to='teacher_profile_imgs/',null=True)
     skills = models.TextField()
+    varify_status=models.BooleanField(default=False)
+    otp_digit = models.CharField(max_length = 20,null=True)
 
     class Meta:
         verbose_name_plural = "1. Teachers"
@@ -31,7 +33,6 @@ class Teacher(models.Model):
         total_students=StudentCourseEnrollment.objects.filter(course__teacher=self).count()
         return total_students
 
-
     def skill_list(self):
         skill_list=self.skills.split(',')
         return skill_list
@@ -46,7 +47,10 @@ class CourseCategory(models.Model):
 
     class Meta:
         verbose_name_plural = "2. Course Categories"
-
+# Total Courses of this category
+    def total_course(self):
+        return Course.objects.filter(category=self).count()
+         
 # for showing the title in admin panel
     def __str__(self): 
         return self.title
@@ -54,12 +58,13 @@ class CourseCategory(models.Model):
     
 # Course Model
 class Course(models.Model):
-    category = models.ForeignKey(CourseCategory, on_delete=models.CASCADE)
+    category = models.ForeignKey(CourseCategory, on_delete=models.CASCADE,related_name='category_courses')
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE,related_name='teacher_courses')
     title = models.CharField(max_length = 150)
     description =  models.TextField()
     featured_img=models.ImageField(upload_to='course_imgs/',null=True)
     techs =  models.TextField(null=True)
+    course_views =  models.BigIntegerField(default=0)
     class Meta:
         verbose_name_plural = "3. Courses"
 
@@ -103,6 +108,8 @@ class Student(models.Model):
     username = models.CharField(max_length = 200)
     interested_categories = models.TextField()
     profile_img=models.ImageField(upload_to='student_profile_imgs/',null=True)
+    varify_status=models.BooleanField(default=False)
+    otp_digit = models.CharField(max_length = 20,null=True)
 
     def __str__(self): 
         return self.full_name
@@ -232,9 +239,6 @@ class QuizQuestions(models.Model):
     right_ans=models.CharField(max_length = 200)
     add_time=models.DateTimeField(auto_now_add=True)
 
-    def __str__(self): 
-            return f"{self.questions}"
-    
     class Meta:
         verbose_name_plural = "12. Quiz Questions"
 

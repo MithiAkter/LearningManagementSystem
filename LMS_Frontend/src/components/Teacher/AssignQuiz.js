@@ -68,7 +68,7 @@ function AssignQuiz() {
                                                                     <Link to={`/all-questions/`+row.id}>{row.title}</Link>
                                                                 </td>
                                                                 <CheckQuizinCourse quiz={row.id} course={course_id}/>
-                                                                
+
                                                             </tr>
                                                             
                                                         )}
